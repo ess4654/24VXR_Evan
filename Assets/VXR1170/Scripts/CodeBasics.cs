@@ -172,10 +172,5 @@ public class CodeBasics : MonoBehaviour
 
         //--
         remainingTime--;
-
-        if(LeftKey ^ RightKey)// (LeftKey && !RightKey) || (!LeftKey && RightKey))
-        {
-
-        }
     }
 }
