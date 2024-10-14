@@ -8,6 +8,11 @@ public class TriggerSFX : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        playSound.Play();
+        playSound.PlayOneShot(playSound.clip);
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        playSound.Stop();
     }
 }

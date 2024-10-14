@@ -10,4 +10,9 @@ public class AudioPlaybackManager : MonoBehaviour
     {
         audioPlayer.Play();
     }
+
+    public void StopAudio()
+    {
+        audioPlayer.Stop();
+    }
 }
