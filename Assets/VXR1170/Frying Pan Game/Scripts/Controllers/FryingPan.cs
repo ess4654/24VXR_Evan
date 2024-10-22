@@ -25,7 +25,8 @@ namespace Controllers
             var prefab = ingredientPrefabs[ID];
             var parent = spawnPoints[currentIngredients.Count];
             currentIngredients.Add(ID);
-            Instantiate(prefab, parent);
+            var instance = Instantiate(prefab, parent);
+            instance.GetComponent<Collider>().enabled = false;
         }
 
         /// <summary>
@@ -38,7 +39,7 @@ namespace Controllers
             //Remove all ingredients from the frying pan
             foreach(var point in spawnPoints)
             {
-                for(int i = point.childCount; i >= 0; i--)
+                for (int i = point.childCount - 1; i >= 0; i--)
                 {
                     var child = point.GetChild(i);
                     Destroy(child.gameObject);

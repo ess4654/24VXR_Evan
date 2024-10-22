@@ -270,9 +270,9 @@ MonoBehaviour:
   - {fileID: 3459561835222807941, guid: 72e2ffd8d73eb8b409090aee7f58b0c0, type: 3}
   - {fileID: 7079528043066060622, guid: 2204d16b9d102914bbbf184c5f227977, type: 3}
   spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 559349917}
+  - {fileID: 559349917}
+  - {fileID: 559349917}
   game: {fileID: 935393008}
 --- !u!65 &559349914
 BoxCollider:
