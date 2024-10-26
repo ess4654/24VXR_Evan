@@ -9,7 +9,9 @@ AudioMixerSnapshotController:
   m_Name: Night
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 1a595c736107bab45901e31eb37b5469
-  m_FloatValues: {}
+  m_FloatValues:
+    324c0a7c1aa0e104ba062c01ca8c8230: -3
+    f076eb1e26f56b14cb12716d30921bae: 10
   m_TransitionOverrides: {}
 --- !u!244 &-1976989179670427556
 AudioMixerEffectController:
@@ -63,7 +65,7 @@ AudioMixerController:
     - d8926af55802ad94585a5ad87443382d
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -5320076478135347607}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -108,7 +110,9 @@ AudioMixerSnapshotController:
   m_Name: Day
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 0f2ba719b0490534cbbaa7ba98442b1c
-  m_FloatValues: {}
+  m_FloatValues:
+    324c0a7c1aa0e104ba062c01ca8c8230: 10
+    f076eb1e26f56b14cb12716d30921bae: -10
   m_TransitionOverrides: {}
 --- !u!243 &3208230562865469510
 AudioMixerGroupController:
