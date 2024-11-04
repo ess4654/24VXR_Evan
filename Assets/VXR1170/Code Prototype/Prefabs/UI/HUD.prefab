@@ -113,6 +113,7 @@ RectTransform:
   m_Children:
   - {fileID: 1623653122705718865}
   - {fileID: 5420510930898940239}
+  - {fileID: 3324138145921802558}
   - {fileID: 4592472544956930369}
   - {fileID: 9215644541791472694}
   - {fileID: 7251169436805598356}
@@ -200,8 +201,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1182571511669820877}
   timerText: {fileID: 1886190270109899884}
-  finalScoreText: {fileID: 0}
+  finalScoreText: {fileID: 1587379599196707442}
   gameOverScreen: {fileID: 8282906430963655854}
+--- !u!1 &4358472689324523059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3324138145921802558}
+  - component: {fileID: 4927799456231517606}
+  - component: {fileID: 1348982543954815041}
+  - component: {fileID: 1115074802156700615}
+  m_Layer: 5
+  m_Name: Cook Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3324138145921802558
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358472689324523059}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1017300826331469725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 28, y: 300}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4927799456231517606
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358472689324523059}
+  m_CullTransparentMesh: 1
+--- !u!114 &1348982543954815041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358472689324523059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.745283, g: 0.12304199, b: 0.12304199, a: 0.5882353}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 0
+  m_FillClockwise: 1
+  m_FillOrigin: 2
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1115074802156700615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358472689324523059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1745dae2f9e55804a8a0a8c97395e970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8843086370828791389
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +842,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9790efab23fc21c48a6c4ee156f2f511, type: 3}
+--- !u!114 &1587379599196707442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6864516038875495437, guid: 9790efab23fc21c48a6c4ee156f2f511,
+    type: 3}
+  m_PrefabInstance: {fileID: 5279390440992761471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8282906430963655854 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4302875129061589713, guid: 9790efab23fc21c48a6c4ee156f2f511,

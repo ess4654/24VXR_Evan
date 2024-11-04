@@ -37,7 +37,8 @@ namespace FryingPanGame.Controllers
 
         private Collider collider;
         private MeshRenderer[] renderers;
-        private GameObject highlight;
+        private Transform highlight;
+        private bool active;
 
         #endregion
 
@@ -49,7 +50,7 @@ namespace FryingPanGame.Controllers
         {
             collider = GetComponent<Collider>();
             renderers = GetComponentsInChildren<MeshRenderer>();
-            highlight = transform.Find("Highlight").gameObject;
+            highlight = transform.Find("Highlight");
             HighlightIngredient(false);
         }
 
@@ -67,7 +68,7 @@ namespace FryingPanGame.Controllers
 
         private void OnMouseEnter()
         {
-            if (GameManager.Instance.GameOn)
+            if (GameManager.Instance.GameOn && active)
             {
                 SoundManager.Instance.PlayClip(hoverSound);
                 HighlightIngredient(true);
@@ -76,16 +77,16 @@ namespace FryingPanGame.Controllers
 
         private void OnMouseExit()
         {
-            if (GameManager.Instance.GameOn)
+            if (GameManager.Instance.GameOn && active)
                 HighlightIngredient(false);
         }
 
         private void OnMouseDown()
         {
-            if (GameManager.Instance.GameOn)
+            if (GameManager.Instance.GameOn && active && !CookTimer.IsCooking) //prevent adding new ingredients to the pan if we are cooking
             {
-                GameEventBroadcaster.BroadcastIngredientAdded(Category, ID); //invoke global event
                 ActivateIngredient(false);
+                GameEventBroadcaster.BroadcastIngredientAdded(Category, ID); //invoke global event
             }
         }
 
@@ -98,7 +99,7 @@ namespace FryingPanGame.Controllers
         private void HighlightIngredient(bool on)
         {
             if(highlight)
-                highlight.SetActive(on);
+                highlight.gameObject.SetActive(on);
         }
 
         /// <summary>
@@ -115,6 +116,9 @@ namespace FryingPanGame.Controllers
                 foreach (var renderer in renderers)
                     renderer.enabled = active;
             }
+
+            HighlightIngredient(false);
+            this.active = active;
         }
 
         /// <summary>
@@ -174,38 +178,27 @@ namespace FryingPanGame.Controllers
             await Timer.WaitUntil(() => this == null || CameraMover.Instance != null);
             if (this == null) return;
 
+            ActivateIngredient(true); //reactivate the ingredient and it's collider
+
             //Move the camera over this ingredient if this ingredient is the required one for the new recipe.
-            var zPosition = transform.localPosition.z;
-            //Debug.Log(name + transform.GetSiblingIndex() + ": " + zPosition);
+            var zPosition = transform.position.z;
             switch (category)
             {
                 case IngredientType.Dough:
                     if(recipe.doughID == _ID)
-                    {
-                        //Debug.Log($"Moving Dough Cam: {zPosition}");
                         await CameraMover.Instance.MoveCamera(category, zPosition);
-                    }
                     break;
 
                 case IngredientType.Glaze:
                     if (recipe.glazeID == _ID)
-                    {
-                        //Debug.Log($"Moving Glaze Cam: {zPosition}");
                         await CameraMover.Instance.MoveCamera(category, zPosition);
-                    }
                     break;
 
                 case IngredientType.Sprinkles:
                     if (recipe.sprinkleID == _ID)
-                    {
-                        //Debug.Log($"Moving Sprinkle Cam: {zPosition}");
                         await CameraMover.Instance.MoveCamera(category, zPosition);
-                    }
                     break;
             }
-            if (this == null) return;
-
-            ActivateIngredient(true); //reactivate the ingredient and it's collider
         }
 
         #endregion

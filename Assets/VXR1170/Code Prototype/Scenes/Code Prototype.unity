@@ -632,7 +632,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.8018868, g: 0.45364052, b: 0.39716092, a: 0}
+  m_BackGroundColor: {r: 0.4862745, g: 0.39607844, b: 0.8, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -842,11 +842,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ingredient Camera 2
       objectReference: {fileID: 0}
-    - target: {fileID: 741537716299146966, guid: abc2b9450280b9643a966239f90a6a1d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2569844144308729413, guid: abc2b9450280b9643a966239f90a6a1d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1036,11 +1031,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ingredient Camera 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 741537716299146966, guid: abc2b9450280b9643a966239f90a6a1d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2569844144308729413, guid: abc2b9450280b9643a966239f90a6a1d,
         type: 3}
@@ -1615,11 +1605,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ingredient Camera 1
       objectReference: {fileID: 0}
-    - target: {fileID: 741537716299146966, guid: abc2b9450280b9643a966239f90a6a1d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2569844144308729413, guid: abc2b9450280b9643a966239f90a6a1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1933,11 +1918,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7617579623352312844, guid: 3e5f5b4390e78b649912089757387dc7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8101894784950857526, guid: 3e5f5b4390e78b649912089757387dc7,
         type: 3}
       propertyPath: ingredientSpawnPoints.Array.data[0]
@@ -1988,6 +1968,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5f5b4390e78b649912089757387dc7, type: 3}
+--- !u!114 &1088680727043184271 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1115074802156700615, guid: 3e5f5b4390e78b649912089757387dc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1088680727043184270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1745dae2f9e55804a8a0a8c97395e970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2563789271282508287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2075,6 +2067,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1146787712768595438, guid: 03ffc5f54abe60c4c905611c9ad192d5,
+        type: 3}
+      propertyPath: cookTimer
+      value: 
+      objectReference: {fileID: 1088680727043184271}
     - target: {fileID: 3546365962089485995, guid: 03ffc5f54abe60c4c905611c9ad192d5,
         type: 3}
       propertyPath: m_Name

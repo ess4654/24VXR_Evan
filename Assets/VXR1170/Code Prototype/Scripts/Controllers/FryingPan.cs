@@ -1,4 +1,6 @@
 using FryingPanGame.Data;
+using FryingPanGame.Helpers;
+using FryingPanGame.Views;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,12 +18,17 @@ namespace FryingPanGame.Controllers
         [SerializeField] private bool isCooking;
         [SerializeField] private Ingredient[] ingredientPrefabs;
         [SerializeField] private Transform[] spawnPoints;
+        
+        [Header("Final Product")]
         [SerializeField] private GameObject finalProduct;
         [SerializeField] private MeshRenderer doughRender;
         [SerializeField] private MeshRenderer glazeRender;
         [SerializeField] private Material[] doughMaterials;
         [SerializeField] private Material[] glazeMaterials;
         [SerializeField] private Material[] spinkleMaterials;
+
+        [Header("Audio")]
+        [SerializeField] private AudioClip errorSound;
 
         /// <summary>
         ///     Are the ingredients in the pan being cooked?
@@ -72,22 +79,21 @@ namespace FryingPanGame.Controllers
         /// <param name="ID">ID of the ingredient selected.</param>
         private void AddIngredient(IngredientType category, int ID)
         {
-            if (GameManager.Instance.GameOn) //prevent adding ingredients to the pan if the game is not running
+            if (!GameManager.Instance.GameOn) //prevent adding ingredients to the pan if the game is not running
                 return;
 
             if(currentIngredients.Count >= Constants.RequiredIngredients) //prevent additional ingredients from being added to the pan
                 return;
-
-            Debug.Log($"Adding {category} {ID} to frying pan");
 
             //add to the list of current ingredients in the pan
             currentIngredients.Add(new Tuple<IngredientType, int>(category, ID));
             
             //show the ingredient in the pan
             var prefab = ingredientPrefabs[(int)category - 1];
-            var ingredient = Instantiate(prefab, spawnPoints[currentIngredients.Count]);
-            ingredient.ActivateIngredient(false);
+            var ingredient = Instantiate(prefab, spawnPoints[currentIngredients.Count - 1]);
             ingredient.RenderIngredient(ID);
+            Destroy(ingredient.GetComponent<Collider>()); //prevent any interaction with this ingredient
+            Destroy(ingredient);
 
             //pan is full of ingredients, check with the manager if the recipe is a match
             if (currentIngredients.Count >= Constants.RequiredIngredients)
@@ -139,6 +145,7 @@ namespace FryingPanGame.Controllers
             else //wrong recipe
             {
                 Debug.Log("Wrong ingredients for this recipe");
+                SoundManager.Instance.PlayClip(errorSound);
                 GameManager.Instance.UpdateScore(GameManager.Instance.Score - penaltyScore); //penalize player for incorrect recipe
                 GameManager.Instance.ResetRecipe();
             }
@@ -148,6 +155,7 @@ namespace FryingPanGame.Controllers
         {
             //Wait for cooking to complete
             var cookTime = GameManager.Instance.CookTime;
+            CookTimer.Instance.RunTimer(cookTime);
             isCooking = true;
             yield return new WaitForSeconds(cookTime / 2f);
 
@@ -157,18 +165,21 @@ namespace FryingPanGame.Controllers
             yield return new WaitForSeconds(cookTime / 2f);
             isCooking = false;
 
-            //calculate bonus and update the player score
-            int baseScore = GameManager.Instance.Score;
-            float ingredientScore = GameManager.Instance.RecipeScore * (1f + (addBonus ? bonusModifier : 0)); //adds a 20% bonus to the score for clicking the pan while we are cooking
-            int newScore = (int)(baseScore + ingredientScore);
+            if (GameManager.Instance.GameOn)
+            {
+                //calculate bonus and update the player score
+                int baseScore = GameManager.Instance.Score;
+                float ingredientScore = GameManager.Instance.RecipeScore * (1f + (addBonus ? bonusModifier : 0)); //adds a 20% bonus to the score for clicking the pan while we are cooking
+                int newScore = (int)(baseScore + ingredientScore);
 
-            Debug.Log(addBonus ?
-                $"Added 20% Bonus to the score for this recipe: {ingredientScore}":
-                $"Score for cooking this recipe: {ingredientScore}");
+                Debug.Log(addBonus ?
+                    $"Added 20% Bonus to the score for this recipe: {ingredientScore}" :
+                    $"Score for cooking this recipe: {ingredientScore}");
 
-            //update the score and reset the recipe
-            GameManager.Instance.UpdateScore(newScore); //submit the new score to the game manager
-            GameManager.Instance.ResetRecipe();
+                //update the score and reset the recipe
+                GameManager.Instance.UpdateScore(newScore); //submit the new score to the game manager
+                GameManager.Instance.ResetRecipe();
+            }
         }
 
         /// <summary>
@@ -188,12 +199,20 @@ namespace FryingPanGame.Controllers
 
                     case IngredientType.Glaze:
                         if(glazeRender)
-                            glazeRender.materials[0] = glazeMaterials[item.Item2];
+                        {
+                            var materials = glazeRender.materials;
+                            materials[0] = glazeMaterials[item.Item2];
+                            glazeRender.materials = materials;
+                        }
                         break;
 
                     case IngredientType.Sprinkles:
                         if (glazeRender)
-                            glazeRender.materials[1] = spinkleMaterials[item.Item2];
+                        {
+                            var materials = glazeRender.materials;
+                            materials[1] = spinkleMaterials[item.Item2];
+                            glazeRender.materials = materials;
+                        }
                         break;
                 }
             }

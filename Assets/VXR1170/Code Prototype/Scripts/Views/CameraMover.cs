@@ -4,6 +4,7 @@ using Shared.Helpers;
 using Shared;
 using System.Threading.Tasks;
 using UnityEngine;
+using FryingPanGame.Controllers;
 
 namespace FryingPanGame.Views
 {
@@ -58,11 +59,12 @@ namespace FryingPanGame.Views
             var currentPosition = camTransform.position;
             currentPosition.z = zPosition;
             camTransform.gameObject.SetActive(false);
-            //Debug.Log($"Moving {camTransform.name} to {zPosition}");
             camTransform.position = new Vector3(camTransform.localPosition.x, camTransform.localPosition.y, zPosition); //currentPosition;
             camTransform.position = currentPosition;
             camTransform.gameObject.SetActive(true);
-            await Timer.WaitForFrame();
+
+            await Timer.WaitForFrame(); //must wait for frame to ensure that image is captured
+
             camTransform.gameObject.SetActive(false);
         }
     }

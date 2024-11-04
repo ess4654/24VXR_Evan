@@ -74,7 +74,7 @@ namespace FryingPanGame.Controllers
         /// <summary>
         ///     While the game is running, count down the timer clock.
         /// </summary>
-        /// <returns>Reference to the countdown Corotuine</returns>
+        /// <returns>Reference to the countdown Coroutine</returns>
         private IEnumerator Countdown()
         {
             timer = Constants.CountdownTime;
