@@ -1,5 +1,6 @@
 using FryingPanGame.Data;
 using FryingPanGame.Views;
+using Shared;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace FryingPanGame.Controllers
     /// <summary>
     ///     Handles all game logic for the frying pan game.
     /// </summary>
-    public class GameManager : MonoBehaviour
+    public class GameManager : Singleton<GameManager>
     {
         [SerializeField] private FryingPan fryingPan;
         [SerializeField] private HUD hud;
@@ -21,6 +22,12 @@ namespace FryingPanGame.Controllers
 
         private void Start()
         {
+            //StartNewGame();
+        }
+
+        public void StartNewGame()
+        {
+            StopAllCoroutines();
             score = 0;
             ResetRecipe();
             StartCoroutine(Countdown());
@@ -44,7 +51,7 @@ namespace FryingPanGame.Controllers
             recipeBuilder ??= new RecipeBuilder();
             currentRecipe = recipeBuilder.GenerateRecipe();
             fryingPan.ClearPan();
-            //hud.ShowRecipe(currentRecipe, fryingPan);
+            GameEventBroadcaster.BroacastNewRecipe(currentRecipe);
         }
 
         public void CheckRecipe(List<int> cookingIngredients)

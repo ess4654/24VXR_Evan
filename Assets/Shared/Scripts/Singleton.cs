@@ -14,7 +14,6 @@ namespace Shared
         /// </summary>
         public static TClass Instance { get; private set; }
 
-
         protected virtual void Awake()
         {
             if(Instance != null && Instance != GetComponent<TClass>())

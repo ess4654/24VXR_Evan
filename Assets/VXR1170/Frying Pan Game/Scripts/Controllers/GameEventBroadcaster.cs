@@ -19,9 +19,9 @@ namespace FryingPanGame.Controllers
         public delegate void IngredientsID_Event(HashSet<int> doughIDs, HashSet<int> glazeIDs, HashSet<int> sprinkleIDs);
 
         /// <summary>
-        ///     An event that takes no parameters.
+        ///     An event that contains a recipe.
         /// </summary>
-        public delegate void VoidEvent();
+        public delegate void RecipeEvent(Recipe recipe);
 
         /// <summary>
         ///     An event that contains an ingredient message.
@@ -45,9 +45,9 @@ namespace FryingPanGame.Controllers
         public static event IngredientEvent OnIngredientAdded;
 
         /// <summary>
-        ///     Called when the ingredients are reset.
+        ///     Called when the a new recipe is generated.
         /// </summary>
-        public static event VoidEvent OnResetIngredients;
+        public static event RecipeEvent OnNewRecipe;
 
         #endregion
 
@@ -62,10 +62,10 @@ namespace FryingPanGame.Controllers
             OnIngredientAdded?.Invoke(type, ID); //subscribed event
 
         /// <summary>
-        ///     Broadcast that cooking time has finsihed, or the recipe was wrong.
+        ///     Broadcast that cooking time has finsihed, or the recipe was wrong, or the game is reset requiring a new recipe.
         /// </summary>
-        public static void BroacastResetIngredients() =>
-            OnResetIngredients?.Invoke(); //subscribed event
+        public static void BroacastNewRecipe(Recipe newRecipe) =>
+            OnNewRecipe?.Invoke(newRecipe); //subscribed event
 
         /// <summary>
         ///     Broadcast that the current selection for ingredients has been determined.

@@ -1,4 +1,5 @@
 using FryingPanGame.Data;
+using FryingPanGame.Views;
 using Helpers;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace FryingPanGame.Controllers
 
         private Collider collider;
         private MeshRenderer[] renderers;
-        private MaterialPropertyBlock highlight;
+        private GameObject highlight;
 
         #endregion
 
@@ -58,19 +59,20 @@ namespace FryingPanGame.Controllers
         {
             collider = GetComponent<Collider>();
             renderers = GetComponentsInChildren<MeshRenderer>();
-            highlight = new MaterialPropertyBlock();
-            transform.Find("Higlight").GetComponent<MeshRenderer>().GetPropertyBlock(highlight);
+            highlight = transform.Find("Highlight").gameObject;
             HighlightIngredient(false);
         }
 
         private void OnEnable()
         {
             GameEventBroadcaster.OnAvailableIngredientsSelected += NewIngredientsSelected;
+            GameEventBroadcaster.OnNewRecipe += NewRecipe;
         }
 
         private void OnDisable()
         {
             GameEventBroadcaster.OnAvailableIngredientsSelected -= NewIngredientsSelected;
+            GameEventBroadcaster.OnNewRecipe -= NewRecipe;
         }
 
         private void OnMouseEnter()
@@ -97,7 +99,8 @@ namespace FryingPanGame.Controllers
         /// <param name="on">Is the highlight on?</param>
         private void HighlightIngredient(bool on)
         {
-            highlight?.SetColor("_Color", highlight.GetColor("_Color").ChangeAlpha(on ? .35f : .0f));
+            if(highlight)
+                highlight.SetActive(on);
         }
 
         /// <summary>
@@ -161,6 +164,39 @@ namespace FryingPanGame.Controllers
             _ID = materialIndex;
             var material = materialOptions[materialIndex];
             materialRender.material = material;
+        }
+        
+        /// <summary>
+        ///     Called when a new recipe is generated.
+        /// </summary>
+        /// <param name="recipe">IDs for the required item of the recipe.</param>
+        private async void NewRecipe(Recipe recipe)
+        {
+            //Handles case where recipe is generated prior to the camera mover being initialized
+            await Timer.WaitUntil(() => this == null || CameraMover.Instance != null);
+            if (this == null) return;
+
+            //Move the camera over this ingredient if this ingredient is the required one for the new recipe.
+            switch(category)
+            {
+                case IngedientType.Dough:
+                    if(recipe.doughID == _ID)
+                        await CameraMover.Instance.MoveCamera(category, transform.position.z);
+                    break;
+
+                case IngedientType.Glaze:
+                    if (recipe.glazeID == _ID)
+                        await CameraMover.Instance.MoveCamera(category, transform.position.z);
+                    break;
+
+                case IngedientType.Sprinkles:
+                    if (recipe.sprinkleID == _ID)
+                        await CameraMover.Instance.MoveCamera(category, transform.position.z);
+                    break;
+            }
+            if (this == null) return;
+
+            ActivateIngredient(true); //rectivate the ingredient and it's collider
         }
 
         #endregion
