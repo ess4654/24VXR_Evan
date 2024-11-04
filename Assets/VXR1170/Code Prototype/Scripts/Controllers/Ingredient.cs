@@ -69,10 +69,7 @@ namespace FryingPanGame.Controllers
         private void OnMouseEnter()
         {
             if (GameManager.Instance.GameOn && active)
-            {
-                SoundManager.Instance.PlayClip(hoverSound);
                 HighlightIngredient(true);
-            }
         }
 
         private void OnMouseExit()
@@ -100,6 +97,9 @@ namespace FryingPanGame.Controllers
         {
             if(highlight)
                 highlight.gameObject.SetActive(on);
+            
+            if(on)
+                SoundManager.Instance.PlayClip(hoverSound);
         }
 
         /// <summary>

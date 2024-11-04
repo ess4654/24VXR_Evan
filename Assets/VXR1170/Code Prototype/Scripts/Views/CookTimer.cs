@@ -1,5 +1,6 @@
 using FryingPanGame.Controllers;
 using FryingPanGame.Data;
+using FryingPanGame.Helpers;
 using Shared;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,15 +13,22 @@ namespace FryingPanGame.Views
     [RequireComponent(typeof(Image))]
     public class CookTimer : Singleton<CookTimer>
     {
+        #region VARIABLE DECLARATIONS
+
         /// <summary>
         ///     Is the timer currently cooking the recipe?
         /// </summary>
         public static bool IsCooking => Instance.cooking;
         [SerializeField] private bool cooking;
 
+        [Header("Audio")]
+        [SerializeField] private AudioClip cookingFinished;
+
         private Image timer;
         private float fill;
         private float time;
+
+        #endregion
 
         #region METHODS
 
@@ -52,8 +60,11 @@ namespace FryingPanGame.Views
                 
                 if(fill >= time)
                 {
+                    SoundManager.Instance.StopSound();
                     timer.fillAmount = 0;
                     cooking = false;
+                    if(GameManager.Instance.GameOn)
+                        SoundManager.Instance.PlayClip(cookingFinished);
                 }
             }
         }

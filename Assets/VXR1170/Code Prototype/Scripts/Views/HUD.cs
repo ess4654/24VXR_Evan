@@ -1,4 +1,5 @@
 using FryingPanGame.Controllers;
+using FryingPanGame.Helpers;
 using Shared;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,9 @@ namespace FryingPanGame.Views
         [SerializeField] private Text finalScoreText;
         [SerializeField] private GameObject gameOverScreen;
 
+        [Header("Audio")]
+        [SerializeField] private AudioClip gameOverSound;
+
         #region METHODS
 
         private void Start()
@@ -30,7 +34,7 @@ namespace FryingPanGame.Views
         {
             if (timerText)
                 timerText.text = time.ToString();
-            //Debug.Log("Remaining Time: " + time);
+            Debug.Log("Remaining Time: " + time);
         }
 
         /// <summary>
@@ -60,6 +64,9 @@ namespace FryingPanGame.Views
 
                 if(finalScoreText)
                     finalScoreText.text = $"Final Score: {finalScore}";
+
+                SoundManager.Instance.StopSound();
+                SoundManager.Instance.PlayClip(gameOverSound);
             }
         }
 

@@ -26,5 +26,11 @@ namespace FryingPanGame.Helpers
             if(clip != null)
                 source.PlayOneShot(clip);
         }
+
+        /// <summary>
+        ///     Stops the sound currently being played.
+        /// </summary>
+        public void StopSound() =>
+            source.Stop();
     }
 }

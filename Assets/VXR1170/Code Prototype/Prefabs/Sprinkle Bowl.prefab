@@ -238,7 +238,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc84ff2496e96cc4ba9b3f6da7404f15, type: 2}
   - {fileID: 2100000, guid: 00b8ecee8bf7ba04c8f96685e4fb8c2c, type: 2}
   - {fileID: 2100000, guid: 303efeda7db097445b7d8301822dad11, type: 2}
-  hoverSound: {fileID: 0}
+  hoverSound: {fileID: 8300000, guid: 8137391d007997b44998e822d3f9576d, type: 3}
 --- !u!65 &6618061464720667593
 BoxCollider:
   m_ObjectHideFlags: 0

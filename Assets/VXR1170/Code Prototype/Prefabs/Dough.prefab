@@ -209,14 +209,13 @@ MonoBehaviour:
   index: 0
   _ID: 0
   category: 1
-  cookTime: 0
-  score: 0
   materialRender: {fileID: 4610012215839358724}
   materialOptions:
   - {fileID: 2100000, guid: a3b10f8ebb598435e8bf5fb0b11d3187, type: 2}
   - {fileID: 2100000, guid: e22581525467d3a4689ee39933480abe, type: 2}
   - {fileID: 2100000, guid: 19f43c0baed0e47428b1dde08c65c26d, type: 2}
   - {fileID: 2100000, guid: 4ad592f45caf3a14da70d114216ba29a, type: 2}
+  hoverSound: {fileID: 8300000, guid: 8137391d007997b44998e822d3f9576d, type: 3}
 --- !u!65 &7213208751962358363
 BoxCollider:
   m_ObjectHideFlags: 0

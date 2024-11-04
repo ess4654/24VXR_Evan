@@ -65,7 +65,8 @@ namespace FryingPanGame.Controllers
         public void StartNewGame()
         {
             StopAllCoroutines();
-            score = 0;
+            UpdateScore(0);
+            recipeBuilder?.ResetSelection(); //reset the selection of ingredients if starting a new game from a game over screen
             ResetRecipe();
             gameOn = true;
             countdownRoutine = StartCoroutine(Countdown());
@@ -95,7 +96,8 @@ namespace FryingPanGame.Controllers
         {
             recipeBuilder ??= new RecipeBuilder();
             currentRecipe = recipeBuilder.GenerateRecipe();
-            fryingPan.ClearPan();
+            if(fryingPan)
+                fryingPan.ClearPan();
             GameEventBroadcaster.BroacastNewRecipe(currentRecipe);
         }
 
@@ -131,10 +133,11 @@ namespace FryingPanGame.Controllers
         /// </summary>
         private void GameOver()
         {
-            Debug.Log("Game Over");
+            gameOn = false;
             if(countdownRoutine!= null)
                 StopCoroutine(countdownRoutine);
             hud.ShowGameOver(true);
+            Debug.Log("Game Over");
         }
 
         #endregion

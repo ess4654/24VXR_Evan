@@ -18,6 +18,7 @@ namespace FryingPanGame.Controllers
         [SerializeField] private bool isCooking;
         [SerializeField] private Ingredient[] ingredientPrefabs;
         [SerializeField] private Transform[] spawnPoints;
+        [SerializeField] private GameObject smoke;
         
         [Header("Final Product")]
         [SerializeField] private GameObject finalProduct;
@@ -28,7 +29,10 @@ namespace FryingPanGame.Controllers
         [SerializeField] private Material[] spinkleMaterials;
 
         [Header("Audio")]
+        [SerializeField] private AudioClip hoverSound;
         [SerializeField] private AudioClip errorSound;
+        [SerializeField] private AudioClip fryingSound;
+        [SerializeField] private AudioClip bonusSound;
 
         /// <summary>
         ///     Are the ingredients in the pan being cooked?
@@ -36,17 +40,21 @@ namespace FryingPanGame.Controllers
         public bool IsCooking => isCooking;
 
         private List<Tuple<IngredientType, int>> currentIngredients = new List<Tuple<IngredientType, int>>();
+        private Transform highlight;
         private Coroutine cookingRoutine;
         private bool addBonus;
-        
-        private const int penaltyScore = 5;
-        private const float bonusModifier = .2f;
 
         #endregion
 
         #region METHODS
 
         #region ENGINE
+
+        private void Awake()
+        {
+            highlight = transform.Find("Highlight");
+            Highlight(false);
+        }
 
         private void OnEnable()
         {
@@ -58,19 +66,50 @@ namespace FryingPanGame.Controllers
             GameEventBroadcaster.OnIngredientAdded -= AddIngredient;
         }
 
+        private void OnMouseEnter()
+        {
+            if (GameManager.Instance.GameOn)
+                Highlight(true);
+        }
+
+        private void OnMouseExit()
+        {
+            Highlight(false); //always hide the highlight whether the game is on or not
+        }
+
         private void OnMouseDown()
         {
             if (GameManager.Instance.GameOn)
             {
                 //submit the recipe if not cooking
                 if (!isCooking)
+                {
                     SubmitRecipe();
+                }
                 else
+                {
+                    if (!addBonus) //only play the bonus sound once
+                        SoundManager.Instance.PlayClip(bonusSound);
+
                     addBonus = true; //adds bonus if we click the pan while ingredients are cooking
+                }
             }
         }
 
         #endregion
+
+        /// <summary>
+        ///     Highlights the frying pan when hovered over.
+        /// </summary>
+        /// <param name="on">Is the highlight on?</param>
+        public void Highlight(bool on)
+        {
+            if (highlight)
+                highlight.gameObject.SetActive(on);
+
+            if (on)
+                SoundManager.Instance.PlayClip(hoverSound);
+        }
 
         /// <summary>
         ///     Adds the selected ingredient to the frying pan.
@@ -125,7 +164,8 @@ namespace FryingPanGame.Controllers
             //ensure that we are not cooking
             isCooking = false;
             addBonus = false;
-
+            if(smoke)
+                smoke.SetActive(false);
             if(cookingRoutine != null)
                 StopCoroutine(cookingRoutine);
         }
@@ -140,19 +180,24 @@ namespace FryingPanGame.Controllers
             if (matchingRecipe) 
             {
                 Debug.Log("Recipe is a match");
+                SoundManager.Instance.PlayClip(fryingSound);
                 cookingRoutine = StartCoroutine(CookDoughnut());
             }
             else //wrong recipe
             {
                 Debug.Log("Wrong ingredients for this recipe");
                 SoundManager.Instance.PlayClip(errorSound);
-                GameManager.Instance.UpdateScore(GameManager.Instance.Score - penaltyScore); //penalize player for incorrect recipe
+                GameManager.Instance.UpdateScore(GameManager.Instance.Score - Constants.PenaltyScore); //penalize player for incorrect recipe
                 GameManager.Instance.ResetRecipe();
             }
         }
 
         private IEnumerator CookDoughnut()
         {
+            //Active smoke effect
+            if (smoke)
+                smoke.SetActive(true);
+
             //Wait for cooking to complete
             var cookTime = GameManager.Instance.CookTime;
             CookTimer.Instance.RunTimer(cookTime);
@@ -169,7 +214,7 @@ namespace FryingPanGame.Controllers
             {
                 //calculate bonus and update the player score
                 int baseScore = GameManager.Instance.Score;
-                float ingredientScore = GameManager.Instance.RecipeScore * (1f + (addBonus ? bonusModifier : 0)); //adds a 20% bonus to the score for clicking the pan while we are cooking
+                float ingredientScore = GameManager.Instance.RecipeScore * (1f + (addBonus ? Constants.BonusModifier : 0)); //adds a 20% bonus to the score for clicking the pan while we are cooking
                 int newScore = (int)(baseScore + ingredientScore);
 
                 Debug.Log(addBonus ?

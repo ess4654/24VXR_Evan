@@ -4,7 +4,6 @@ using Shared.Helpers;
 using Shared;
 using System.Threading.Tasks;
 using UnityEngine;
-using FryingPanGame.Controllers;
 
 namespace FryingPanGame.Views
 {
