@@ -1,10 +1,11 @@
-using Controllers;
+using FryingPanGame.Controllers;
+using FryingPanGame.Data;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Views
+namespace FryingPanGame.Views
 {
     /// <summary>
     ///     Controls the visuals of the game canvas.
@@ -16,6 +17,7 @@ namespace Views
         [SerializeField] private Text scoreText;
         [SerializeField] private Text timerText;
         [SerializeField] private GameObject gameOverScreen;
+        [SerializeField] private Recipe currentRecipe;
 
         private void Start()
         {
@@ -32,17 +34,17 @@ namespace Views
             scoreText.text = $"$ {score}";
         }
 
-        public void ShowRecipe(List<int> recipe, FryingPan fryingPan)
-        {
-            int i = 0;
-            foreach(var ingredient in recipe)
-            {
-                var prefab = ingredientPrefabs.First(x => x.ID == ingredient);
-                var ingredientInstance = Instantiate(prefab, ingredientSpawnPoints[i]);
-                ingredientInstance.Pan = fryingPan;
-                i++;
-            }
-        }
+        //public void ShowRecipe(List<int> recipe, FryingPan fryingPan)
+        //{
+        //    int i = 0;
+        //    foreach(var ingredient in recipe)
+        //    {
+        //        var prefab = ingredientPrefabs.First(x => x.ID == ingredient);
+        //        var ingredientInstance = Instantiate(prefab, ingredientSpawnPoints[i]);
+        //        //ingredientInstance.Pan = fryingPan;
+        //        i++;
+        //    }
+        //}
 
         public void ShowGameOver()
         {

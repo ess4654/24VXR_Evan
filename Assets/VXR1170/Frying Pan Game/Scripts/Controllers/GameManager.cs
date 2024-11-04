@@ -1,11 +1,11 @@
-using Data;
+using FryingPanGame.Data;
+using FryingPanGame.Views;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Views;
 
-namespace Controllers
+namespace FryingPanGame.Controllers
 {
     /// <summary>
     ///     Handles all game logic for the frying pan game.
@@ -15,7 +15,7 @@ namespace Controllers
         [SerializeField] private FryingPan fryingPan;
         [SerializeField] private HUD hud;
 
-        private List<int> currentRecipe;
+        private Recipe currentRecipe;
         private RecipeBuilder recipeBuilder;
         private int timer;
         private int score;
@@ -42,22 +42,22 @@ namespace Controllers
 
         public void ResetRecipe()
         {
-            recipeBuilder ??= new RecipeBuilder(new List<int> { 0, 1, 2 });
-            currentRecipe = recipeBuilder.GenerateRecipe(Constants.RequiredIngredients);
+            recipeBuilder ??= new RecipeBuilder();
+            currentRecipe = recipeBuilder.GenerateRecipe();
             fryingPan.ClearPan();
-            hud.ShowRecipe(currentRecipe, fryingPan);
+            //hud.ShowRecipe(currentRecipe, fryingPan);
         }
 
         public void CheckRecipe(List<int> cookingIngredients)
         {
-            bool matchingRecipe = cookingIngredients.Intersect(currentRecipe).Count() == currentRecipe.Count;
-            if(matchingRecipe)
-            {
-                score++;
-                hud.UpdateScore(score);
-            }
-
-            ResetRecipe();
+            //bool matchingRecipe = cookingIngredients.Intersect(currentRecipe).Count() == currentRecipe.Count;
+            //if(matchingRecipe)
+            //{
+            //    score++;
+            //    hud.UpdateScore(score);
+            //}
+            //
+            //ResetRecipe();
         }
 
         private void Update()
