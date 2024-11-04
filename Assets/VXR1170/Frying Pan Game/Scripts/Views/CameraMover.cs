@@ -22,7 +22,7 @@ namespace FryingPanGame.Views
         /// <param name="category">Category of the camera to move.</param>
         /// <param name="zPosition">ZPosition of the ingredient to position the camera above.</param>
         /// <returns>Completed move camera task.</returns>
-        /// <exception cref="CameraExcepition">If the camera is not referenced in the inspector</exception>
+        /// <exception cref="CameraException">If the camera is not referenced in the inspector</exception>
         public async Task MoveCamera(IngredientType category, float zPosition)
         {
             //Get a reference to the camera to be moved
@@ -31,27 +31,27 @@ namespace FryingPanGame.Views
             {
                 case IngredientType.Dough:
                     if(doughCam == null)
-                        throw new CameraExcepition("Dough");
+                        throw new CameraException("Dough");
 
                     camTransform = doughCam.transform;
                     break;
              
                 case IngredientType.Glaze:
                     if(glazeCam == null)
-                        throw new CameraExcepition("Glaze");
+                        throw new CameraException("Glaze");
 
                     camTransform = glazeCam.transform;
                     break;
 
                 case IngredientType.Sprinkles:
                     if(sprinklesCam == null)
-                        throw new CameraExcepition("Sprinkles");
+                        throw new CameraException("Sprinkles");
 
                     camTransform = sprinklesCam.transform;
                     break;
 
                 default:
-                    throw new CameraExcepition("Undefined");
+                    throw new CameraException("Undefined");
             }
 
             //move the camera and take a screenshot

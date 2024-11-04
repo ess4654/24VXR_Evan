@@ -13,7 +13,7 @@ namespace FryingPanGame.Views
     {
         [SerializeField] private Material[] materials;
 
-        #region SETUP
+        #region METHODS
 
         private void OnEnable()
         {
@@ -25,8 +25,6 @@ namespace FryingPanGame.Views
             GameEventBroadcaster.OnAvailableIngredientsSelected -= SelectedNewIngredients;
         }
 
-        #endregion
-
         private void SelectedNewIngredients(HashSet<int> doughIDs, HashSet<int> glazeIDs, HashSet<int> sprinkleIDs)
         {
             ResetMaterials();
@@ -36,5 +34,7 @@ namespace FryingPanGame.Views
         {
             GetComponent<MeshRenderer>().material = materials.SelectRandom();
         }
+
+        #endregion
     }
 }

@@ -1,4 +1,5 @@
 using FryingPanGame.Data;
+using FryingPanGame.Helpers;
 using FryingPanGame.Views;
 using Shared.Helpers;
 using System;
@@ -30,20 +31,9 @@ namespace FryingPanGame.Controllers
         public IngredientType Category => category;
         [SerializeField] private IngredientType category;
 
-        /// <summary>
-        ///     The cook time of this individual ingedient.
-        /// </summary>
-        public int CookTime => cookTime;
-        [SerializeField] private int cookTime;
-
-        /// <summary>
-        ///     The score for cooking this ingredient.
-        /// </summary>
-        public int Score => score;
-        [SerializeField] private int score;
-
         [SerializeField] private MeshRenderer materialRender;
         [SerializeField] private Material[] materialOptions;
+        [SerializeField] private AudioClip hoverSound;
 
         private Collider collider;
         private MeshRenderer[] renderers;
@@ -78,7 +68,10 @@ namespace FryingPanGame.Controllers
         private void OnMouseEnter()
         {
             if (GameManager.Instance.GameOn)
+            {
+                SoundManager.Instance.PlayClip(hoverSound);
                 HighlightIngredient(true);
+            }
         }
 
         private void OnMouseExit()

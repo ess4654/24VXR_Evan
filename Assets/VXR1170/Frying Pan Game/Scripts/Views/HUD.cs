@@ -15,6 +15,8 @@ namespace FryingPanGame.Views
         [SerializeField] private Text finalScoreText;
         [SerializeField] private GameObject gameOverScreen;
 
+        #region METHODS
+
         private void Start()
         {
             ShowGameOver(false);
@@ -60,5 +62,7 @@ namespace FryingPanGame.Views
                     finalScoreText.text = $"Final Score: {finalScore}";
             }
         }
+
+        #endregion
     }
 }

@@ -16,6 +16,12 @@ namespace FryingPanGame.Controllers
         [SerializeField] private bool isCooking;
         [SerializeField] private Ingredient[] ingredientPrefabs;
         [SerializeField] private Transform[] spawnPoints;
+        [SerializeField] private GameObject finalProduct;
+        [SerializeField] private MeshRenderer doughRender;
+        [SerializeField] private MeshRenderer glazeRender;
+        [SerializeField] private Material[] doughMaterials;
+        [SerializeField] private Material[] glazeMaterials;
+        [SerializeField] private Material[] spinkleMaterials;
 
         /// <summary>
         ///     Are the ingredients in the pan being cooked?
@@ -100,12 +106,19 @@ namespace FryingPanGame.Controllers
                     var child = point.GetChild(i);
                     Destroy(child.gameObject);
                 }
+
+                point.gameObject.SetActive(true);
             }
+
+            if (finalProduct)
+                finalProduct.SetActive(false); //hide the final product
 
             //ensure that we are not cooking
             isCooking = false;
             addBonus = false;
-            StopCoroutine(cookingRoutine);
+
+            if(cookingRoutine != null)
+                StopCoroutine(cookingRoutine);
         }
 
         /// <summary>
@@ -113,7 +126,7 @@ namespace FryingPanGame.Controllers
         /// </summary>
         private void SubmitRecipe()
         {
-            bool matchingRecipe = GameManager.Instance.CheckRecipe(currentIngredients);
+            bool matchingRecipe = GameManager.Instance.CheckRecipe(new List<Tuple<IngredientType, int>>(currentIngredients)); //ensure that game manager does not edit the current items in pan
 
             if (matchingRecipe) 
             {
@@ -133,7 +146,12 @@ namespace FryingPanGame.Controllers
             //Wait for cooking to complete
             var cookTime = GameManager.Instance.CookTime;
             isCooking = true;
-            yield return new WaitForSeconds(cookTime);
+            yield return new WaitForSeconds(cookTime / 2f);
+
+            //render the final product after half the cooking time
+            CompleteDoughnut();
+
+            yield return new WaitForSeconds(cookTime / 2f);
             isCooking = false;
 
             //calculate bonus and update the player score
@@ -148,6 +166,42 @@ namespace FryingPanGame.Controllers
             //update the score and reset the recipe
             GameManager.Instance.UpdateScore(newScore); //submit the new score to the game manager
             GameManager.Instance.ResetRecipe();
+        }
+
+        /// <summary>
+        ///     Renders the final product in the pan.
+        /// </summary>
+        private void CompleteDoughnut()
+        {
+            //set the materials for the final render
+            foreach(var item in currentIngredients)
+            {
+                switch(item.Item1)
+                {
+                    case IngredientType.Dough:
+                        if(doughRender)
+                            doughRender.material = doughMaterials[item.Item2];
+                        break;
+
+                    case IngredientType.Glaze:
+                        if(glazeRender)
+                            glazeRender.materials[0] = glazeMaterials[item.Item2];
+                        break;
+
+                    case IngredientType.Sprinkles:
+                        if (glazeRender)
+                            glazeRender.materials[1] = spinkleMaterials[item.Item2];
+                        break;
+                }
+            }
+
+            //hide individual ingredients
+            foreach (var point in spawnPoints)
+                point.gameObject.SetActive(false);
+
+            //show the final product
+            if (finalProduct)
+                finalProduct.SetActive(true);
         }
 
         #endregion
