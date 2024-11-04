@@ -2,7 +2,6 @@ using FryingPanGame.Data;
 using FryingPanGame.Views;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace FryingPanGame.Controllers
@@ -14,8 +13,8 @@ namespace FryingPanGame.Controllers
     {
         [SerializeField] private FryingPan fryingPan;
         [SerializeField] private HUD hud;
-
-        private Recipe currentRecipe;
+        [SerializeField] private Recipe currentRecipe;
+        
         private RecipeBuilder recipeBuilder;
         private int timer;
         private int score;

@@ -1,4 +1,5 @@
 using FryingPanGame.Data;
+using Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace FryingPanGame.Controllers
     public class Ingredient : MonoBehaviour
     {
         #region VARIABLE DECLARATIONS
+
+        [SerializeField] private int index;
 
         /// <summary>
         ///     Unique ID of this ingredient.
@@ -43,15 +46,21 @@ namespace FryingPanGame.Controllers
 
         private Collider collider;
         private MeshRenderer[] renderers;
+        private MaterialPropertyBlock highlight;
 
         #endregion
 
         #region METHODS
 
+        #region ENGINE
+
         private void Awake()
         {
             collider = GetComponent<Collider>();
             renderers = GetComponentsInChildren<MeshRenderer>();
+            highlight = new MaterialPropertyBlock();
+            transform.Find("Higlight").GetComponent<MeshRenderer>().GetPropertyBlock(highlight);
+            HighlightIngredient(false);
         }
 
         private void OnEnable()
@@ -64,10 +73,31 @@ namespace FryingPanGame.Controllers
             GameEventBroadcaster.OnAvailableIngredientsSelected -= NewIngredientsSelected;
         }
 
+        private void OnMouseEnter()
+        {
+            HighlightIngredient(true);
+        }
+
+        private void OnMouseExit()
+        {
+            HighlightIngredient(false);
+        }
+
         private void OnMouseDown()
         {
-            GameEventBroadcaster.BroadcastIngredientAdded(Category, ID);
+            GameEventBroadcaster.BroadcastIngredientAdded(Category, ID); //invoke global event
             ActivateIngredient(false);
+        }
+
+        #endregion
+
+        /// <summary>
+        ///     Highlights the ingredient when hovered over.
+        /// </summary>
+        /// <param name="on">Is the highlight on?</param>
+        private void HighlightIngredient(bool on)
+        {
+            highlight?.SetColor("_Color", highlight.GetColor("_Color").ChangeAlpha(on ? .35f : .0f));
         }
 
         /// <summary>
@@ -97,15 +127,15 @@ namespace FryingPanGame.Controllers
             switch (category)
             {
                 case IngedientType.Dough:
-                    RenderIngredient(doughIDs.ElementAt(ID));
+                    RenderIngredient(doughIDs.ElementAt(index));
                     break;
 
                 case IngedientType.Glaze:
-                    RenderIngredient(glazeIDs.ElementAt(ID));
+                    RenderIngredient(glazeIDs.ElementAt(index));
                     break;
 
                 case IngedientType.Sprinkles:
-                    RenderIngredient(sprinkleIDs.ElementAt(ID));
+                    RenderIngredient(sprinkleIDs.ElementAt(index));
                     break;
             }
         }
@@ -128,6 +158,7 @@ namespace FryingPanGame.Controllers
                 throw new Exception("You must define the material renderer for this ingredient");
             }
 
+            _ID = materialIndex;
             var material = materialOptions[materialIndex];
             materialRender.material = material;
         }
