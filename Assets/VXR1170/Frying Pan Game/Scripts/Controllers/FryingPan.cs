@@ -72,10 +72,13 @@ namespace FryingPanGame.Controllers
         /// <param name="ID">ID of the ingredient selected.</param>
         private void AddIngredient(IngredientType category, int ID)
         {
-            if(currentIngredients.Count >= Constants.RequiredIngredients) //prevent additional ingredients from being added to the pan
-            {
+            if (GameManager.Instance.GameOn) //prevent adding ingredients to the pan if the game is not running
                 return;
-            }
+
+            if(currentIngredients.Count >= Constants.RequiredIngredients) //prevent additional ingredients from being added to the pan
+                return;
+
+            Debug.Log($"Adding {category} {ID} to frying pan");
 
             //add to the list of current ingredients in the pan
             currentIngredients.Add(new Tuple<IngredientType, int>(category, ID));

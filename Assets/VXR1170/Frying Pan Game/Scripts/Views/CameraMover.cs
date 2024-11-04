@@ -58,6 +58,8 @@ namespace FryingPanGame.Views
             var currentPosition = camTransform.position;
             currentPosition.z = zPosition;
             camTransform.gameObject.SetActive(false);
+            //Debug.Log($"Moving {camTransform.name} to {zPosition}");
+            camTransform.position = new Vector3(camTransform.localPosition.x, camTransform.localPosition.y, zPosition); //currentPosition;
             camTransform.position = currentPosition;
             camTransform.gameObject.SetActive(true);
             await Timer.WaitForFrame();

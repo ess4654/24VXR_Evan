@@ -30,7 +30,7 @@ namespace FryingPanGame.Views
         {
             if (timerText)
                 timerText.text = time.ToString();
-            Debug.Log("Remaining Time: " + time);
+            //Debug.Log("Remaining Time: " + time);
         }
 
         /// <summary>

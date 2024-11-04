@@ -229,9 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   _ID: 0
-  category: 2
-  cookTime: 0
-  score: 0
+  category: 3
   materialRender: {fileID: 2571791512330927936}
   materialOptions:
   - {fileID: 2100000, guid: fca978a4f1b88fb43a24c36e656cca23, type: 2}
@@ -240,6 +238,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc84ff2496e96cc4ba9b3f6da7404f15, type: 2}
   - {fileID: 2100000, guid: 00b8ecee8bf7ba04c8f96685e4fb8c2c, type: 2}
   - {fileID: 2100000, guid: 303efeda7db097445b7d8301822dad11, type: 2}
+  hoverSound: {fileID: 0}
 --- !u!65 &6618061464720667593
 BoxCollider:
   m_ObjectHideFlags: 0

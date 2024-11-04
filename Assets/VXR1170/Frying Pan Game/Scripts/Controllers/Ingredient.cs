@@ -175,21 +175,32 @@ namespace FryingPanGame.Controllers
             if (this == null) return;
 
             //Move the camera over this ingredient if this ingredient is the required one for the new recipe.
-            switch(category)
+            var zPosition = transform.localPosition.z;
+            //Debug.Log(name + transform.GetSiblingIndex() + ": " + zPosition);
+            switch (category)
             {
                 case IngredientType.Dough:
                     if(recipe.doughID == _ID)
-                        await CameraMover.Instance.MoveCamera(category, transform.position.z);
+                    {
+                        //Debug.Log($"Moving Dough Cam: {zPosition}");
+                        await CameraMover.Instance.MoveCamera(category, zPosition);
+                    }
                     break;
 
                 case IngredientType.Glaze:
                     if (recipe.glazeID == _ID)
-                        await CameraMover.Instance.MoveCamera(category, transform.position.z);
+                    {
+                        //Debug.Log($"Moving Glaze Cam: {zPosition}");
+                        await CameraMover.Instance.MoveCamera(category, zPosition);
+                    }
                     break;
 
                 case IngredientType.Sprinkles:
                     if (recipe.sprinkleID == _ID)
-                        await CameraMover.Instance.MoveCamera(category, transform.position.z);
+                    {
+                        //Debug.Log($"Moving Sprinkle Cam: {zPosition}");
+                        await CameraMover.Instance.MoveCamera(category, zPosition);
+                    }
                     break;
             }
             if (this == null) return;
