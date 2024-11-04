@@ -1,5 +1,5 @@
 using FryingPanGame.Controllers;
-using Helpers;
+using Shared.Helpers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -81,6 +81,6 @@ namespace FryingPanGame.Data
             doughID = (DoughSelectionIDs != null && DoughSelectionIDs.Count > 0) ? DoughSelectionIDs.SelectRandom() : -1,
             glazeID = (GlazeSelectionIDs != null && GlazeSelectionIDs.Count > 0) ? GlazeSelectionIDs.SelectRandom() : -1,
             sprinkleID = (SprinkleSelectionIDs != null & SprinkleSelectionIDs.Count > 0) ? SprinkleSelectionIDs.SelectRandom() : -1
-        };
+        }.GenerateScoreAndCookTime();
     }
 }

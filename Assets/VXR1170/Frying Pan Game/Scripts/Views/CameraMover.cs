@@ -1,6 +1,6 @@
 using FryingPanGame.Core;
 using FryingPanGame.Data;
-using Helpers;
+using Shared.Helpers;
 using Shared;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -23,27 +23,27 @@ namespace FryingPanGame.Views
         /// <param name="zPosition">ZPosition of the ingredient to position the camera above.</param>
         /// <returns>Completed move camera task.</returns>
         /// <exception cref="CameraExcepition">If the camera is not referenced in the inspector</exception>
-        public async Task MoveCamera(IngedientType category, float zPosition)
+        public async Task MoveCamera(IngredientType category, float zPosition)
         {
             //Get a reference to the camera to be moved
             Transform camTransform;
             switch (category)
             {
-                case IngedientType.Dough:
+                case IngredientType.Dough:
                     if(doughCam == null)
                         throw new CameraExcepition("Dough");
 
                     camTransform = doughCam.transform;
                     break;
              
-                case IngedientType.Glaze:
+                case IngredientType.Glaze:
                     if(glazeCam == null)
                         throw new CameraExcepition("Glaze");
 
                     camTransform = glazeCam.transform;
                     break;
 
-                case IngedientType.Sprinkles:
+                case IngredientType.Sprinkles:
                     if(sprinklesCam == null)
                         throw new CameraExcepition("Sprinkles");
 

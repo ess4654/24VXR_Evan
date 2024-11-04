@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Helpers
+namespace Shared.Helpers
 {
     /// <summary>
     ///     Adds extension methods to Color struct

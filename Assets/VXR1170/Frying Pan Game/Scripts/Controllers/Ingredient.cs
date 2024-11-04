@@ -1,6 +1,6 @@
 using FryingPanGame.Data;
 using FryingPanGame.Views;
-using Helpers;
+using Shared.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +27,8 @@ namespace FryingPanGame.Controllers
         /// <summary>
         ///     Type of category this ingredient belongs to.
         /// </summary>
-        public IngedientType Category => category;
-        [SerializeField] private IngedientType category;
+        public IngredientType Category => category;
+        [SerializeField] private IngredientType category;
 
         /// <summary>
         ///     The cook time of this individual ingedient.
@@ -77,18 +77,23 @@ namespace FryingPanGame.Controllers
 
         private void OnMouseEnter()
         {
-            HighlightIngredient(true);
+            if (GameManager.Instance.GameOn)
+                HighlightIngredient(true);
         }
 
         private void OnMouseExit()
         {
-            HighlightIngredient(false);
+            if (GameManager.Instance.GameOn)
+                HighlightIngredient(false);
         }
 
         private void OnMouseDown()
         {
-            GameEventBroadcaster.BroadcastIngredientAdded(Category, ID); //invoke global event
-            ActivateIngredient(false);
+            if (GameManager.Instance.GameOn)
+            {
+                GameEventBroadcaster.BroadcastIngredientAdded(Category, ID); //invoke global event
+                ActivateIngredient(false);
+            }
         }
 
         #endregion
@@ -107,7 +112,7 @@ namespace FryingPanGame.Controllers
         ///     Enables/Disables this ingredient.
         /// </summary>
         /// <param name="active">Is the ingredient to be activated or deactivated?</param>
-        private void ActivateIngredient(bool active)
+        public void ActivateIngredient(bool active)
         {
             if (collider != null)
                 collider.enabled = active;
@@ -129,15 +134,15 @@ namespace FryingPanGame.Controllers
         {
             switch (category)
             {
-                case IngedientType.Dough:
+                case IngredientType.Dough:
                     RenderIngredient(doughIDs.ElementAt(index));
                     break;
 
-                case IngedientType.Glaze:
+                case IngredientType.Glaze:
                     RenderIngredient(glazeIDs.ElementAt(index));
                     break;
 
-                case IngedientType.Sprinkles:
+                case IngredientType.Sprinkles:
                     RenderIngredient(sprinkleIDs.ElementAt(index));
                     break;
             }
@@ -149,7 +154,7 @@ namespace FryingPanGame.Controllers
         /// <param name="materialIndex">Index of the material to render on this ingredient.</param>
         /// <exception cref="IndexOutOfRangeException">If the index of the material is out of range of the list of available materials</exception>
         /// <exception cref="Exception">If the material render for this ingredient is null</exception>
-        private void RenderIngredient(int materialIndex)
+        public void RenderIngredient(int materialIndex)
         {
             if (materialIndex < 0 || materialIndex >= materialOptions.Length)
             {
@@ -179,24 +184,24 @@ namespace FryingPanGame.Controllers
             //Move the camera over this ingredient if this ingredient is the required one for the new recipe.
             switch(category)
             {
-                case IngedientType.Dough:
+                case IngredientType.Dough:
                     if(recipe.doughID == _ID)
                         await CameraMover.Instance.MoveCamera(category, transform.position.z);
                     break;
 
-                case IngedientType.Glaze:
+                case IngredientType.Glaze:
                     if (recipe.glazeID == _ID)
                         await CameraMover.Instance.MoveCamera(category, transform.position.z);
                     break;
 
-                case IngedientType.Sprinkles:
+                case IngredientType.Sprinkles:
                     if (recipe.sprinkleID == _ID)
                         await CameraMover.Instance.MoveCamera(category, transform.position.z);
                     break;
             }
             if (this == null) return;
 
-            ActivateIngredient(true); //rectivate the ingredient and it's collider
+            ActivateIngredient(true); //reactivate the ingredient and it's collider
         }
 
         #endregion

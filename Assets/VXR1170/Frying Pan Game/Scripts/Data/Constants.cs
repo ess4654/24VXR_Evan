@@ -7,5 +7,9 @@ namespace FryingPanGame.Data
     {
         public const int RequiredIngredients = 3;
         public const int CountdownTime = 60;
+        public const int MinimumRecipeScore = 10;
+        public const int MaximumRecipeScore = 31;
+        public const int MinimumCookTime = 3;
+        public const int MaximumCookTime = 8;
     }
 }

@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Helpers
+namespace Shared.Helpers
 {
     /// <summary>
     ///     Timer handles asynchronous threading.

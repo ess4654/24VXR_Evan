@@ -18,7 +18,7 @@ namespace Shared
         {
             if(Instance != null && Instance != GetComponent<TClass>())
             {
-                Destroy(GetComponent<TClass>());
+                Destroy(GetComponent<TClass>()); //ensure that no duplicates of the singleton can exist
                 return;
             }
 

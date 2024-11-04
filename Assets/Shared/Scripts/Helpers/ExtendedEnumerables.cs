@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Helpers
+namespace Shared.Helpers
 {
     /// <summary>
     ///     Adds extension methods to lists and other enumerables

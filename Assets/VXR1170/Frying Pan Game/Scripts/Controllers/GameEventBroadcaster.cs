@@ -28,7 +28,7 @@ namespace FryingPanGame.Controllers
         /// </summary>
         /// <param name="type">The type of ingredient being added.</param>
         /// <param name="ID">The ID number of that ingredient type.</param>
-        public delegate void IngredientEvent(IngedientType type, int ID);
+        public delegate void IngredientEvent(IngredientType type, int ID);
 
         #endregion
 
@@ -58,7 +58,7 @@ namespace FryingPanGame.Controllers
         /// </summary>
         /// <param name="type">The category of the ingredient being added.</param>
         /// <param name="ID">ID of the ingredient.</param>
-        public static void BroadcastIngredientAdded(IngedientType type, int ID) =>
+        public static void BroadcastIngredientAdded(IngredientType type, int ID) =>
             OnIngredientAdded?.Invoke(type, ID); //subscribed event
 
         /// <summary>
