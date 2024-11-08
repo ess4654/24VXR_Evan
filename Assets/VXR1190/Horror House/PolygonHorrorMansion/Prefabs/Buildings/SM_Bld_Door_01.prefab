@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4101001673232278}
   - component: {fileID: 33340282111777136}
   - component: {fileID: 23575916844362214}
+  - component: {fileID: 5829671148175427144}
   m_Layer: 0
   m_Name: SM_Bld_Door_01_Mail_Door_01
   m_TagString: Untagged
@@ -83,6 +84,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5829671148175427144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016463165795486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: d780f25df1d231d4aa9a31ab3ba935d0, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0
 --- !u!1 &1285466175579604
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +111,7 @@ GameObject:
   - component: {fileID: 33442503084194736}
   - component: {fileID: 23856691961744152}
   - component: {fileID: 65024453939767938}
+  - component: {fileID: 800362090740644869}
   m_Layer: 0
   m_Name: SM_Bld_Door_01
   m_TagString: Untagged
@@ -190,6 +207,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1295215, y: 2.4666355, z: 0.12331009}
   m_Center: {x: -0.56023926, y: 1.2333177, z: 0.0009088516}
+--- !u!114 &800362090740644869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285466175579604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: 5272c55b882edd34a9d80b11bd6f240c, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0
 --- !u!1 &1360045160856870
 GameObject:
   m_ObjectHideFlags: 0

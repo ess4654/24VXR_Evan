@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33951758676495680}
   - component: {fileID: 23561696037488824}
   - component: {fileID: 65500707277582820}
+  - component: {fileID: -1467807934462926723}
   m_Layer: 0
   m_Name: SM_Bld_Wall_Trim_06
   m_TagString: Untagged
@@ -105,3 +106,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: -2.541245, y: 0.16814613, z: 0.041244492}
   m_Center: {x: -1.1168776, y: 2.915925, z: 0.13312224}
+--- !u!114 &-1467807934462926723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927292196055462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: 5272c55b882edd34a9d80b11bd6f240c, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0

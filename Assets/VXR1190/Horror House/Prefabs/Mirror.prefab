@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6658852890013093746}
   - component: {fileID: 4177905902712714572}
   - component: {fileID: 8014990311270096499}
+  - component: {fileID: 1266653965508396518}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Untagged
@@ -84,6 +85,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1266653965508396518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2200271716306180155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: 08bf73ad12cb44944875b02ce7f9d694, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0
 --- !u!1 &7196180675398400400
 GameObject:
   m_ObjectHideFlags: 0

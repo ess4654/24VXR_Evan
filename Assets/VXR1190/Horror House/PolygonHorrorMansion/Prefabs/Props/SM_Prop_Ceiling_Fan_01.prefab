@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33182520949339416}
   - component: {fileID: 23161582809595024}
   - component: {fileID: 192570237043543780}
+  - component: {fileID: 9215082229647455760}
   m_Layer: 0
   m_Name: SM_Prop_Ceiling_Fan_01
   m_TagString: Untagged
@@ -106,6 +107,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9215082229647455760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020757132066440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: d780f25df1d231d4aa9a31ab3ba935d0, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0
 --- !u!1 &1493810528201904
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +133,7 @@ GameObject:
   - component: {fileID: 4598571316066924}
   - component: {fileID: 33602491861754770}
   - component: {fileID: 23323464076409514}
+  - component: {fileID: 7361960641044545081}
   m_Layer: 0
   m_Name: SM_Prop_Ceiling_Fan_01_Blades_01
   m_TagString: Untagged
@@ -189,3 +206,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7361960641044545081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493810528201904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: 5272c55b882edd34a9d80b11bd6f240c, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0

@@ -456,5 +456,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 11400000, guid: d780f25df1d231d4aa9a31ab3ba935d0, type: 2}
-  exportAllChildren: 0
+  exportAllChildren: 1
   terrainSimplificationLevel: 0

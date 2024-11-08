@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33294377452987926}
   - component: {fileID: 23442752574048610}
   - component: {fileID: 65995356643220752}
+  - component: {fileID: 7738851101634459432}
   m_Layer: 0
   m_Name: SM_Bld_Wall_Door_Double_Large_02_Door_01
   m_TagString: Untagged
@@ -106,6 +107,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6784369, y: 2.722689, z: 0.15295692}
   m_Center: {x: -0.33921844, y: 1.3613445, z: -0.046353683}
+--- !u!114 &7738851101634459432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067755432591082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: 5272c55b882edd34a9d80b11bd6f240c, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0
 --- !u!1 &1262060478001454
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +133,7 @@ GameObject:
   - component: {fileID: 4221830531097990}
   - component: {fileID: 33847916029134902}
   - component: {fileID: 23351678029948220}
+  - component: {fileID: 4735084554367841650}
   m_Layer: 0
   m_Name: SM_Bld_Wall_Door_Double_Large_02_Glass_02
   m_TagString: Untagged
@@ -189,6 +206,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4735084554367841650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262060478001454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: 08bf73ad12cb44944875b02ce7f9d694, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0
 --- !u!1 &1463127815815648
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +233,7 @@ GameObject:
   - component: {fileID: 33238692870248424}
   - component: {fileID: 23948043499826020}
   - component: {fileID: 65597277971091068}
+  - component: {fileID: 207286014162734471}
   m_Layer: 0
   m_Name: SM_Bld_Wall_Door_Double_Large_02_Door_02
   m_TagString: Untagged
@@ -295,6 +328,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6784369, y: 2.722689, z: 0.15295692}
   m_Center: {x: 0.33921844, y: 1.3613445, z: -0.046353683}
+--- !u!114 &207286014162734471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463127815815648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: 5272c55b882edd34a9d80b11bd6f240c, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0
 --- !u!1 &1544801320120194
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +357,7 @@ GameObject:
   - component: {fileID: 65468007884754168}
   - component: {fileID: 65004593407897012}
   - component: {fileID: 65157374338305414}
+  - component: {fileID: 2522669848928492686}
   m_Layer: 0
   m_Name: SM_Bld_Wall_Door_Double_Large_02
   m_TagString: Untagged
@@ -448,6 +497,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.4999926, y: 0.32137918, z: 0.39502537}
   m_Center: {x: -1.2499963, y: 2.8450534, z: 0.06970689}
+--- !u!114 &2522669848928492686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544801320120194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: 9e0a6d5705eaec64ab63e6ac7132e0a7, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0
 --- !u!1 &1581810261459166
 GameObject:
   m_ObjectHideFlags: 0
