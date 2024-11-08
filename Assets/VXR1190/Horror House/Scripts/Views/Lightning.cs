@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace HorrorHouse
+namespace HorrorHouse.Views
 {
     [RequireComponent(typeof(ParticleSystem))]
     public class Lightning : MonoBehaviour
