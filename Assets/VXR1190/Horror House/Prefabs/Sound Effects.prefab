@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2075894571790620277
+--- !u!1 &6695848150761964744
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6162047737855063773}
-  - component: {fileID: 7172799190234598054}
+  - component: {fileID: 9148171941001025757}
+  - component: {fileID: 8660265369810404209}
   m_Layer: 0
-  m_Name: Rusling Leaves
-  m_TagString: Untagged
+  m_Name: Steam Audio Static Mesh
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &6162047737855063773
+--- !u!4 &9148171941001025757
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075894571790620277}
+  m_GameObject: {fileID: 6695848150761964744}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,102 +32,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7718614922003169761}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &7172799190234598054
-AudioSource:
+--- !u!114 &8660265369810404209
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075894571790620277}
+  m_GameObject: {fileID: 6695848150761964744}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a88bb4a345518d441b854e41116adaa7, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 5
-  MaxDistance: 50
-  Pan2D: 0
-  rolloffMode: 1
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8173b2a8dbe2d2d48995bb2ba9a49ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000, guid: 63dbaa82998cbdd42a6dc3de96661431, type: 2}
+  sceneNameWhenExported: Horror House
 --- !u!1 &8574967504851743387
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,10 +57,10 @@ GameObject:
   - component: {fileID: 7718614922003169761}
   m_Layer: 0
   m_Name: Sound Effects
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7718614922003169761
 Transform:
@@ -157,6 +75,501 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6162047737855063773}
+  - {fileID: 8914430297474606770}
+  - {fileID: 4029885041583553975}
+  - {fileID: 1069868404339410794}
+  - {fileID: 5573583148186610899}
+  - {fileID: 386250298363558600}
+  - {fileID: 2348038399955308228}
+  - {fileID: 4133035820052930663}
+  - {fileID: 9148171941001025757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1346645569099967752
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7718614922003169761}
+    m_Modifications:
+    - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Rusling Leaves (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8b56c131a28eed4da481da18097e8bd, type: 3}
+--- !u!4 &1069868404339410794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1346645569099967752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1816336300799103146
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7718614922003169761}
+    m_Modifications:
+    - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Rusling Leaves (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8b56c131a28eed4da481da18097e8bd, type: 3}
+--- !u!4 &386250298363558600 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1816336300799103146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2680678109596240389
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7718614922003169761}
+    m_Modifications:
+    - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Rusling Leaves (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336940499433069794, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: transmission
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8b56c131a28eed4da481da18097e8bd, type: 3}
+--- !u!4 &4133035820052930663 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 2680678109596240389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3136149933030201301
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7718614922003169761}
+    m_Modifications:
+    - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Rusling Leaves (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8b56c131a28eed4da481da18097e8bd, type: 3}
+--- !u!4 &4029885041583553975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3136149933030201301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4394731330702550182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7718614922003169761}
+    m_Modifications:
+    - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Rusling Leaves (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -46.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8b56c131a28eed4da481da18097e8bd, type: 3}
+--- !u!4 &2348038399955308228 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4394731330702550182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5850607956585481905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7718614922003169761}
+    m_Modifications:
+    - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Rusling Leaves (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8b56c131a28eed4da481da18097e8bd, type: 3}
+--- !u!4 &5573583148186610899 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5850607956585481905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7484626031335836880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7718614922003169761}
+    m_Modifications:
+    - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Rusling Leaves
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8b56c131a28eed4da481da18097e8bd, type: 3}
+--- !u!4 &8914430297474606770 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7484626031335836880}
+  m_PrefabAsset: {fileID: 0}
