@@ -142,12 +142,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directBinaural: 1
-  interpolation: 0
+  interpolation: 1
   perspectiveCorrection: 0
-  distanceAttenuation: 0
+  distanceAttenuation: 1
   distanceAttenuationInput: 0
   distanceAttenuationValue: 1
-  airAbsorption: 0
+  airAbsorption: 1
   airAbsorptionInput: 0
   airAbsorptionLow: 1
   airAbsorptionMid: 1
@@ -163,17 +163,17 @@ MonoBehaviour:
   occlusionRadius: 1
   occlusionSamples: 16
   occlusionValue: 1
-  transmission: 0
-  transmissionType: 0
+  transmission: 1
+  transmissionType: 1
   transmissionInput: 0
   transmissionLow: 1
   transmissionMid: 1
   transmissionHigh: 1
-  maxTransmissionSurfaces: 1
+  maxTransmissionSurfaces: 2
   directMixLevel: 1
   reflections: 1
-  reflectionsType: 1
-  useDistanceCurveForReflections: 0
+  reflectionsType: 0
+  useDistanceCurveForReflections: 1
   currentBakedSource: {fileID: 0}
   reverbTimeLow: 0
   reverbTimeMid: 0
@@ -182,8 +182,8 @@ MonoBehaviour:
   hybridReverbEQMid: 1
   hybridReverbEQHigh: 1
   hybridReverbDelay: 0
-  applyHRTFToReflections: 0
-  reflectionsMixLevel: 1
+  applyHRTFToReflections: 1
+  reflectionsMixLevel: 0.2
   pathing: 0
   pathingProbeBatch: {fileID: 0}
   pathValidation: 1

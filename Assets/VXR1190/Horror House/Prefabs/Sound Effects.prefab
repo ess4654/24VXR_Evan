@@ -212,6 +212,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8336940499433069794, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: reflections
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -284,6 +289,16 @@ PrefabInstance:
     - target: {fileID: 8336940499433069794, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
       propertyPath: transmission
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336940499433069794, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: reflectionsMixLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336940499433069794, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: useDistanceCurveForReflections
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -422,6 +437,11 @@ PrefabInstance:
     - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336940499433069794, guid: a8b56c131a28eed4da481da18097e8bd,
+        type: 3}
+      propertyPath: reflections
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

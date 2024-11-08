@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentBakedListener: {fileID: 0}
-  applyReverb: 0
+  applyReverb: 1
   reverbType: 0
-  useAllProbeBatches: 0
+  useAllProbeBatches: 1
   probeBatches: []
   mTotalDataSize: 0
   mProbeDataSizes: 

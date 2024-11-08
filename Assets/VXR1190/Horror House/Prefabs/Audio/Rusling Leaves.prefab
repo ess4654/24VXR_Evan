@@ -18,6 +18,21 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a88bb4a345518d441b854e41116adaa7, type: 3}
+    - target: {fileID: 2162872812240833202, guid: 15431e04770b5984bb2766f21e75e8bc,
+        type: 3}
+      propertyPath: reflections
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162872812240833202, guid: 15431e04770b5984bb2766f21e75e8bc,
+        type: 3}
+      propertyPath: transmission
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2162872812240833202, guid: 15431e04770b5984bb2766f21e75e8bc,
+        type: 3}
+      propertyPath: useDistanceCurveForReflections
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8204998646315334706, guid: 15431e04770b5984bb2766f21e75e8bc,
         type: 3}
       propertyPath: m_LocalPosition.x
