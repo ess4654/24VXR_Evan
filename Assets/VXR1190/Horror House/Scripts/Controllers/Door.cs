@@ -1,5 +1,8 @@
 using HorrorHouse.Data;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace HorrorHouse.Controllers
@@ -16,6 +19,7 @@ namespace HorrorHouse.Controllers
         [SerializeField] private AudioSource doorSoundSource;
         [SerializeField] private AudioClip openingSound;
         [SerializeField] private AudioClip closingSound;
+        [SerializeField] private AudioClip endSound;
 
         #region METHODS
 
@@ -66,8 +70,26 @@ namespace HorrorHouse.Controllers
                 {
                     doorSoundSource.clip = active ? openingSound : closingSound;
                     doorSoundSource.Play();
+
+                    if (!active && endSound != null)
+                        StartCoroutine(EndSound());
                 }
             }
+        }
+
+        /// <summary>
+        ///     Plays the end sound of a door closing.
+        /// </summary>
+        /// <returns>Play routine.</returns>
+        private IEnumerator EndSound()
+        {
+            //wait for closing sound to play
+            var length = doorSoundSource.clip.length;
+            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil(() => doorSoundSource.time == 0 || doorSoundSource.time >= length || !doorSoundSource.isPlaying);
+
+            doorSoundSource.clip = endSound;
+            doorSoundSource.Play();
         }
 
         #endregion
