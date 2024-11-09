@@ -1,5 +1,6 @@
 using HorrorHouse.Data;
 using HorrorHouse.Helpers;
+using HorrorHouse.Views;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -38,13 +39,21 @@ namespace HorrorHouse.Controllers
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(Constants.TAG_PLAYER))
+            {
+                if (collectedArtifacts.Count == 4)
+                    HUD.Instance.ActivateHint(true, "Press The Trigger To Lift Curse");
                 insideTrigger = true;
+            }
         }
 
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag(Constants.TAG_PLAYER))
+            {
+                if (collectedArtifacts.Count == 4)
+                    HUD.Instance.ActivateHint(false);
                 insideTrigger = false;
+            }
         }
 
         #endregion

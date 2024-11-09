@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace HorrorHouse.Controllers
 {
@@ -24,7 +25,7 @@ namespace HorrorHouse.Controllers
         {
             //disable the xr rig
             if (xrRig)
-                xrRig.enabled = false;
+                xrRig.GetComponent<ContinuousMoveProviderBase>().enabled = false;
 
             //disable world objects
             foreach (var toActivate in activateOnStart)
@@ -87,7 +88,7 @@ namespace HorrorHouse.Controllers
         {
             //enable the xr rig
             if(xrRig)
-                xrRig.enabled = true;
+                xrRig.GetComponent<ContinuousMoveProviderBase>().enabled = true;
 
             //enable world objects
             foreach (var toActivate in activateOnStart)

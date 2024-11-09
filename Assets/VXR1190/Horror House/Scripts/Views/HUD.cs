@@ -57,11 +57,25 @@ namespace HorrorHouse.Views
         }
 
         /// <summary>
+        ///     Hides/Shows the hint for collecting after changing the text.
+        /// </summary>
+        /// <param name="active">True to activate. False to hide.</param>
+        /// <param name="text">Text for the hint.</param>
+        public void ActivateHint(bool active, string text)
+        {
+            if (collectText)
+                collectText.GetComponent<TextMeshProUGUI>().text = text;
+            ActivateHint(active);
+        }
+
+        /// <summary>
         ///     Activates the artifact icon in the UI.
         /// </summary>
         /// <param name="artifactType">Type of artifact collected.</param>
         private void ArtifactCollected(ArtifactType artifactType)
         {
+            ActivateHint(false);
+
             if(!collectedArtifacts.Contains(artifactType))
             {
                 switch(artifactType)
