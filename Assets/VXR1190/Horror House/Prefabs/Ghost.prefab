@@ -148,10 +148,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1490722815415622, guid: fa63c57edb6fd7047a705ceae2681813,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1245124716143423549}
-    - targetCorrespondingSourceObject: {fileID: 1490722815415622, guid: fa63c57edb6fd7047a705ceae2681813,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 124687088557991700}
     - targetCorrespondingSourceObject: {fileID: 1490722815415622, guid: fa63c57edb6fd7047a705ceae2681813,
         type: 3}
@@ -161,26 +157,36 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3838536876909040200}
+    - targetCorrespondingSourceObject: {fileID: 1466682605790792, guid: fa63c57edb6fd7047a705ceae2681813,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5004323578808654462}
   m_SourcePrefab: {fileID: 100100000, guid: fa63c57edb6fd7047a705ceae2681813, type: 3}
---- !u!1 &1776211435491804245 stripped
+--- !u!1 &1776143243551029083 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1490722815415622, guid: fa63c57edb6fd7047a705ceae2681813,
+  m_CorrespondingSourceObject: {fileID: 1466682605790792, guid: fa63c57edb6fd7047a705ceae2681813,
     type: 3}
   m_PrefabInstance: {fileID: 1775285966394020115}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1245124716143423549
+--- !u!114 &5004323578808654462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776211435491804245}
+  m_GameObject: {fileID: 1776143243551029083}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6bc774ef810ebd4d85e86c732173fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   yOnly: 1
+--- !u!1 &1776211435491804245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1490722815415622, guid: fa63c57edb6fd7047a705ceae2681813,
+    type: 3}
+  m_PrefabInstance: {fileID: 1775285966394020115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &124687088557991700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa76885834a0aa4093f9b49855a3784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showChance: 0.35
+  showChance: 0.3
   mesh: {fileID: 1822700930888460937}
   screams:
   - {fileID: 8300000, guid: 916baee21fb8ce14a85754eb8628d295, type: 3}
