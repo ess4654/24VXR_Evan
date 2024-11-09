@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3055611647511613264}
   - component: {fileID: 3486925677815888528}
   - component: {fileID: 7468042819719627147}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3383710406980813091}
   - component: {fileID: 422689446815871975}
   - component: {fileID: 8313697218912031620}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 2392037157096010604}
   - component: {fileID: 1149800700889343858}
   - component: {fileID: 8307765574024426643}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 2672477443299782990}
   - component: {fileID: 435594872480902879}
   - component: {fileID: 1861075018100421995}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 799853833912873818}
   - component: {fileID: 4520557374507210393}
   - component: {fileID: 7543330046173311577}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 7082725566263518038}
   - component: {fileID: 3473498283508039822}
   - component: {fileID: 2441043018895521867}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Intro
   m_TagString: GameController
   m_Icon: {fileID: 0}
@@ -622,7 +622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5843567146567551767}
   - component: {fileID: 3658177533472343449}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Artifact Icons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,6 +696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialoge Text 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123409194447833589, guid: 1e8bc132b9ca18e42bae444042aa65f4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5123409194447833589, guid: 1e8bc132b9ca18e42bae444042aa65f4,
         type: 3}
@@ -849,6 +854,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5123409194447833589, guid: 1e8bc132b9ca18e42bae444042aa65f4,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123409194447833589, guid: 1e8bc132b9ca18e42bae444042aa65f4,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -995,6 +1005,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5123409194447833589, guid: 1e8bc132b9ca18e42bae444042aa65f4,
         type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123409194447833589, guid: 1e8bc132b9ca18e42bae444042aa65f4,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1138,6 +1153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialoge Text 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123409194447833589, guid: 1e8bc132b9ca18e42bae444042aa65f4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5123409194447833589, guid: 1e8bc132b9ca18e42bae444042aa65f4,
         type: 3}

@@ -112,6 +112,7 @@ namespace HorrorHouse.Views
         {
             if (gameOverText)
                 gameOverText.enabled = true;
+            ActivateHint(false);
         }
 
         #endregion

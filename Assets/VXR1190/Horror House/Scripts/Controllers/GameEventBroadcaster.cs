@@ -33,6 +33,12 @@ namespace HorrorHouse.Controllers
         /// </summary>
         public delegate void VoidEvent();
 
+        /// <summary>
+        ///     An event that triggers a boolean action.
+        /// </summary>
+        /// <param name="value">Value of the boolean.</param>
+        public delegate void BoolEvent(bool value);
+
         #endregion
 
         #region SUBSCRIBABLES
@@ -56,6 +62,11 @@ namespace HorrorHouse.Controllers
         ///     Called when the player lifts the curse.
         /// </summary>
         public static event VoidEvent OnGameOver;
+
+        /// <summary>
+        ///     Called when the player is moving or standing still.
+        /// </summary>
+        public static event BoolEvent OnPlayerMoving;
 
         #endregion
 
@@ -87,6 +98,13 @@ namespace HorrorHouse.Controllers
         /// </summary>
         public static void BroadcastGameOver() =>
             OnGameOver?.Invoke();
+
+        /// <summary>
+        ///     Broadcasts whether the player is moving or not.
+        /// </summary>
+        /// <param name="moving">True if moving, false if not.</param>
+        public static void BroadcastMovement(bool moving) =>
+            OnPlayerMoving?.Invoke(moving);
 
         #endregion
     }

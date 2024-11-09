@@ -1,6 +1,8 @@
 using Shared;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace HorrorHouse.Controllers
 {
@@ -9,6 +11,8 @@ namespace HorrorHouse.Controllers
     /// </summary>
     public class XRInputReceiver : Singleton<XRInputReceiver>
     {
+        [SerializeField] private ContinuousMoveProviderBase mover;
+
         private InputDevice rightController;
         private InputDevice leftController;
         private InputDevice hmd;
@@ -34,6 +38,12 @@ namespace HorrorHouse.Controllers
             if (leftController.isValid && leftController.TryGetFeatureValue(CommonUsages.triggerButton, out triggered) && triggered)
             {
                 GameEventBroadcaster.BroadcastTriggerInput(leftController);
+            }
+            //get the axis input from the left device
+            if (leftController.isValid && leftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 axis))
+            {
+                if(mover && mover.enabled)
+                    GameEventBroadcaster.BroadcastMovement(axis != Vector2.zero);
             }
         }
 

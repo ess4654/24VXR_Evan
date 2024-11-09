@@ -13,6 +13,7 @@ namespace HorrorHouse.Helpers
     {
         [SerializeField] private float playbackTime;
         [SerializeField] private float length;
+        [SerializeField] private float delay;
         [SerializeField] private AudioClip[] randomSounds;
 
         private AudioSource source;
@@ -49,6 +50,9 @@ namespace HorrorHouse.Helpers
                 playbackTime = source.time;
                 return playbackTime >= length || playbackTime == 0 || !source.isPlaying;
             });
+
+            if(delay > 0)
+                yield return new WaitForSeconds(delay);
 
             StartCoroutine(PlayRandomSound());
         }
