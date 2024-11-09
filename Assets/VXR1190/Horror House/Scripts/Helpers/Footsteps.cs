@@ -1,5 +1,6 @@
 ﻿using HorrorHouse.Controllers;
 using HorrorHouse.Data;
+using System;
 using UnityEngine;
 
 namespace HorrorHouse.Helpers
@@ -17,13 +18,20 @@ namespace HorrorHouse.Helpers
         private void OnEnable()
         {
             GameEventBroadcaster.OnPlayerLocationChanged += OnChangeLocation;            
-            GameEventBroadcaster.OnPlayerMoving += OnMoving;            
+            GameEventBroadcaster.OnPlayerMoving += OnMoving;         
+            GameEventBroadcaster.OnGameOver += GameOver;         
         }
 
         private void OnDisable()
         {
             GameEventBroadcaster.OnPlayerLocationChanged -= OnChangeLocation;            
             GameEventBroadcaster.OnPlayerMoving -= OnMoving;            
+            GameEventBroadcaster.OnGameOver -= GameOver;         
+        }
+
+        private void GameOver()
+        {
+            playerLocation = PlayerLocation.Outside;
         }
 
         private void OnChangeLocation(PlayerLocation location)
