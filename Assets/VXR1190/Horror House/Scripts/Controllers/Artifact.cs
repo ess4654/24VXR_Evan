@@ -1,5 +1,6 @@
 using HorrorHouse.Data;
 using HorrorHouse.Helpers;
+using HorrorHouse.Views;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR;
@@ -46,10 +47,10 @@ namespace HorrorHouse.Controllers
                 insideTrigger = true;
                 if (hintText)
                     hintText.enabled = true;
+
+                HUD.Instance.ActivateHint(true);
             }
         }
-
-        #endregion
 
         private void OnTriggerExit(Collider other)
         {
@@ -58,8 +59,12 @@ namespace HorrorHouse.Controllers
                 insideTrigger = false;
                 if (hintText)
                     hintText.enabled = false;
+
+                HUD.Instance.ActivateHint(false);
             }
         }
+
+        #endregion
 
         //attempts to collect the artifact if inside the trigger region
         private void TryCollect(InputDevice _)

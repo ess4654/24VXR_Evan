@@ -17,6 +17,7 @@ namespace HorrorHouse.Views
         [SerializeField] private InventoryButton steakUI;
         [SerializeField] private InventoryButton crossUI;
         [SerializeField] private TextMeshProUGUI gameOverText;
+        [SerializeField] private GameObject collectText;
 
         private HashSet<ArtifactType> collectedArtifacts = new();
 
@@ -44,6 +45,16 @@ namespace HorrorHouse.Views
         }
 
         #endregion
+
+        /// <summary>
+        ///     Hides/Shows the hint for collecting.
+        /// </summary>
+        /// <param name="active">True to activate. False to hide.</param>
+        public void ActivateHint(bool active)
+        {
+            if(collectText)
+                collectText.SetActive(active);
+        }
 
         /// <summary>
         ///     Activates the artifact icon in the UI.

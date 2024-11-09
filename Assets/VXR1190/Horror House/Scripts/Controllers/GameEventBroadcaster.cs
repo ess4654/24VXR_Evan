@@ -23,6 +23,12 @@ namespace HorrorHouse.Controllers
         public delegate void CollectArtifactEvent(ArtifactType artifactType);
 
         /// <summary>
+        ///     An event that sends the player location to listeners.
+        /// </summary>
+        /// <param name="location">The location to broadcast.</param>
+        public delegate void PlayerLocationEvent(PlayerLocation location);
+
+        /// <summary>
         ///     An event that triggers a void action.
         /// </summary>
         public delegate void VoidEvent();
@@ -40,6 +46,11 @@ namespace HorrorHouse.Controllers
         ///     Called when the player collects an artifact.
         /// </summary>
         public static event CollectArtifactEvent OnArtifactCollected;
+
+        /// <summary>
+        ///     Called when the player changes location.
+        /// </summary>
+        public static event PlayerLocationEvent OnPlayerLocationChanged;
         
         /// <summary>
         ///     Called when the player lifts the curse.
@@ -63,6 +74,13 @@ namespace HorrorHouse.Controllers
         /// <param name="artifactType">The type of artifact collected.</param>
         public static void BroadcastArtifactCollected(ArtifactType artifactType) =>
             OnArtifactCollected?.Invoke(artifactType);
+
+        /// <summary>
+        ///     Broadcasts that the player has changed location.
+        /// </summary>
+        /// <param name="location">Location of the player.</param>
+        public static void BroadcastPlayerLocation(PlayerLocation location) =>
+            OnPlayerLocationChanged?.Invoke(location);
 
         /// <summary>
         ///     Broadcasts that the curse has been lifted.
