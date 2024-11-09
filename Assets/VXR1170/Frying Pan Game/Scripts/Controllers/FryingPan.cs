@@ -1,4 +1,4 @@
-using Data;
+using FryingPanGame.Data;
 using System.Collections.Generic;
 using UnityEngine;
 

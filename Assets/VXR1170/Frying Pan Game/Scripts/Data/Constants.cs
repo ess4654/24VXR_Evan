@@ -1,4 +1,4 @@
-namespace Data
+namespace FryingPanGame.Data
 {
     /// <summary>
     ///     Global constants for the frying pan game.
