@@ -11,6 +11,7 @@ namespace HorrorHouse.Controllers
     public class Intro : MonoBehaviour
     {
         [SerializeField] private XROrigin xrRig;
+        [SerializeField] private GameObject[] activateOnStart;
         [SerializeField] private AudioSource narrator;
         [SerializeField] private AudioClip[] narratorClips;
         [SerializeField] private TextMeshProUGUI[] narratorText;
@@ -19,17 +20,33 @@ namespace HorrorHouse.Controllers
 
         #region METHODS
 
-        private void Start() => StartCoroutine(Narration());
+        private void Start()
+        {
+            //disable the xr rig
+            if (xrRig)
+                xrRig.enabled = false;
+
+            //disable world objects
+            foreach (var toActivate in activateOnStart)
+                if (toActivate)
+                    toActivate.SetActive(false);
+
+            StartCoroutine(Narration());
+        }
 
         private IEnumerator Narration()
         {
+            yield return new WaitForSeconds(1); //wait 1 second to start
+
+            //wait for all narration clips to play
             for(var i = 0; i < narratorClips.Length; i++)
             {
                 ActivateText(i);
                 yield return PlayClip(narratorClips[i]);
+                Debug.Log($"Done {i}");
             }
             
-            //StartGame();
+            StartGame();
         }
 
         /// <summary>
@@ -42,8 +59,13 @@ namespace HorrorHouse.Controllers
             length = clip != null ? clip.length : 0;
             narrator.clip = clip;
             narrator.Play();
-            yield return new WaitForEndOfFrame();
+            
+            yield return new WaitUntil(() => narrator.time > 0 && narrator.isPlaying);
             yield return new WaitUntil(() => narrator.time == 0 || narrator.time >= length || !narrator.isPlaying);
+            yield return new WaitForSeconds(1.5f);
+            
+            narrator.Stop();
+            narrator.time = 0;
         }
 
         /// <summary>
@@ -54,7 +76,7 @@ namespace HorrorHouse.Controllers
         {
             for(var i = 0; i < narratorText.Length; i++)
                 if(narratorText[i])
-                    narratorText[i].enabled = i == index;
+                    narratorText[i].gameObject.SetActive(i == index);
         }
 
         /// <summary>
@@ -63,9 +85,16 @@ namespace HorrorHouse.Controllers
         [ContextMenu("Start Game")]
         private void StartGame()
         {
+            //enable the xr rig
             if(xrRig)
-                xrRig.gameObject.SetActive(true);
-            Destroy(gameObject);
+                xrRig.enabled = true;
+
+            //enable world objects
+            foreach (var toActivate in activateOnStart)
+                if (toActivate)
+                    toActivate.SetActive(true);
+
+            gameObject.SetActive(false);
         }
 
         #endregion

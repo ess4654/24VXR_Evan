@@ -118,6 +118,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   enableOnCurseLifted: []
+  player: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  transitionPost: {fileID: 0}
 --- !u!1001 &868208863888769354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,6 +405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Post Processing
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093213571176222591, guid: f719a1c081f0bf84d8c807c8e85c58b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
