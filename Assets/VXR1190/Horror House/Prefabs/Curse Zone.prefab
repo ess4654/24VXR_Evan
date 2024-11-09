@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 912077676497769702}
   - component: {fileID: 4071219041850524580}
   - component: {fileID: 3919859714987917354}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
