@@ -380,6 +380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hint: {fileID: 3919859714987917354}
+  gameOverSound: {fileID: 8300000, guid: dc0ea3dcf8038a642bb79d8baeec900b, type: 3}
+  insideTrigger: 0
 --- !u!1001 &258142888006362152
 PrefabInstance:
   m_ObjectHideFlags: 0
