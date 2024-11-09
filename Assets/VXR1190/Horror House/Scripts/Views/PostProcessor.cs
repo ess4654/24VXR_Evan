@@ -12,6 +12,8 @@ namespace HorrorHouse.Views
     {
         private Volume volume;
 
+        #region METHODS
+
         private void Awake()
         {
             volume = GetComponent<Volume>();
@@ -31,5 +33,7 @@ namespace HorrorHouse.Views
         {
             volume.weight = 0f;
         }
+
+        #endregion
     }
 }

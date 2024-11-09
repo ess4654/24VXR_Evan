@@ -1,4 +1,5 @@
 using HorrorHouse.Data;
+using UnityEngine.XR;
 
 namespace HorrorHouse.Controllers
 {
@@ -10,11 +11,17 @@ namespace HorrorHouse.Controllers
         #region DELEGATES
 
         /// <summary>
+        ///     An event that passes an input device to a method.
+        /// </summary>
+        /// <param name="device">The input device interacted with.</param>
+        public delegate void InputDeviceEvent(InputDevice device);
+
+        /// <summary>
         ///     An event that passes a collected artifact type.
         /// </summary>
         /// <param name="artifactType">Type of artifact that was collected.</param>
         public delegate void CollectArtifactEvent(ArtifactType artifactType);
-        
+
         /// <summary>
         ///     An event that triggers a void action.
         /// </summary>
@@ -23,6 +30,11 @@ namespace HorrorHouse.Controllers
         #endregion
 
         #region SUBSCRIBABLES
+        
+        /// <summary>
+        ///     Called when the trigger is activated on either the right or left controller.
+        /// </summary>
+        public static event InputDeviceEvent OnTriggerInput;
 
         /// <summary>
         ///     Called when the player collects an artifact.
@@ -37,6 +49,13 @@ namespace HorrorHouse.Controllers
         #endregion
 
         #region BROADCASTERS
+
+        /// <summary>
+        ///     Broadcasts that an input trigger has been pressed.
+        /// </summary>
+        /// <param name="device">The device the trigger was activated on.</param>
+        public static void BroadcastTriggerInput(InputDevice device) =>
+            OnTriggerInput?.Invoke(device);
 
         /// <summary>
         ///     Broadcasts that player has collected an artifact.

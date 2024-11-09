@@ -17,6 +17,8 @@ namespace HorrorHouse.Helpers
 
         private AudioSource source;
 
+        #region METHODS
+
         private void Awake()
         {
             source = GetComponent<AudioSource>();
@@ -50,5 +52,7 @@ namespace HorrorHouse.Helpers
 
             StartCoroutine(PlayRandomSound());
         }
+
+        #endregion
     }
 }

@@ -22,6 +22,8 @@ namespace HorrorHouse.Views
 
         #region METHODS
 
+        #region ENGINE
+
         protected override void Awake()
         {
             base.Awake();
@@ -40,6 +42,8 @@ namespace HorrorHouse.Views
             GameEventBroadcaster.OnArtifactCollected -= ArtifactCollected;
             GameEventBroadcaster.OnGameOver -= GameOver;
         }
+
+        #endregion
 
         /// <summary>
         ///     Activates the artifact icon in the UI.

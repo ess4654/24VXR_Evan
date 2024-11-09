@@ -9,7 +9,11 @@ namespace HorrorHouse.Controllers
     public class GameManager : Singleton<GameManager>
     {
         [SerializeField] private GameObject[] destroyOnCurseLifted;
-        
+
+        #region METHODS
+
+        #region ENGINE
+
         private void OnEnable()
         {
             GameEventBroadcaster.OnGameOver += CurseLifted;
@@ -20,11 +24,15 @@ namespace HorrorHouse.Controllers
             GameEventBroadcaster.OnGameOver -= CurseLifted;
         }
 
+        #endregion
+
         //Destroys items on curse lifted
         private void CurseLifted()
         {
             foreach(var item in destroyOnCurseLifted)
                 Destroy(item);
         }
+
+        #endregion
     }
 }

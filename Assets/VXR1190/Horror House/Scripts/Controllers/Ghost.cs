@@ -10,6 +10,8 @@ namespace HorrorHouse.Controllers
     /// </summary>
     public class Ghost : MonoBehaviour
     {
+        #region VARIABLE DECLARATIONS
+
         [SerializeField, Range(0f, 1f)] private float showChance = .5f;
         [SerializeField] private Renderer mesh;
         
@@ -20,7 +22,11 @@ namespace HorrorHouse.Controllers
 
         private bool visible;
 
+        #endregion
+
         #region METHODS
+
+        #region ENGINE
 
         private void Awake() => Hide();
 
@@ -29,6 +35,8 @@ namespace HorrorHouse.Controllers
             if(other.CompareTag(Constants.TAG_PLAYER) && Random.value <= showChance)
                 StartCoroutine(Show());
         }
+
+        #endregion
 
         /// <summary>
         ///     Shows the ghost.

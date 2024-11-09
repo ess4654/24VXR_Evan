@@ -11,6 +11,8 @@ namespace HorrorHouse.Views
 
         private Camera xrCamera;
 
+        #region MEHTODS
+
         private void Awake()
         {
             xrCamera = Camera.main;
@@ -30,5 +32,7 @@ namespace HorrorHouse.Views
                     transform.LookAt(xrCamera.transform.position, Vector3.forward);
             }
         }
+
+        #endregion
     }
 }

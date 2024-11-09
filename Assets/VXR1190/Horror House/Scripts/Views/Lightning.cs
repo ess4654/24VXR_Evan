@@ -12,6 +12,8 @@ namespace HorrorHouse.Views
         private ParticleSystem lighting;
         private bool on;
 
+        #region METHODS
+
         private void Awake()
         {
             lighting = GetComponent<ParticleSystem>();
@@ -41,5 +43,7 @@ namespace HorrorHouse.Views
             if (lightingFlash && Random.value < .2f)
                 lightingFlash.gameObject.SetActive(!lightingFlash.gameObject.activeInHierarchy);
         }
+
+        #endregion
     }
 }

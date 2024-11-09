@@ -3,6 +3,7 @@ using HorrorHouse.Helpers;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace HorrorHouse.Controllers
 {
@@ -20,15 +21,33 @@ namespace HorrorHouse.Controllers
 
         #region METHODS
 
+        #region ENGINE
+
         private void OnEnable()
         {
+            GameEventBroadcaster.OnTriggerInput += TryLiftCurse;
             GameEventBroadcaster.OnArtifactCollected += CollectArtifact;    
         }
 
         private void OnDisable()
         {
+            GameEventBroadcaster.OnTriggerInput -= TryLiftCurse;
             GameEventBroadcaster.OnArtifactCollected -= CollectArtifact;    
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag(Constants.TAG_PLAYER))
+                insideTrigger = true;
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag(Constants.TAG_PLAYER))
+                insideTrigger = false;
+        }
+
+        #endregion
 
         //Called automatically when an artifact is collected.
         private void CollectArtifact(ArtifactType artifactType)
@@ -37,13 +56,26 @@ namespace HorrorHouse.Controllers
             hint.text = $"Lift The Curse\n({collectedArtifacts.Count}/4)";
         }
 
+        //attempts to lift the curse when inside the curse region
+        private void TryLiftCurse(InputDevice _)
+        {
+            if(insideTrigger)
+                LiftCurse();
+        }
+
+        /// <summary>
+        ///     Lifts the curse if the artifacts are collected.
+        /// </summary>
         [ContextMenu("Lift Curse")]
         public void LiftCurse()
         {
-            if(collectedArtifacts.Count == 4 && insideTrigger)
+            if(collectedArtifacts.Count == 4)
                 GameOver();
         }
 
+        /// <summary>
+        ///     Triggers the game over event.
+        /// </summary>
         [ContextMenu("Game Over")]
         private void GameOver()
         {

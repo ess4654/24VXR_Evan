@@ -2,6 +2,7 @@ using HorrorHouse.Data;
 using HorrorHouse.Helpers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace HorrorHouse.Controllers
 {
@@ -17,6 +18,8 @@ namespace HorrorHouse.Controllers
 
         #region METHODS
 
+        #region ENGINE
+
         private void Awake()
         {
             if (hintText)
@@ -24,6 +27,16 @@ namespace HorrorHouse.Controllers
                 hintText.text = type.ToString().Replace("_", " ");
                 hintText.enabled = false;
             }
+        }
+
+        private void OnEnable()
+        {
+            GameEventBroadcaster.OnTriggerInput += TryCollect;   
+        }
+
+        private void OnDisable()
+        {
+            GameEventBroadcaster.OnTriggerInput -= TryCollect;   
         }
 
         private void OnTriggerEnter(Collider other)
@@ -36,6 +49,8 @@ namespace HorrorHouse.Controllers
             }
         }
 
+        #endregion
+
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag(Constants.TAG_PLAYER))
@@ -46,18 +61,22 @@ namespace HorrorHouse.Controllers
             }
         }
 
+        //attempts to collect the artifact if inside the trigger region
+        private void TryCollect(InputDevice _)
+        {
+            if (insideTrigger)
+                Collect();
+        }
+
         /// <summary>
         ///     Collects the artifact adding it to our library.
         /// </summary>
         [ContextMenu("Collect")]
         public void Collect()
         {
-            if (insideTrigger)
-            {
-                GameEventBroadcaster.BroadcastArtifactCollected(type);
-                UI_Sounds.PlaySoundFX(collectSound);
-                Destroy(gameObject);
-            }
+            GameEventBroadcaster.BroadcastArtifactCollected(type);
+            UI_Sounds.PlaySoundFX(collectSound);
+            Destroy(gameObject);
         }
 
         #endregion
