@@ -2,6 +2,7 @@
 using HorrorHouse.Data;
 using Shared;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace HorrorHouse.Views
@@ -15,19 +16,29 @@ namespace HorrorHouse.Views
         [SerializeField] private InventoryButton waterUI;
         [SerializeField] private InventoryButton steakUI;
         [SerializeField] private InventoryButton crossUI;
+        [SerializeField] private TextMeshProUGUI gameOverText;
 
         private HashSet<ArtifactType> collectedArtifacts = new();
 
         #region METHODS
 
+        protected override void Awake()
+        {
+            base.Awake();
+            if(gameOverText)
+                gameOverText.enabled = false;
+        }
+
         private void OnEnable()
         {
             GameEventBroadcaster.OnArtifactCollected += ArtifactCollected;
+            GameEventBroadcaster.OnGameOver += GameOver;
         }
 
         private void OnDisable()
         {
             GameEventBroadcaster.OnArtifactCollected -= ArtifactCollected;
+            GameEventBroadcaster.OnGameOver -= GameOver;
         }
 
         /// <summary>
@@ -63,6 +74,15 @@ namespace HorrorHouse.Views
             }
 
             collectedArtifacts.Add(artifactType);
+        }
+
+        /// <summary>
+        ///     Called when the curse is lifted.
+        /// </summary>
+        private void GameOver()
+        {
+            if (gameOverText)
+                gameOverText.enabled = true;
         }
 
         #endregion
