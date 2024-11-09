@@ -11,10 +11,11 @@ namespace HorrorHouse.Helpers
     [RequireComponent(typeof(AudioSource))]
     public class RandomAudioPlaylist : MonoBehaviour
     {
+        [SerializeField] private float playbackTime;
+        [SerializeField] private float length;
         [SerializeField] private AudioClip[] randomSounds;
 
         private AudioSource source;
-        private float length;
 
         private void Awake()
         {
@@ -28,17 +29,25 @@ namespace HorrorHouse.Helpers
         /// <returns>Asynchronous routine</returns>
         private IEnumerator PlayRandomSound()
         {
+            //if no audio clips are found, throw an error
             if (randomSounds.Length == 0)
                 throw new System.Exception($"No sound clips to select from on {name}");
 
-            yield return new WaitUntil(() => source.time == 0);
-
+            //select a random audio clip to play
             var randomClip = randomSounds.SelectRandom();
             source.clip = randomClip;
             length = randomClip.length;
             source.Play();
 
-            yield return new WaitUntil(() => source.time >= length);
+            yield return new WaitForEndOfFrame();
+
+            //wait for playback time to exceed the clip length or reset to 0
+            yield return new WaitUntil(() =>
+            {
+                playbackTime = source.time;
+                return playbackTime >= length || playbackTime == 0 || !source.isPlaying;
+            });
+
             StartCoroutine(PlayRandomSound());
         }
     }
