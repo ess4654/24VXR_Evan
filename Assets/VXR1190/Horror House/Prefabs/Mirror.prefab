@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4177905902712714572}
   - component: {fileID: 8014990311270096499}
   - component: {fileID: 1266653965508396518}
+  - component: {fileID: 2496096886970834348}
+  - component: {fileID: 5472520655169214831}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Untagged
@@ -100,6 +102,39 @@ MonoBehaviour:
   material: {fileID: 11400000, guid: 08bf73ad12cb44944875b02ce7f9d694, type: 2}
   exportAllChildren: 0
   terrainSimplificationLevel: 0
+--- !u!65 &2496096886970834348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2200271716306180155}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 3, z: 2.0451453}
+  m_Center: {x: 0, y: 0, z: -1.0225726}
+--- !u!114 &5472520655169214831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2200271716306180155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6683076701de88c4490bb7e3f952d879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7196180675398400400
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4043482057971385588
 Transform:
   m_ObjectHideFlags: 0
