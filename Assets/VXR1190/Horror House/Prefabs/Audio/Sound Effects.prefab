@@ -370,7 +370,7 @@ PrefabInstance:
     - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
       propertyPath: m_Name
-      value: Rusling Leaves (2)
+      value: Rusling Leaves
       objectReference: {fileID: 0}
     - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
@@ -439,7 +439,7 @@ PrefabInstance:
     - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
       propertyPath: m_Name
-      value: Rusling Leaves (4)
+      value: Rusling Leaves
       objectReference: {fileID: 0}
     - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
@@ -523,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
       propertyPath: m_Name
-      value: Rusling Leaves (5)
+      value: Rusling Leaves
       objectReference: {fileID: 0}
     - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
@@ -711,7 +711,7 @@ PrefabInstance:
     - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
       propertyPath: m_Name
-      value: Rusling Leaves (1)
+      value: Rusling Leaves
       objectReference: {fileID: 0}
     - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
@@ -780,7 +780,7 @@ PrefabInstance:
     - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
       propertyPath: m_Name
-      value: Rusling Leaves (6)
+      value: Rusling Leaves
       objectReference: {fileID: 0}
     - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
@@ -1018,7 +1018,7 @@ PrefabInstance:
     - target: {fileID: 1340192822699152715, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}
       propertyPath: m_Name
-      value: Rusling Leaves (3)
+      value: Rusling Leaves
       objectReference: {fileID: 0}
     - target: {fileID: 2047115448828176994, guid: a8b56c131a28eed4da481da18097e8bd,
         type: 3}

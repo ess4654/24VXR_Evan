@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 23271883832923690}
   - component: {fileID: 65273548865231152}
   - component: {fileID: 4788739239520537415}
+  - component: {fileID: 7319894614619178594}
   m_Layer: 0
   m_Name: SM_Bld_Fence_Gate_Fancy_01
   m_TagString: Untagged
@@ -227,3 +228,24 @@ MonoBehaviour:
   material: {fileID: 11400000, guid: d780f25df1d231d4aa9a31ab3ba935d0, type: 2}
   exportAllChildren: 1
   terrainSimplificationLevel: 0
+--- !u!95 &7319894614619178594
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627410080298334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 8d32335e8160470408fecd8c88396c78, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
