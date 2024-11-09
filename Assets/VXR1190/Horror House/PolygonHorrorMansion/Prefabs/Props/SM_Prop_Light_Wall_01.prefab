@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 7936524990280998562}
   - component: {fileID: 4546028999281707962}
   m_Layer: 0
-  m_Name: Light
+  m_Name: Flickering Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

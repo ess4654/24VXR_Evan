@@ -6,6 +6,7 @@ namespace HorrorHouse.Data
     public enum PlayerLocation
     {
         Outside,
-        Inside
+        Inside,
+        Bathroom
     }
 }
