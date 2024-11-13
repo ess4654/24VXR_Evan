@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.device-simulator.devices": "1.0.0",
     "com.unity.ide.rider": "3.0.31",
     "com.unity.ide.visualstudio": "2.0.22",
     "com.unity.ide.vscode": "1.2.5",
@@ -11,6 +12,7 @@
     "com.unity.timeline": "1.7.6",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.4",
+    "com.unity.xr.hands": "1.2.1",
     "com.unity.xr.interaction.toolkit": "2.4.3",
     "com.unity.xr.management": "4.5.0",
     "com.unity.xr.openxr": "1.8.2",
