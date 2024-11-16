@@ -7,5 +7,6 @@ namespace ArcadeGame.Views.Machines
     /// </summary>
     public class ClawMachineAnimator : ArcadeMachineAnimator
     {
+        public const string Filename = "Claw Machine Animator";
     }
 }

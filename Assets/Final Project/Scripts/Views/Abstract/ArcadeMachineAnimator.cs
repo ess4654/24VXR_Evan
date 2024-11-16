@@ -7,6 +7,7 @@ namespace ArcadeGame.Views.Machines
     /// <summary>
     ///     Base class used by all arcade machine animators.
     /// </summary>
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(Animator))]
     public abstract class ArcadeMachineAnimator : Shared.Behaviour
     {

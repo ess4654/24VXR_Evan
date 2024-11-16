@@ -11,6 +11,7 @@ namespace ArcadeGame.Helpers.Audio
     [RequireComponent(typeof(AudioSource))]
     public class SoundManager : Singleton<SoundManager>
     {
+        public const string Filename = "Sound Manager";
         protected override bool DontDestroy => true;
 
         #region VARIABLE DECLARATIONS

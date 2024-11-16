@@ -7,5 +7,6 @@ namespace ArcadeGame.Views.Machines
     /// </summary>
     public class PirateSpinAnimator : ArcadeMachineAnimator
     {
+        public const string Filename = "Pirate Spin Animator";
     }
 }

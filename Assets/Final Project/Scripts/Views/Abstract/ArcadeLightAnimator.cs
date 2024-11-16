@@ -24,5 +24,15 @@ namespace ArcadeGame.Views
             if (light.GetComponentInChildren<Light>())
                 light.GetComponentInChildren<Light>().enabled = on;
         }
+
+        /// <summary>
+        ///     Turn all lights on/off.
+        /// </summary>
+        /// <param name="on">Whether the lights are on or off.</param>
+        protected void UpdateAllLights(bool on)
+        {
+            for(var i = 0; i < lights.Length; i++)
+                UpdateLight(i, on);
+        }
     }
 }

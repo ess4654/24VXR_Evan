@@ -8,6 +8,7 @@ namespace ArcadeGame.Controllers
     /// </summary>
     public class GameManager : Singleton<GameManager>
     {
+        public const string Filename = "Game Manager";
         protected override bool DontDestroy => true;
 
         private void Start()

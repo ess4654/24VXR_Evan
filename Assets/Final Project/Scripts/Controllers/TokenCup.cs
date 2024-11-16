@@ -10,6 +10,8 @@ namespace ArcadeGame.Controllers
     [RequireComponent(typeof(BoxCollider), typeof(MeshRenderer))]
     public class TokenCup : Shared.Behaviour
     {
+        public const string Filename = "Token Cup";
+
         #region VARIABLE DECLARATIONS
 
         [SerializeField, Range(0f, 1f)] private float spawnChance = .5f;

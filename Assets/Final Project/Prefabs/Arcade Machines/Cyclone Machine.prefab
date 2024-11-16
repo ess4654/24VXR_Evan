@@ -432,8 +432,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99905d8680c90b542b0abad9ecc8970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveKey: Cyclone
   gameStateOnPlay: 1
   requiredTokens: 3
+  hasTimer: 0
+  gameTime: 30
+  animator: {fileID: 4831241767591372872}
+  UI_Panel: cyclone
+  spinningGame: 0
+  spinAxis: {fileID: 0}
   hasJackpot: 1
   jackpotRange: {x: 50, y: 500}
   jackpotFlasher: {fileID: 856141950948513799}
@@ -441,15 +448,10 @@ MonoBehaviour:
   - {fileID: 8339262162925312497}
   - {fileID: 5966283613079983586}
   - {fileID: 2602069243663393965}
-  hasTimer: 0
-  gameTime: 30
-  spinningGame: 0
-  spinAxis: {fileID: 0}
-  saveKey: Cyclone
-  animator: {fileID: 4831241767591372872}
-  UI_Panel: cyclone
+  ticketAmounts: ffffffff02000000010000000500000003000000020000001e0000000a00000005000000010000000300000008000000ffffffff0f0000000700000002000000060000000100000019000000050000000a000000140000000f00000005000000ffffffff0a000000050000000100000003000000080000001e0000000f00000007000000020000000600000001000000ffffffff0200000001000000050000000300000002000000190000000a00000005000000010000000300000008000000ffffffff0f000000070000000200000006000000010000001e000000050000000a000000140000000f00000005000000ffffffff0a00000005000000010000000300000008000000190000000f00000007000000020000000600000001000000
   m_ResetJackpot: 0
   lightController: {fileID: 4531635692144287631}
+  m_PressButton: 0
 --- !u!114 &4831241767591372872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,6 +603,10 @@ MonoBehaviour:
   - {fileID: 4324328739412163946}
   - {fileID: 6740954183279843638}
   - {fileID: 615111073573311846}
+  numberFlashes: 35
+  isFlashing: 0
+  flashTime: 3
+  m_Flash: 0
 --- !u!1 &5761675269263452087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1347,10 @@ MonoBehaviour:
   - {fileID: 2569317305502482558}
   - {fileID: 3193893876964208937}
   - {fileID: 1898614583834463022}
+  numberFlashes: 0
+  isFlashing: 0
+  flashTime: 3
+  m_Flash: 0
 --- !u!23 &1781082899994337341 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -2394177312216615211, guid: cb10b193f98cea847889fa69aa400e00,

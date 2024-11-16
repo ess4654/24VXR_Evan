@@ -7,5 +7,6 @@ namespace ArcadeGame.Views.Machines
     /// </summary>
     public class CycloneAnimator : ArcadeMachineAnimator
     {
+        public const string Filename = "Cyclone Animator";
     }
 }

@@ -1,5 +1,4 @@
 using Shared.Helpers;
-using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -10,6 +9,8 @@ namespace ArcadeGame.Views
     /// </summary>
     public class LightCycler : ArcadeLightAnimator
     {
+        public const string Filename = "Light Cycler";
+
         #region VARIABLE DECLARATIONS
 
         [SerializeField] private float delay = 0.25f;
@@ -20,8 +21,8 @@ namespace ArcadeGame.Views
 
         #endregion
 
-        #region METHODS
-
+        #region SETUP
+        
         private void Awake()
         {
             reverseDirection = Random.value < .5f;
@@ -38,34 +39,16 @@ namespace ArcadeGame.Views
             while (this)
             {
                 if (isCycling && lights.Length > 1)
-                {
-                    //turn the current light off
-                    UpdateLight(currentIndex, false);
+                    SkipNextLight();
 
-                    if (reverseDirection)
-                    {
-                        currentIndex++;
-                        currentIndex %= lights.Length;
-                    }
-                    else
-                    {
-                        currentIndex--;
-                        if (currentIndex < 0)
-                            currentIndex = lights.Length - 1;
-                    }
-
-                    //turn the next light on
-                    UpdateLight(currentIndex, true);
-                }
-
-                //Log("Running");
-
-                //yield return new WaitForSeconds(delay);
-                //yield return new WaitForEndOfFrame();
                 await Timer.WaitForSeconds(delay);
                 await Timer.WaitForFrame();
             }
         }
+
+        #endregion
+
+        #region METHODS
 
         /// <summary>
         ///     Toggle the cycler on/off.
@@ -75,6 +58,33 @@ namespace ArcadeGame.Views
         public int ToggleCycling(bool isCycling)
         {
             this.isCycling = isCycling;
+            return currentIndex;
+        }
+
+        /// <summary>
+        ///     Skips to the next light in sequence.
+        /// </summary>
+        /// <returns>The new index of the light once skipped</returns>
+        public int SkipNextLight()
+        {
+            //turn the current light off
+            UpdateLight(currentIndex, false);
+
+            if (reverseDirection)
+            {
+                currentIndex++;
+                currentIndex %= lights.Length;
+            }
+            else
+            {
+                currentIndex--;
+                if (currentIndex < 0)
+                    currentIndex = lights.Length - 1;
+            }
+
+            //turn the next light on
+            UpdateLight(currentIndex, true);
+
             return currentIndex;
         }
 

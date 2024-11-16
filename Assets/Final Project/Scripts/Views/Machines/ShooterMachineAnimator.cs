@@ -7,5 +7,6 @@ namespace ArcadeGame.Views.Machines
     /// </summary>
     public class ShooterMachineAnimator : ShooterCabinetAnimator
     {
+        public const string Filename = "Shooter Machine Animator";
     }
 }

@@ -7,6 +7,8 @@ namespace ArcadeGame.Controllers.Machines
     /// </summary>
     public class ClawMachine : TokenMachineBase
     {
+        public const string Filename = "Claw Machine";
+
         #region VARIABLE DECLARATIONS
 
         private Vector2 leftControllerAxis;

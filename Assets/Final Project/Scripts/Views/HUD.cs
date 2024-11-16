@@ -11,6 +11,8 @@ namespace ArcadeGame.Views
     [RequireComponent(typeof(Canvas))]
     public class HUD : Singleton<HUD>
     {
+        public const string Filename = "HUD";
+
         #region VARIABLE DECLARATIONS
 
         /// <summary>

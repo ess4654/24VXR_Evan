@@ -8,6 +8,7 @@ namespace ArcadeGame.Controllers
     /// </summary>
     public class XRInputManager : Singleton<XRInputManager>
     {
+        public const string Filename = "XR Input Manager";
         protected override bool DontDestroy => true;
 
         #region DELEGATES

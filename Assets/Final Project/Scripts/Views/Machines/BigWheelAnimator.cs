@@ -7,5 +7,6 @@ namespace ArcadeGame.Views.Machines
     /// </summary>
     public class BigWheelAnimator : ArcadeMachineAnimator
     {
+        public const string Filename = "Big Wheel Animator";
     }
 }
