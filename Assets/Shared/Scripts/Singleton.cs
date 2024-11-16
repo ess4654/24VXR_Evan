@@ -13,7 +13,7 @@ namespace Shared
         public static TClass Instance { get; private set; }
 
         /// <summary>
-        ///     Does the singleton object exist?
+        ///     Does the singleton object exist in the 'Dont Destroy On Load' scene?
         /// </summary>
         protected virtual bool DontDestroy => false;
 

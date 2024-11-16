@@ -1,6 +1,10 @@
+using ArcadeGame.Data;
 using static ArcadeGame.Data.Constants;
+using ArcadeGame.Views;
 using ArcadeGame.Views.Machines;
 using UnityEngine;
+
+using Shared.Editor;
 
 namespace ArcadeGame.Controllers.Machines
 {
@@ -12,11 +16,18 @@ namespace ArcadeGame.Controllers.Machines
         #region VARIABLE DECLARATIONS
 
         [Header("Machine Settings")]
+        [SerializeField] private GameState gameStateOnPlay;
         [SerializeField, Range(1, MaxMachineTokens)] private int requiredTokens;
+        
         [SerializeField] private bool hasJackpot;
-        [SerializeField] private Vector2Int jackpotRange;
+        [SerializeField, DependsUpon("hasJackpot")] private Vector2Int jackpotRange;
+        [SerializeField, DependsUpon("hasJackpot")] private LightFlasher jackpotFlasher;
+        
         [SerializeField] private bool hasTimer;
-        [SerializeField] private float gameTime = 30;
+        [SerializeField, DependsUpon("hasTimer")] private float gameTime = 30;
+        
+        [SerializeField] private bool spinningGame;
+        [SerializeField, DependsUpon("spinningGame")] private Transform spinAxis;
         
         [Tooltip("This key is used to save/load the number of tokens deposited into the machine.")]
         [SerializeField] private string saveKey;
@@ -28,7 +39,7 @@ namespace ArcadeGame.Controllers.Machines
         //[SerializeField] private MachineAnimatorBase animator;
         
         [Header("HUD")]
-        [SerializeField] private string uiPanel;
+        [SerializeField] private string UI_Panel;
 
         private int depositedTokens;
         private int currentJackpot;
@@ -69,6 +80,25 @@ namespace ArcadeGame.Controllers.Machines
                 }
             }
         }
+
+        #endregion
+
+        #region UPDATES
+
+        protected virtual void Update()
+        {
+            if (GameData.State == gameStateOnPlay)
+                OnGameActive(); //engine
+        }
+
+        #endregion
+
+        #region ENGINE
+
+        /// <summary>
+        ///     OnGameActive is called every frame if we are engaged with the machine.
+        /// </summary>
+        protected virtual void OnGameActive() { }
 
         #endregion
 

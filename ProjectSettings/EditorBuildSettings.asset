@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/VXR1170/Code Prototype/Scenes/Code Prototype.unity
     guid: 576ac909133433b439148e7cf5764e22
+  - enabled: 1
+    path: Assets/Final Project/Scenes/Focus Project Final.unity
+    guid: 3dffc56fd99aae74bbd6aaec5cac5c8e
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 645f6397da5a25e40ab68e4ad603910d,
       type: 2}

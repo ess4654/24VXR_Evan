@@ -47,13 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e920dd9da73a5f46b003dc24dba379d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateOnPlay: 5
   requiredTokens: 0
   hasJackpot: 0
   jackpotRange: {x: 0, y: 0}
   hasTimer: 1
   gameTime: 30
+  spinningGame: 0
+  spinAxis: {fileID: 0}
   saveKey: ClawMachine
   animator: {fileID: -6483880171739762639}
+  UI_Panel: ClawMachine
 --- !u!114 &-6483880171739762639
 MonoBehaviour:
   m_ObjectHideFlags: 0

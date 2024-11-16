@@ -11,6 +11,6 @@ namespace ArcadeGame.Data
         PirateSpin,
         ShooterCabinet,
         ClawMachine,
-        Paused
+        Paused = -1
     }
 }

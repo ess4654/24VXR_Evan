@@ -64,7 +64,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -151,6 +151,8 @@ MonoBehaviour:
     panel: {fileID: 3386832563823991366}
   - key: Shooter
     panel: {fileID: 8531331019426123045}
+  xrCameraPivot: {fileID: 0}
+  distanceFromCamera: 10
 --- !u!1001 &1764477142465468600
 PrefabInstance:
   m_ObjectHideFlags: 0

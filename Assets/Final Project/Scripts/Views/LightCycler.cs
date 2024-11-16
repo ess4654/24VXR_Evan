@@ -1,4 +1,6 @@
+using Shared.Helpers;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace ArcadeGame.Views
@@ -6,16 +8,14 @@ namespace ArcadeGame.Views
     /// <summary>
     ///     Cycles through lights in succession turning one off, and the next on.
     /// </summary>
-    public class LightCycler : Shared.Behaviour
+    public class LightCycler : ArcadeLightAnimator
     {
         #region VARIABLE DECLARATIONS
 
-        [SerializeField] private Material lightOnMaterial;
-        [SerializeField] private Material lightOffMaterial;
-        [SerializeField] private MeshRenderer[] lights;
         [SerializeField] private float delay = 0.25f;
 
         private bool isCycling;
+        private bool reverseDirection;
         private int currentIndex;
 
         #endregion
@@ -24,15 +24,16 @@ namespace ArcadeGame.Views
 
         private void Awake()
         {
+            reverseDirection = Random.value < .5f;
             isCycling = true;
-            StartCoroutine(CycleLight());
+            CycleLight();
         }
 
         /// <summary>
         ///     Cycles through the lights this script is managing.
         /// </summary>
         /// <returns>Coroutine</returns>
-        private IEnumerator CycleLight()
+        private async Task CycleLight()
         {
             while (this)
             {
@@ -41,30 +42,29 @@ namespace ArcadeGame.Views
                     //turn the current light off
                     UpdateLight(currentIndex, false);
 
-                    currentIndex++;
-                    currentIndex %= lights.Length;
+                    if (reverseDirection)
+                    {
+                        currentIndex++;
+                        currentIndex %= lights.Length;
+                    }
+                    else
+                    {
+                        currentIndex--;
+                        if (currentIndex < 0)
+                            currentIndex = lights.Length - 1;
+                    }
 
                     //turn the next light on
                     UpdateLight(currentIndex, true);
                 }
 
-                yield return new WaitForSeconds(delay);
-                yield return new WaitForEndOfFrame();
+                //Log("Running");
+
+                //yield return new WaitForSeconds(delay);
+                //yield return new WaitForEndOfFrame();
+                await Timer.WaitForSeconds(delay);
+                await Timer.WaitForFrame();
             }
-        }
-
-        /// <summary>
-        ///     Turn the light at the given index on/off.
-        /// </summary>
-        /// <param name="index">Index of the light to modify.</param>
-        /// <param name="on">Whether the light is on or off.</param>
-        private void UpdateLight(int index, bool on)
-        {
-            var light = lights[index];
-            light.material = on ? lightOnMaterial : lightOffMaterial;
-
-            if(light.GetComponentInChildren<Light>())
-                light.GetComponentInChildren<Light>().enabled = on;
         }
 
         /// <summary>

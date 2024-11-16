@@ -37,7 +37,6 @@ namespace Editor.Tools
 
         private static void DrawIconOnWindowItem(int instanceID, Rect rect)
         {
-            //if (Icon == null) return;
             GameObject gameObject = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
             if (gameObject == null) return;
@@ -45,7 +44,6 @@ namespace Editor.Tools
             //Get the behaviour
             var behaviours = new List<MonoBehaviour>(gameObject.GetComponents<MonoBehaviour>());
             if (behaviours == null) return;
-            //if (behaviours.Count(x => x is DisableHierarchyIcon) > 0) return; //Icon has been disabled
 
             //Gets the behaviour icon
             Texture2D Icon = null;

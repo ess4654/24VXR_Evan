@@ -1,3 +1,4 @@
+using Shared.Editor;
 using UnityEngine;
 
 namespace ArcadeGame.Views.Machines
@@ -11,8 +12,9 @@ namespace ArcadeGame.Views.Machines
         #region VARIABLE DECLARATIONS
 
         [SerializeField] private bool hasButtons;
-        [SerializeField] private string buttonAnimatorToggle = "Pressed";
-        [SerializeField] private Animator[] buttonAnimators;
+        [SerializeField, DependsUpon("hasButtons")] private string buttonAnimatorToggle = "Pressed";
+        [SerializeField, DependsUpon("hasButtons")] private Animator[] buttonAnimators;
+        [SerializeField, DependsUpon("hasButtons")] private LightFlasher buttonsFlasher;
 
         private Animator controller;
 
@@ -56,13 +58,18 @@ namespace ArcadeGame.Views.Machines
         #endregion
 
         #region DEBUGGING
-        [SerializeField, Min(0)] int m_buttonIndex;
+        
+        [Debugging]
+        [SerializeField, DependsUpon("hasButtons"), Min(0)] int m_buttonIndex;
+        [SerializeField, InspectorButton("TestButtonDown")] bool m_PressButton;
+        [SerializeField, InspectorButton("TestButtonUp")] bool m_ReleaseButton;
         
         [ContextMenu("Press Button")]
-        private void TestButtonDown() => PressButton(m_buttonIndex);
+        public void TestButtonDown() => PressButton(m_buttonIndex);
         
         [ContextMenu("Release Button")]
-        private void TestButtonUp() => ReleaseButton(m_buttonIndex);
+        public void TestButtonUp() => ReleaseButton(m_buttonIndex);
+        
         #endregion
     }
 }

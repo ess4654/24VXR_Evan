@@ -47,11 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcb8dc76cb145f4aa85e604a3e5babf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateOnPlay: 3
   requiredTokens: 2
   hasJackpot: 1
   jackpotRange: {x: 0, y: 0}
+  hasTimer: 0
+  gameTime: 30
+  spinningGame: 1
+  spinAxis: {fileID: 0}
   saveKey: PirateSpin
   animator: {fileID: 3797003372439938138}
+  UI_Panel: PirateSpin
 --- !u!114 &3797003372439938138
 MonoBehaviour:
   m_ObjectHideFlags: 0

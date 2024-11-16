@@ -1,3 +1,4 @@
+using ArcadeGame.Controllers;
 using System.Collections.Generic;
 
 namespace ArcadeGame.Data
@@ -12,7 +13,16 @@ namespace ArcadeGame.Data
         /// <summary>
         ///     Current state of the game.
         /// </summary>
-        public static GameState State;
+        public static GameState State
+        { 
+            get => state;
+            set
+            {
+                state = value;
+                GameEventBroadcaster.BroadcastGameStateChanged(state);
+            }
+        }
+        private static GameState state;
 
         /// <summary>
         ///     The number of tokens we currently have.

@@ -47,11 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab5dda5cb72639418b6bda1df491d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateOnPlay: 2
   requiredTokens: 2
   hasJackpot: 1
   jackpotRange: {x: 0, y: 0}
+  hasTimer: 0
+  gameTime: 30
+  spinningGame: 1
+  spinAxis: {fileID: 0}
   saveKey: BigWheel
   animator: {fileID: 328816246384706608}
+  UI_Panel: BigWheel
 --- !u!114 &328816246384706608
 MonoBehaviour:
   m_ObjectHideFlags: 0

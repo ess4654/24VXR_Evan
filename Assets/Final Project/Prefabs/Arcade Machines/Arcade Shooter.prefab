@@ -47,13 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86012e8406f24642882b8c2f4362301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateOnPlay: 4
   requiredTokens: 0
   hasJackpot: 0
   jackpotRange: {x: 0, y: 0}
   hasTimer: 1
   gameTime: 60
+  spinningGame: 0
+  spinAxis: {fileID: 0}
   saveKey: ShooterGame
   animator: {fileID: -2734025647924352279}
+  UI_Panel: Shooter
 --- !u!114 &-2734025647924352279
 MonoBehaviour:
   m_ObjectHideFlags: 0
