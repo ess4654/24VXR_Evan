@@ -1,3 +1,4 @@
+using ArcadeGame.Helpers.Audio;
 using Shared.Editor;
 using UnityEngine;
 
@@ -11,10 +12,13 @@ namespace ArcadeGame.Views.Machines
     {
         #region VARIABLE DECLARATIONS
 
+        [Header("Buttons")]
         [SerializeField] private bool hasButtons;
         [SerializeField, DependsUpon("hasButtons")] private string buttonAnimatorToggle = "Pressed";
         [SerializeField, DependsUpon("hasButtons")] private Animator[] buttonAnimators;
         [SerializeField, DependsUpon("hasButtons")] private LightFlasher buttonsFlasher;
+        [SerializeField, DependsUpon("hasButtons")] private string buttonPressAudioKey;
+        [SerializeField, DependsUpon("hasButtons")] private string buttonReleaseAudioKey;
 
         private Animator controller;
 
@@ -32,28 +36,31 @@ namespace ArcadeGame.Views.Machines
         #region METHODS
 
         /// <summary>
-        ///     Press the button at the given index down.
+        ///     Animates the button press of an arcade machine, & plays the audio feedback.
         /// </summary>
         /// <param name="buttonIndex"></param>
-        public void PressButton(int buttonIndex)
+        /// <param name="down"></param>
+        /// <exception cref="System.Exception"></exception>
+        private void AnimateButton(int buttonIndex, bool down)
         {
             if (!hasButtons)
                 throw new System.Exception($"{name} does not use buttons.");
 
-            buttonAnimators[buttonIndex].SetBool(buttonAnimatorToggle, true);
+            buttonAnimators[buttonIndex].SetBool(buttonAnimatorToggle, down);
+            SoundManager.PlayAudioClip(down ? buttonPressAudioKey: buttonReleaseAudioKey);
         }
+
+        /// <summary>
+        ///     Press the button at the given index down.
+        /// </summary>
+        /// <param name="buttonIndex"></param>
+        public void PressButton(int buttonIndex) => AnimateButton(buttonIndex, true);
 
         /// <summary>
         ///     Release the button at the given index up.
         /// </summary>
         /// <param name="buttonIndex"></param>
-        public void ReleaseButton(int buttonIndex)
-        {
-            if (!hasButtons)
-                throw new System.Exception($"{name} does not use buttons.");
-
-            buttonAnimators[buttonIndex].SetBool(buttonAnimatorToggle, false);
-        }
+        public void ReleaseButton(int buttonIndex) => AnimateButton(buttonIndex, false);
 
         #endregion
 

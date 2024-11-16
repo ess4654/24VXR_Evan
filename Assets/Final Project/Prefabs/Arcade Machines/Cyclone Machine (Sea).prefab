@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3690055341499808308
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 542232877707111612, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00000064176476
+      objectReference: {fileID: 0}
+    - target: {fileID: 542232877707111612, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000033728088
+      objectReference: {fileID: 0}
+    - target: {fileID: 542232877707111612, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.49999842
+      objectReference: {fileID: 0}
+    - target: {fileID: 542232877707111612, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542232877707111612, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.86602634
+      objectReference: {fileID: 0}
+    - target: {fileID: 542232877707111612, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542232877707111612, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 615111073573311846, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21f81e8626ef7354a8893dff77e116c9, type: 2}
+    - target: {fileID: 856141950948513799, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: lightOnMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fac0855e086803b408d35b859f3baf09, type: 2}
+    - target: {fileID: 856141950948513799, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: lightOffMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 21f81e8626ef7354a8893dff77e116c9, type: 2}
+    - target: {fileID: 1420532917912589899, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbdd9e7dbfd582d4498945052873aa31, type: 2}
+    - target: {fileID: 1853246576007560803, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: saveKey
+      value: Cyclone2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392903462748602021, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 64e3963f172875e4c892261b344c589d, type: 2}
+    - target: {fileID: 4290679752828991245, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290679752828991245, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290679752828991245, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324328739412163946, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21f81e8626ef7354a8893dff77e116c9, type: 2}
+    - target: {fileID: 4827918249262804244, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Name
+      value: Cyclone Machine (Sea)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740954183279843638, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21f81e8626ef7354a8893dff77e116c9, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78503f8b52f063245bacc43109622387, type: 3}

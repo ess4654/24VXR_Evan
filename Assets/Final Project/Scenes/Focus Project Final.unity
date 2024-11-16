@@ -2237,6 +2237,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machines
       objectReference: {fileID: 0}
+    - target: {fileID: 6430053498398429475, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.556007
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430053498398429475, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.678547
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430053498398429475, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 8039606526100377979, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2247,16 +2262,34 @@ PrefabInstance:
       propertyPath: uiPanel
       value: Cyclone
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8334962447906042675, guid: 92dbd67369697694f86e073f31d5ba4c, type: 3}
-    - {fileID: 7639199185969789259, guid: 92dbd67369697694f86e073f31d5ba4c, type: 3}
-    - {fileID: 6552938274525864746, guid: 92dbd67369697694f86e073f31d5ba4c, type: 3}
-    - {fileID: 2528370581002580387, guid: 92dbd67369697694f86e073f31d5ba4c, type: 3}
-    - {fileID: 8110295825563385741, guid: 92dbd67369697694f86e073f31d5ba4c, type: 3}
-    - {fileID: 6733773257272700260, guid: 92dbd67369697694f86e073f31d5ba4c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1974107788852279235, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4184421324175064016, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5531012305763781279, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2180187462124199486, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4555084702586065453, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5325222894965236578, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 92dbd67369697694f86e073f31d5ba4c, type: 3}
 --- !u!1001 &2679380339205800349
 PrefabInstance:

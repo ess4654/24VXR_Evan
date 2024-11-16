@@ -141,15 +141,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panels:
-  - key: Cyclone
+  - key: cyclone
     panel: {fileID: 6352430237525378164}
-  - key: BigWheel
+  - key: big-wheel
     panel: {fileID: 2001368234193640002}
-  - key: PirateSpin
+  - key: pirate-spin
     panel: {fileID: 4597571829572211244}
-  - key: ClawMachine
+  - key: claw-machine
     panel: {fileID: 3386832563823991366}
-  - key: Shooter
+  - key: shooter
     panel: {fileID: 8531331019426123045}
   xrCameraPivot: {fileID: 0}
   distanceFromCamera: 10

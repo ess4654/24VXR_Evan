@@ -30,6 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6636273918019156190}
+  - {fileID: 6430053498398429475}
   - {fileID: 3193308408652071265}
   - {fileID: 524560535313983073}
   - {fileID: 8956782725596754451}
@@ -48,7 +49,7 @@ PrefabInstance:
     - target: {fileID: 2206672718990774239, guid: da45ff8a6f6f43f4bb470a449efb16df,
         type: 3}
       propertyPath: m_Name
-      value: Claw Machine (2)
+      value: Claw Machine
       objectReference: {fileID: 0}
     - target: {fileID: 6349794452640904224, guid: da45ff8a6f6f43f4bb470a449efb16df,
         type: 3}
@@ -144,6 +145,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1040748325178811616, guid: f0d3e5a0e6cf5dd4eb433dc398b01368,
     type: 3}
   m_PrefabInstance: {fileID: 4850976440751546904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5873284206162746394
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1196527357787940905}
+    m_Modifications:
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.81915176
+      objectReference: {fileID: 0}
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.57357687
+      objectReference: {fileID: 0}
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -140
+      objectReference: {fileID: 0}
+    - target: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085513675056584480, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cyclone Machine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a0d4ed7fa6a2b44195b92b720620ac2, type: 3}
+--- !u!4 &6430053498398429475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 630006181925342521, guid: 8a0d4ed7fa6a2b44195b92b720620ac2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5873284206162746394}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6870414329087005249
 PrefabInstance:
@@ -279,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 4290679752828991245, guid: 78503f8b52f063245bacc43109622387,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.009999275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4290679752828991245, guid: 78503f8b52f063245bacc43109622387,
         type: 3}

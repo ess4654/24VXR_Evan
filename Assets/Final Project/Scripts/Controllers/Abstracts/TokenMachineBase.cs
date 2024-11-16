@@ -2,15 +2,16 @@ using ArcadeGame.Data;
 using static ArcadeGame.Data.Constants;
 using ArcadeGame.Views;
 using ArcadeGame.Views.Machines;
-using UnityEngine;
-
 using Shared.Editor;
+using TMPro;
+using UnityEngine;
 
 namespace ArcadeGame.Controllers.Machines
 {
     /// <summary>
     ///     Base class used by all token arcade machines.
     /// </summary>
+    [SelectionBase]
     public abstract class TokenMachineBase : Shared.Behaviour
     {
         #region VARIABLE DECLARATIONS
@@ -22,6 +23,7 @@ namespace ArcadeGame.Controllers.Machines
         [SerializeField] private bool hasJackpot;
         [SerializeField, DependsUpon("hasJackpot")] private Vector2Int jackpotRange;
         [SerializeField, DependsUpon("hasJackpot")] private LightFlasher jackpotFlasher;
+        [SerializeField, DependsUpon("hasJackpot")] private TextMeshPro[] jackpotLCD;
         
         [SerializeField] private bool hasTimer;
         [SerializeField, DependsUpon("hasTimer")] private float gameTime = 30;
@@ -70,13 +72,10 @@ namespace ArcadeGame.Controllers.Machines
                 {
                     currentJackpot = PlayerPrefs.GetInt(saveKey + jackpotKey, 0);
 
-                    //generate the jackpot amount if it is not saved
                     if (currentJackpot == 0)
-                    {
-                        currentJackpot = jackpotRange.x == jackpotRange.y ? jackpotRange.x : Random.Range(jackpotRange.x, jackpotRange.y + 1);
-                        PlayerPrefs.SetInt(saveKey + jackpotKey, currentJackpot);
-                        PlayerPrefs.Save(); //commit changes
-                    }
+                        ResetJackpot(); //generate the jackpot amount if it is not saved
+                    else
+                        UpdateJackpotDisplay();
                 }
             }
         }
@@ -103,7 +102,33 @@ namespace ArcadeGame.Controllers.Machines
         #endregion
 
         #region METHODS
+        
+        /// <summary>
+        ///     Resets the jackpot amount.
+        /// </summary>
+        protected void ResetJackpot()
+        {
+            currentJackpot = jackpotRange.x == jackpotRange.y ? jackpotRange.x : Random.Range(jackpotRange.x, jackpotRange.y + 1);
+            UpdateJackpotDisplay();
 
+            PlayerPrefs.SetInt(saveKey + jackpotKey, currentJackpot);
+            PlayerPrefs.Save(); //commit changes
+        }
+
+        /// <summary>
+        ///     Updates the jackpot LCD display.
+        /// </summary>
+        private void UpdateJackpotDisplay()
+        {
+            foreach(var lcd in jackpotLCD)
+                lcd.text = currentJackpot.ToString();
+        }
+
+        #endregion
+
+        #region DEBUGGING
+        [Debugging]
+        [SerializeField, InspectorButton("ResetJackpot")] bool m_ResetJackpot;
         #endregion
     }
 }
