@@ -50,6 +50,8 @@ MonoBehaviour:
   requiredTokens: 0
   hasJackpot: 0
   jackpotRange: {x: 0, y: 0}
+  hasTimer: 1
+  gameTime: 30
   saveKey: ClawMachine
   animator: {fileID: -6483880171739762639}
 --- !u!114 &-6483880171739762639
@@ -64,6 +66,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82286c7e9393dc540b185ca1925d3c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasButtons: 1
+  buttonAnimatorToggle: Pressed
+  buttonAnimators:
+  - {fileID: 0}
+  m_buttonIndex: 0
 --- !u!95 &-7398711703365561930
 Animator:
   serializedVersion: 5

@@ -1,3 +1,6 @@
+using ArcadeGame.Views;
+using UnityEngine;
+
 namespace ArcadeGame.Controllers.Machines
 {
     /// <summary>
@@ -5,5 +8,7 @@ namespace ArcadeGame.Controllers.Machines
     /// </summary>
     public class Cyclone : TokenMachineBase
     {
+        [Header("Cyclone Settings")]
+        [SerializeField] private LightCycler lightController;
     }
 }

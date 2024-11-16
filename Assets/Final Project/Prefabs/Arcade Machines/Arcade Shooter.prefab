@@ -50,6 +50,8 @@ MonoBehaviour:
   requiredTokens: 0
   hasJackpot: 0
   jackpotRange: {x: 0, y: 0}
+  hasTimer: 1
+  gameTime: 60
   saveKey: ShooterGame
   animator: {fileID: -2734025647924352279}
 --- !u!114 &-2734025647924352279
@@ -64,6 +66,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecb32acc553d554abcc06bc19d1f750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasButtons: 0
+  buttonAnimatorToggle: Pressed
+  buttonAnimators: []
+  m_buttonIndex: 0
 --- !u!95 &2919662200125350490
 Animator:
   serializedVersion: 5

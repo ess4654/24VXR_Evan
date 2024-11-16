@@ -64,6 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788b95f0d925f9a4aadcd064b51156a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasButtons: 1
+  buttonAnimatorToggle: Pressed
+  buttonAnimators:
+  - {fileID: 0}
+  m_buttonIndex: 0
 --- !u!95 &-263786875138391998
 Animator:
   serializedVersion: 5

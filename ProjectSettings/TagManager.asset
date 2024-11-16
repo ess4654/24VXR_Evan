@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ingredient
   - Lights
+  - Sound FX
   layers:
   - Default
   - TransparentFX
