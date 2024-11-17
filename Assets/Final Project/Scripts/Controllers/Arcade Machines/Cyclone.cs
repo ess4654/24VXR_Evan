@@ -19,6 +19,9 @@ namespace ArcadeGame.Controllers.Machines
         [Header("Cyclone Settings")]
         [SerializeField] private LightCycler lightController;
 
+        /// <summary>
+        ///     The position the player is standing at the machine.
+        /// </summary>
         private int playerPosition = 0;
 
         private const float jackpotFlashTime = 3.0f;
@@ -50,13 +53,13 @@ namespace ArcadeGame.Controllers.Machines
         #region METHODS
 
         /// <summary>
-        ///     Starts the cyclone game.
+        ///     Interact with the cyclone game.
         /// </summary>
         /// <param name="standingPosition">Standing position of the player.</param>
-        public void StartGame(int standingPosition)
+        public void Interact(int standingPosition)
         {
             playerPosition = standingPosition;
-            GameData.State = gameStateOnPlay;
+            base.Interact();
         }
 
         /// <summary>
@@ -80,7 +83,7 @@ namespace ArcadeGame.Controllers.Machines
                     Log("Jackpot Won");
                     AwardTickets(currentJackpot);
 
-                    await jackpotFlasher.FlashAll(jackpotFlashTime); //flash the jackpot light for 3 seconds
+                    await jackpotFlasher.FlashLightAtIndex(jackpotFlashTime, playerPosition); //flash the jackpot light for 3 seconds
                     ResetJackpot(); //create a new jackpot amount
                 }
                 else //Skip to the next light and recalculate the amount of tickets won

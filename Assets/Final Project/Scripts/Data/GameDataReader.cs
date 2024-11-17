@@ -1,4 +1,5 @@
 ﻿using Shared;
+using Shared.Editor;
 using UnityEngine;
 
 namespace ArcadeGame.Data
@@ -10,10 +11,10 @@ namespace ArcadeGame.Data
     {
         protected override bool DontDestroy => true;
 
-        [SerializeField] private GameState gameState;
-        [SerializeField] private int tokens;
-        [SerializeField] private int tickets;
-        [SerializeField, TextArea(5, 10)] private string prizes;
+        [SerializeField, ReadOnly] private GameState gameState;
+        [SerializeField, ReadOnly] private int tokens;
+        [SerializeField, ReadOnly] private int tickets;
+        [SerializeField, TextArea(5, 10), ReadOnly] private string prizes;
 
         protected override void Awake()
         {

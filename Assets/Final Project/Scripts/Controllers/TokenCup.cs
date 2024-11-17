@@ -17,12 +17,14 @@ namespace ArcadeGame.Controllers
         [SerializeField, Range(0f, 1f)] private float spawnChance = .5f;
         [SerializeField] private Vector2 spawnTime = Vector2.one;
         [SerializeField] private Material[] cupMaterials;
+        [SerializeField] private Vector2Int randomTokenRange;
 
         /// <summary>
         ///     Has the cup been spawned into the world?
         /// </summary>
         private bool isSpawned => cup.enabled;
         private MeshRenderer cup;
+        private BoxCollider region;
 
         #endregion
 
@@ -30,9 +32,12 @@ namespace ArcadeGame.Controllers
 
         private void Awake()
         {
-            GetComponent<BoxCollider>().isTrigger = true;
+            region = GetComponent<BoxCollider>();
+            region.enabled = false;
+
             cup = GetComponent<MeshRenderer>();
             cup.enabled = false;
+            
             Respawn();
         }
 
@@ -64,5 +69,17 @@ namespace ArcadeGame.Controllers
         }
 
         #endregion
+
+        /// <summary>
+        ///     Collect the token cup and award player with tokens.
+        /// </summary>
+        public void Collect()
+        {
+            cup.enabled = false;
+            region.enabled = false;
+            var tokensCollected = Random.Range(randomTokenRange.x, randomTokenRange.y + 1);
+            GameEventBroadcaster.BroadcastTokensCollected(tokensCollected);
+            Respawn(); //restart the spawn routine.
+        }
     }
 }

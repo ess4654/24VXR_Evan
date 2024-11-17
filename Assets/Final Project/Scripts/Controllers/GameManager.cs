@@ -25,11 +25,13 @@ namespace ArcadeGame.Controllers
 
         private void OnEnable()
         {
+            GameEventBroadcaster.OnTokensCollected += HandleTokensCollected;
             GameEventBroadcaster.OnTicketsWon += HandleTicketsWon;
         }
 
         private void OnDisable()
         {
+            GameEventBroadcaster.OnTokensCollected -= HandleTokensCollected;
             GameEventBroadcaster.OnTicketsWon -= HandleTicketsWon;
         }
 
@@ -38,7 +40,16 @@ namespace ArcadeGame.Controllers
         #region METHODS
 
         /// <summary>
-        ///     Handles the event broadcast by ticket machines.
+        ///     Handles the event broadcast by token cups when tokens are collected.
+        /// </summary>
+        /// <param name="amount">The amount of tokens collected.</param>
+        private void HandleTokensCollected(int amount)
+        {
+            GameData.AddTokens(amount);
+        }
+
+        /// <summary>
+        ///     Handles the event broadcast by ticket machines when tickets are won.
         /// </summary>
         /// <param name="amount">Amount of tickets won.</param>
         private void HandleTicketsWon(int amount)

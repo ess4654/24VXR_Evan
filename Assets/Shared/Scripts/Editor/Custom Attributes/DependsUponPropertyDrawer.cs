@@ -50,7 +50,7 @@ namespace Shared.Editor
                     display &= (obj is float f) ? (not ? variable.floatValue != f : variable.floatValue == f) : (not ? variable.floatValue == 0 : variable.floatValue != 0);
                 else if (variable.propertyType == SerializedPropertyType.Integer)
                     display &= (obj is int _i) ? (not ? variable.intValue != _i : variable.intValue == _i) : (not ? variable.intValue == 0 : variable.intValue != 0);
-                
+
                 // vectors
                 else if (variable.propertyType == SerializedPropertyType.Vector2)
                     display &= (obj is string || obj is IFormattable) ? (not ? variable.vector2Value != ToVector2(obj.ToString()) : variable.vector2Value == ToVector2(obj.ToString())) : (not ? variable.vector2Value == Vector2.zero : variable.vector2Value != Vector2.zero);
@@ -58,6 +58,15 @@ namespace Shared.Editor
                     display &= (obj is string || obj is IFormattable) ? (not ? variable.vector3Value != ToVector3(obj.ToString()) : variable.vector3Value == ToVector3(obj.ToString())) : (not ? variable.vector3Value == Vector3.zero : variable.vector3Value != Vector3.zero);
                 else if (variable.propertyType == SerializedPropertyType.Vector4)
                     display &= (obj is string || obj is IFormattable) ? (not ? variable.vector4Value != ToVector4(obj.ToString()) : variable.vector4Value == ToVector4(obj.ToString())) : (not ? variable.vector4Value == Vector4.zero : variable.vector4Value != Vector4.zero);
+
+                // object reference
+                else if (variable.propertyType == SerializedPropertyType.ObjectReference)
+                    display &=
+                        (obj == null) ?
+                        (not ? variable.objectReferenceValue == null : variable.objectReferenceValue != null) :
+
+                        (obj is int _o) ? ((_o == 0 && (not ? variable.objectReferenceValue != null : variable.objectReferenceValue == null)) || (_o != 0 && (not ? variable.objectReferenceValue == null : variable.objectReferenceValue != null))) :
+                        (obj is bool _oB && ((!_oB && (not ? variable.objectReferenceValue != null : variable.objectReferenceValue == null)) || (_oB && (not ? variable.objectReferenceValue == null : variable.objectReferenceValue != null))));
             }
 
             foreach (var predicate in predicates)

@@ -79,7 +79,15 @@ namespace ArcadeGame.Controllers.Machines
         #endregion
 
         #region METHODS
-        
+
+        /// <summary>
+        ///     Engage in interaction with the machine.
+        /// </summary>
+        public void Interact()
+        {
+            GameData.State = gameStateOnPlay;
+        }
+
         #endregion
 
         #region DEBUGGING

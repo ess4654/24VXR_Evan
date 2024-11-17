@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dbdd9e7dbfd582d4498945052873aa31, type: 2}
+    - target: {fileID: 1420532917912589899, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: eff6c8b270be30647bb78c370aed6cb6, type: 2}
     - target: {fileID: 1853246576007560803, guid: 78503f8b52f063245bacc43109622387,
         type: 3}
       propertyPath: saveKey
@@ -463,6 +468,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 437418df8c24a0a459f7b6b996256225, type: 2}
+    - target: {fileID: 4044510727721748642, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c55cdf8a74459cc4d8d19826b15fc91f, type: 3}
     - target: {fileID: 4290679752828991245, guid: 78503f8b52f063245bacc43109622387,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

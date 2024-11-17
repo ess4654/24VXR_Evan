@@ -2242,6 +2242,11 @@ PrefabInstance:
       propertyPath: lights.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6896053793271646065, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7857302484306338410, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

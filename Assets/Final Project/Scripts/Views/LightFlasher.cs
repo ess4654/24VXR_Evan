@@ -1,5 +1,6 @@
 using Shared.Editor;
 using Shared.Helpers;
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -22,7 +23,25 @@ namespace ArcadeGame.Views
         /// </summary>
         /// <param name="time">Amount of time to flash the light.</param>
         /// <returns>Completed flashing task</returns>
-        public async Task FlashAll(float time)
+        public Task FlashAll(float time) =>
+            FlashingRoutine(time, newState => UpdateAllLights(newState));
+
+        /// <summary>
+        ///     Flashes the given light on/off for the given amount of time.
+        /// </summary>
+        /// <param name="time">Amount of time to flash the light.</param>
+        /// <param name="lightIndex">Index of the light to be flashed.</param>
+        /// <returns>Completed flashing task</returns>
+        public Task FlashLightAtIndex(float time, int lightIndex) =>
+            FlashingRoutine(time, newState => UpdateLight(lightIndex, newState));
+
+        /// <summary>
+        ///     Flashing routine handles the starting/stopping of light flashing.
+        /// </summary>
+        /// <param name="time">Amount of time to flash the light.</param>
+        /// <param name="flashingAction"></param>
+        /// <returns>Completed flashing task</returns>
+        private async Task FlashingRoutine(float time, Action<bool> flashingAction)
         {
             if (isFlashing) return; //we are already flashing
 
@@ -39,7 +58,7 @@ namespace ArcadeGame.Views
 
             while (this && Time.time < completeTime)
             {
-                UpdateAllLights(newState);
+                flashingAction?.Invoke(newState); 
                 newState = !newState;
 
                 await Timer.WaitForSeconds(delay);
@@ -47,7 +66,7 @@ namespace ArcadeGame.Views
             }
 
             //reset the flasher
-            UpdateAllLights(false);
+            flashingAction?.Invoke(false);
             isFlashing = false;
             OnFlashingStop(); //engine
         }

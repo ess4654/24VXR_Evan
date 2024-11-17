@@ -1,3 +1,4 @@
+using ArcadeGame.Data;
 using Shared;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +80,22 @@ namespace ArcadeGame.Views
             var panelParent = Instance.panels.FirstOrDefault(x => x.key == key);
             if(panelParent.panel != null)
                 panelParent.panel.gameObject.SetActive(active);
+        }
+
+        /// <summary>
+        ///     Updates the token count after the game manager adds tokens to the GameData.
+        /// </summary>
+        public void UpdateTokenCount()
+        {
+            var tokens = GameData.Tokens;
+        }
+
+        /// <summary>
+        ///     Updates the tickets count after the game manager adds tokens to the GameData.
+        /// </summary>
+        public void UpdateTicketCount()
+        {
+            var tickets = GameData.Tickets;
         }
 
         #endregion

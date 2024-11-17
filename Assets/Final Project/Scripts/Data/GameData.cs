@@ -109,6 +109,16 @@ namespace ArcadeGame.Data
         #endregion
 
         /// <summary>
+        ///     Adds tokens to the game data.
+        /// </summary>
+        /// <param name="amount">The amount of tickets.</param>
+        public static void AddTokens(int amount)
+        {
+            Tokens += Mathf.Abs(amount);
+            SaveGameData();
+        }
+
+        /// <summary>
         ///     Adds tickets to the game data.
         /// </summary>
         /// <param name="amount">The amount of tickets.</param>
@@ -117,6 +127,8 @@ namespace ArcadeGame.Data
             Tickets += Mathf.Abs(amount);
             SaveGameData();
         }
+
+        #region CLEANUP
 
         /// <summary>
         ///     Resets the game data and exports a new save.
@@ -132,6 +144,8 @@ namespace ArcadeGame.Data
             //export the save
             SaveGameData();
         }
+
+        #endregion
 
         #endregion
     }
