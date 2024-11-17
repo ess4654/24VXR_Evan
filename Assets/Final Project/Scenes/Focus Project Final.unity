@@ -2319,6 +2319,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2099469042}
+    - target: {fileID: 4696226601000647658, guid: 8493d9364160dec47b67f942e56066e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444294065602357488, guid: 8493d9364160dec47b67f942e56066e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7747725456791074401, guid: 8493d9364160dec47b67f942e56066e3,
         type: 3}
       propertyPath: xrCameraPivot
