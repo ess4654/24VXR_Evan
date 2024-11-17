@@ -64,6 +64,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Neon - Yellow
     second: {fileID: 2100000, guid: a0a50517564e4094faf1073f86edba44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Side Panel
+    second: {fileID: 2100000, guid: 93c281f790e4bcc4c87c54cc00026af6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

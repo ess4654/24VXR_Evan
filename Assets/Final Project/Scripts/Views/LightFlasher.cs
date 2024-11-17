@@ -12,8 +12,10 @@ namespace ArcadeGame.Views
     {
         public const string Filename = "Light Flasher";
 
-        [SerializeField, ReadOnly] private bool isFlashing;
+        [SerializeField, ReadOnly] protected bool isFlashing;
         [SerializeField, Min(2)] private int numberFlashes = 10;
+
+        #region METHODS
 
         /// <summary>
         ///     Flashes all lights on/off for the given length of time.
@@ -23,6 +25,8 @@ namespace ArcadeGame.Views
         public async Task FlashAll(float time)
         {
             if (isFlashing) return; //we are already flashing
+
+            OnFlashingStart(); //engine
             isFlashing = true;
 
             //calculate time
@@ -44,8 +48,25 @@ namespace ArcadeGame.Views
 
             //reset the flasher
             UpdateAllLights(false);
-            isFlashing = false ;
+            isFlashing = false;
+            OnFlashingStop(); //engine
         }
+
+        #endregion
+
+        #region ENGINE
+
+        /// <summary>
+        ///     OnFlashingStart is called when the light starts flashing.
+        /// </summary>
+        protected virtual void OnFlashingStart() { }
+
+        /// <summary>
+        ///     OnFlashingStop is called when the light stops flashing.
+        /// </summary>
+        protected virtual void OnFlashingStop() { }
+
+        #endregion
 
         #region DEBUGGING
         [Debugging]

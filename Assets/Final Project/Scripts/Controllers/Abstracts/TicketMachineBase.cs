@@ -1,6 +1,7 @@
 ﻿using ArcadeGame.Views;
 using Shared.Editor;
 using Shared.Helpers.Extensions;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -14,15 +15,16 @@ namespace ArcadeGame.Controllers.Machines
         #region VARIABLE DECALRATIONS
 
         [SerializeField] private bool spinningGame;
-        [SerializeField, DependsUpon("spinningGame")] private Transform spinAxis;
+        [SerializeField, DependsUpon("spinningGame")] protected Transform spinAxis;
 
         [Header("Ticket Settings")]
+        [SerializeField] protected int largeTicketThreshold = 100;
         [SerializeField] private bool hasJackpot;
         [SerializeField, DependsUpon("hasJackpot")] private Vector2Int jackpotRange;
         [SerializeField, DependsUpon("hasJackpot")] protected LightFlasher jackpotFlasher;
         [SerializeField, DependsUpon("hasJackpot")] private TextMeshPro[] jackpotLCD;
         
-        [SerializeField] protected int[] ticketAmounts;
+        [SerializeField] protected List<int> ticketAmounts;
 
         protected int currentJackpot;
 
@@ -74,6 +76,16 @@ namespace ArcadeGame.Controllers.Machines
         {
             foreach (var lcd in jackpotLCD)
                 lcd.text = currentJackpot.ToString();
+        }
+
+        /// <summary>
+        ///     Awards the player with tickets.
+        /// </summary>
+        /// <param name="ticketsWon">Number of tickets won.</param>
+        protected void AwardTickets(int ticketsWon)
+        {
+            Log($"Tickets Won: {ticketsWon}");
+            GameEventBroadcaster.BroadcastTicketsWon(ticketsWon);
         }
 
         #endregion

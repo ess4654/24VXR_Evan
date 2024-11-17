@@ -72,7 +72,7 @@ namespace ArcadeGame.Controllers.Machines
             
             //calculate the amount of tickets won.
             var ticketsWon = ticketAmounts[lightIndex];
-            if(ticketsWon == -1) //we hit the jackpot
+            if(ticketsWon == Constants.Jackpot) //we hit the jackpot
             {
                 Log("Jackpot Hit");
                 if(Random.value <= Constants.JackpotOdds) //we have beaten the jackpot odds
@@ -91,7 +91,24 @@ namespace ArcadeGame.Controllers.Machines
             }
             else //we did not hit the jackpot
             {
-                AwardTickets(ticketsWon);
+                if (ticketsWon >= largeTicketThreshold) //large number of tickets won
+                {
+                    Log("Large Tickets Hit");
+                    if (Random.value <= Constants.LargeWinningOdds) //we have beaten the odds of winning big
+                    {
+                        Log("Large Tickets Won");
+                        AwardTickets(currentJackpot);
+                    }
+                    else //Skip to the next light and recalculate the amount of tickets won
+                    {
+                        lightIndex = lightController.SkipNextLight();
+                        AwardTickets(ticketAmounts[lightIndex]);
+                    }
+                }
+                else //we did not hit a large winning or jackpot
+                {
+                    AwardTickets(ticketsWon);
+                }
             }
 
             await ReleaseButton(); //reset the button and light cycler
@@ -108,16 +125,6 @@ namespace ArcadeGame.Controllers.Machines
 
             //animate the button release
             animator.ReleaseButton(playerPosition);
-        }
-
-        /// <summary>
-        ///     Awards the player with tickets.
-        /// </summary>
-        /// <param name="ticketsWon">Number of tickets won.</param>
-        private void AwardTickets(int ticketsWon)
-        {
-            Log($"Tickets Won: {ticketsWon}");
-            GameEventBroadcaster.BroadcastTicketsWon(ticketsWon);
         }
 
         #endregion

@@ -2237,35 +2237,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machines
       objectReference: {fileID: 0}
-    - target: {fileID: 6430053498398429475, guid: 92dbd67369697694f86e073f31d5ba4c,
+    - target: {fileID: 6113293311839674434, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -20.556007
+      propertyPath: lights.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6430053498398429475, guid: 92dbd67369697694f86e073f31d5ba4c,
+    - target: {fileID: 7857302484306338410, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.678547
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 6430053498398429475, guid: 92dbd67369697694f86e073f31d5ba4c,
+    - target: {fileID: 8682887371234784763, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467781981605708143, guid: 92dbd67369697694f86e073f31d5ba4c,
-        type: 3}
-      propertyPath: m_Name
-      value: Greybox
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039606526100377979, guid: 92dbd67369697694f86e073f31d5ba4c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.8443785
-      objectReference: {fileID: 0}
-    - target: {fileID: 9091435617238004144, guid: 92dbd67369697694f86e073f31d5ba4c,
-        type: 3}
-      propertyPath: uiPanel
-      value: Cyclone
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

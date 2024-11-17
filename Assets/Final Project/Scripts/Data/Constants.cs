@@ -37,6 +37,11 @@
         #region TICKET MACHINES
 
         /// <summary>
+        ///     Flag indicates jackpot amount.
+        /// </summary>
+        public const int Jackpot = -1;
+
+        /// <summary>
         ///     The odds of hitting a jackpot. Makes the game more difficult.
         /// </summary>
         public const float JackpotOdds = .1f;
@@ -47,7 +52,7 @@
         /// <remarks>
         ///     Note: This is different than the jackpot odds.
         /// </remarks>
-        public const float LargeWinningOdds = .3f;
+        public const float LargeWinningOdds = .25f;
 
         #endregion
     }
