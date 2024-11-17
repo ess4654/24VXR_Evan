@@ -11,9 +11,41 @@ namespace ArcadeGame.Controllers
         public const string Filename = "Game Manager";
         protected override bool DontDestroy => true;
 
+        #region VARIABLE DECLARATIONS
+
+        #endregion
+
+        #region SETUP
+
         private void Start()
         {
             GameData.State = GameState.Arcade;
+            GameData.LoadData();
         }
+
+        private void OnEnable()
+        {
+            GameEventBroadcaster.OnTicketsWon += HandleTicketsWon;
+        }
+
+        private void OnDisable()
+        {
+            GameEventBroadcaster.OnTicketsWon -= HandleTicketsWon;
+        }
+
+        #endregion
+
+        #region METHODS
+
+        /// <summary>
+        ///     Handles the event broadcast by ticket machines.
+        /// </summary>
+        /// <param name="amount">Amount of tickets won.</param>
+        private void HandleTicketsWon(int amount)
+        {
+            GameData.AddTickets(amount);
+        }
+
+        #endregion
     }
 }

@@ -11,6 +11,13 @@
         public const bool Debugging = true;
 
         /// <summary>
+        ///     The default key to use for saving/loading player prefs.
+        /// </summary>
+        public const string DefaultSaveFile = "ArcadeGameData";
+
+        #region TOKEN MACHINES
+
+        /// <summary>
         ///     The maximum amount of tokens that any machine can require to play.
         /// </summary>
         public const int MaxMachineTokens = 10;
@@ -21,9 +28,13 @@
         public const int StartingTokens = 10;
 
         /// <summary>
-        ///     The default key to use for saving/loading player prefs.
+        ///     The amount of time to keep a button pressed down.
         /// </summary>
-        public const string DefaultSaveFile = "ArcadeGameData";
+        public const float ButtonDownTime = 3f;//1.0f;
+
+        #endregion
+
+        #region TICKET MACHINES
 
         /// <summary>
         ///     The odds of hitting a jackpot. Makes the game more difficult.
@@ -31,8 +42,13 @@
         public const float JackpotOdds = .1f;
 
         /// <summary>
-        ///     The amount of time to keep a button pressed down.
+        ///     The odds of winning a large number of tickets.
         /// </summary>
-        public const float ButtonDownTime = 3f;//1.0f;
+        /// <remarks>
+        ///     Note: This is different than the jackpot odds.
+        /// </remarks>
+        public const float LargeWinningOdds = .3f;
+
+        #endregion
     }
 }
