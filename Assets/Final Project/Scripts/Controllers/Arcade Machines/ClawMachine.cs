@@ -1,3 +1,5 @@
+using ArcadeGame.Views.Machines;
+using Shared.Editor;
 using UnityEngine;
 
 namespace ArcadeGame.Controllers.Machines
@@ -11,7 +13,9 @@ namespace ArcadeGame.Controllers.Machines
 
         #region VARIABLE DECLARATIONS
 
-        private Vector2 leftControllerAxis;
+        [SerializeField, Axis] private Vector2 joystickAxis;
+
+        private new ClawMachineAnimator animator => base.animator as ClawMachineAnimator;
 
         #endregion
 
@@ -31,7 +35,16 @@ namespace ArcadeGame.Controllers.Machines
         ///     Cache the value of the left controller rotation axis for use.
         /// </summary>
         /// <param name="rotationAxis">Axis of rotation.</param>
-        private void HandleControllerRotation(Vector2 rotationAxis) => leftControllerAxis = rotationAxis;
+        private void HandleControllerRotation(Vector2 rotationAxis) => joystickAxis = rotationAxis;
+
+        #endregion
+
+        #region ENGINE
+
+        protected override void OnGameActive()
+        {
+            animator.AnimateJoystick(in joystickAxis);
+        }
 
         #endregion
     }

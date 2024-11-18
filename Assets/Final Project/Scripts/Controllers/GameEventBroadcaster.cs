@@ -1,5 +1,6 @@
 using ArcadeGame.Data;
 using Assets.Final_Project.Scripts.Controllers;
+using System;
 
 namespace ArcadeGame.Controllers
 {
@@ -21,7 +22,7 @@ namespace ArcadeGame.Controllers
         /// </summary>
         /// <param name="value">Value of the integer.</param>
         public delegate void IntAction(int value);
-
+        
         /// <summary>
         ///    An event that contains an interaction area. 
         /// </summary>
@@ -46,6 +47,11 @@ namespace ArcadeGame.Controllers
         ///     Called when the player wins tickets.
         /// </summary>
         public static event IntAction OnTicketsWon;
+        
+        /// <summary>
+        ///     Called if the player wins the jackpot of an arcade machine.
+        /// </summary>
+        public static event Action OnJackpotWon;
 
         /// <summary>
         ///     Called when the player enters a region.
@@ -76,6 +82,12 @@ namespace ArcadeGame.Controllers
         /// <param name="amountTickets">The amount of tickets won by the player.</param>
         public static void BroadcastTicketsWon(int amountTickets) =>
             OnTicketsWon?.Invoke(amountTickets);
+
+        /// <summary>
+        ///     Broadcasts event when the jackpot is won.
+        /// </summary>
+        public static void BroadcastJackpotWon() =>
+            OnJackpotWon?.Invoke();
 
         /// <summary>
         ///     Broadcasts event when tickets are won.

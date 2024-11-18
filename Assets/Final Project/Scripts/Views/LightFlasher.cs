@@ -15,6 +15,12 @@ namespace ArcadeGame.Views
 
         [SerializeField, ReadOnly] protected bool isFlashing;
         [SerializeField, Min(2)] private int numberFlashes = 10;
+        
+        /// <summary>
+        ///     The default flash time for the flashing animation
+        /// </summary>
+        public float DefaultFlashTime => flashTime;
+        [SerializeField] private float flashTime = 3f;
 
         #region METHODS
 
@@ -67,8 +73,8 @@ namespace ArcadeGame.Views
 
             //reset the flasher
             flashingAction?.Invoke(false);
+            await OnFlashingStop(); //engine
             isFlashing = false;
-            OnFlashingStop(); //engine
         }
 
         #endregion
@@ -83,13 +89,13 @@ namespace ArcadeGame.Views
         /// <summary>
         ///     OnFlashingStop is called when the light stops flashing.
         /// </summary>
-        protected virtual void OnFlashingStop() { }
+        /// <returns>Completed stopping routine</returns>
+        protected virtual Task OnFlashingStop() => Task.CompletedTask;
 
         #endregion
 
         #region DEBUGGING
         [Debugging]
-        [SerializeField] float flashTime = 3f;
         [SerializeField, InspectorButton("TestFlash")] bool m_Flash;
         public async void TestFlash() => await FlashAll(flashTime);
         #endregion

@@ -1,5 +1,6 @@
 ﻿using ArcadeGame.Views;
 using Shared.Helpers;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Final_Project.Scripts.Views.Abstract
@@ -25,13 +26,13 @@ namespace Assets.Final_Project.Scripts.Views.Abstract
             sirenSound.Play();
         }
 
-        protected override async void OnFlashingStop()
+        protected override async Task OnFlashingStop()
         {
             //stop the siren sound
             sirenSound.loop = false;
 
             //wait for the current siren sound to complete before we reset the loop and stop the audio source
-            await Timer.WaitForSeconds(sirenSound.clip.length);
+            await Timer.WaitUntil(() => sirenSound.time == 0 || sirenSound.time >= sirenSound.clip.length || !sirenSound.isPlaying);
             sirenSound.Stop();
             sirenSound.loop = true;
         }

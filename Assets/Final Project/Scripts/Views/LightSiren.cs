@@ -1,5 +1,6 @@
 using Assets.Final_Project.Scripts.Views.Abstract;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace ArcadeGame.Views
@@ -64,11 +65,10 @@ namespace ArcadeGame.Views
             ToggleSpotlights(true);
         }
 
-        protected override void OnFlashingStop()
+        protected override async Task OnFlashingStop()
         {
+            await base.OnFlashingStop();
             ToggleSpotlights(false);
-
-            base.OnFlashingStop();
         }
 
         /// <summary>

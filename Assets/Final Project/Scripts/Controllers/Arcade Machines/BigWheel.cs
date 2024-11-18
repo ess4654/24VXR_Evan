@@ -18,7 +18,7 @@ namespace ArcadeGame.Controllers.Machines
         private const float largeWinningChance = Constants.LargeWinningOdds / 3.5f; //reduced chance of winning big because there are only 16 ticket spaces
         private const float fullRotation = 360f;
 
-        [SerializeField] private bool isSpinning;
+        [SerializeField, ReadOnly] private bool isSpinning;
         [SerializeField, Min(1)] private int rotations = 10;
         [SerializeField] private Vector2 spinTimeRange = new Vector2(10, 20);
         [SerializeField] private AnimationCurve spinCurve;
@@ -70,14 +70,14 @@ namespace ArcadeGame.Controllers.Machines
                     //Log($"Stop Axis: {stopRotation}");
                     //Log($"Stop Rotation: {spinAxis.localRotation.eulerAngles}");
                     startingRotation = stopRotation; //set the starting rotation for the next spin
+                    isSpinning = false;
                 })
                 .setEase(spinCurve);
 
-            await Timer.WaitForSeconds(spinTime);
+            await Timer.WaitUntil(() => !isSpinning); //wait for spinning to stop
             
             AwardTickets(ticketsWon);
 
-            isSpinning = false;
             return ticketsWon;
         }
 
@@ -93,28 +93,18 @@ namespace ArcadeGame.Controllers.Machines
             {
                 Log("Jackpot Hit");
                 if (Random.value <= jackpotChance) //we have beaten the jackpot odds
-                {
-                    Log("Jackpot Won");
                     return new KeyValuePair<int, int>(randomIndex, currentJackpot);
-                }
                 else //Recalculate tickets and return
-                {
                     return CalculateTickets();
-                }
             }
 
             if(ticketsWon >= largeTicketThreshold) //large number of tickets won
             {
                 Log("Large Tickets Hit");
                 if (Random.value <= largeWinningChance) //we have beaten the odds of winning big
-                {
-                    Log("Large Tickets Won");
                     return new KeyValuePair<int, int>(randomIndex, ticketsWon);
-                }
                 else //Recalculate tickets and return
-                {
                     return CalculateTickets();
-                }
             }
 
             return new KeyValuePair<int, int>(randomIndex, ticketsWon);

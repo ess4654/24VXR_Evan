@@ -80,7 +80,6 @@ namespace ArcadeGame.Controllers.Machines
                 Log("Jackpot Hit");
                 if(Random.value <= Constants.JackpotOdds) //we have beaten the jackpot odds
                 {
-                    Log("Jackpot Won");
                     AwardTickets(currentJackpot);
 
                     await jackpotFlasher.FlashLightAtIndex(jackpotFlashTime, playerPosition); //flash the jackpot light for 3 seconds
@@ -99,7 +98,6 @@ namespace ArcadeGame.Controllers.Machines
                     Log("Large Tickets Hit");
                     if (Random.value <= Constants.LargeWinningOdds) //we have beaten the odds of winning big
                     {
-                        Log("Large Tickets Won");
                         AwardTickets(currentJackpot);
                     }
                     else //Skip to the next light and recalculate the amount of tickets won

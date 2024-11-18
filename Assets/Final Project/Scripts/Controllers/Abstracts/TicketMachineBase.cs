@@ -1,4 +1,4 @@
-﻿using ArcadeGame.Views;
+﻿using Assets.Final_Project.Scripts.Views.Abstract;
 using Shared.Editor;
 using Shared.Helpers.Extensions;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace ArcadeGame.Controllers.Machines
         [SerializeField] protected int largeTicketThreshold = 100;
         [SerializeField] private bool hasJackpot;
         [SerializeField, DependsUpon("hasJackpot")] private Vector2Int jackpotRange;
-        [SerializeField, DependsUpon("hasJackpot")] protected LightFlasher jackpotFlasher;
+        [SerializeField, DependsUpon("hasJackpot")] protected LightJackpotFlasher jackpotFlasher;
         [SerializeField, DependsUpon("hasJackpot")] private TextMeshPro[] jackpotLCD;
         
         [SerializeField] protected List<int> ticketAmounts;
@@ -86,6 +86,18 @@ namespace ArcadeGame.Controllers.Machines
         {
             Log($"Tickets Won: {ticketsWon}");
             GameEventBroadcaster.BroadcastTicketsWon(ticketsWon);
+            
+            //We hit the jackpot
+            if(ticketsWon == currentJackpot)
+            {
+                Log("Jackpot Won");
+                jackpotFlasher.FlashAll(jackpotFlasher.DefaultFlashTime);
+                GameEventBroadcaster.BroadcastJackpotWon();
+            }
+            else if(ticketsWon >= largeTicketThreshold)
+            {
+                Log("Large Tickets Won");
+            }
         }
 
         #endregion
