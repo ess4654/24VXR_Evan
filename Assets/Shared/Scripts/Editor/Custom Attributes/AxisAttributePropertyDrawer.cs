@@ -8,7 +8,7 @@ namespace Shared.Editor
     public class AxisAttributePropertyDrawer : PropertyDrawer
     {
         private const float lineWidth = 2;
-        private const float inputWidth = 52;
+        private const float inputWidth = 53;
         private const float padding = 2f;
         private readonly Color lineColor = new Color(.16f, .16f, .16f, .8f);
 

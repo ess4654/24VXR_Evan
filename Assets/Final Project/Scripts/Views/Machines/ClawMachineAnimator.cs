@@ -18,9 +18,9 @@ namespace ArcadeGame.Views.Machines
             {
                 joystickPivot.localEulerAngles = new Vector3
                 (
-                    axis.x * joystickRange,
+                    -axis.x * joystickRange,
                     0,
-                    axis.y * joystickRange
+                    -axis.y * joystickRange
                 );
             }
         }
