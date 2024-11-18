@@ -68,6 +68,52 @@ MonoBehaviour:
   jackpotLCD: []
   ticketAmounts: 0a000000030000000500000019000000500000004500000005000000320000000100000019000000ffffffff0200000064000000280000000a0000002c010000
   m_ResetJackpot: 0
+  isSpinning: 0
+  rotations: 10
+  spinTime: 14
+  spinCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -0.054878246
+      outSlope: -0.054878246
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13304205
+    - serializedVersion: 3
+      time: 0.21844003
+      value: 0.34233534
+      inSlope: 5.0233707
+      outSlope: 5.0233707
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1034915
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.35951138
+      value: 0.7369659
+      inSlope: 1.207519
+      outSlope: 1.207519
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.085550845
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.094339825
+      outSlope: -0.094339825
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12992857
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverseDirection: 0
   m_Spin: 0
 --- !u!114 &328816246384706608
 MonoBehaviour:
@@ -841,6 +887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512243300098982147, guid: be2aa34658c5bf64a9a617d090d108cb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

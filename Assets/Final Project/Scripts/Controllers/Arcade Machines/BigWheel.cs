@@ -1,6 +1,8 @@
 ﻿using ArcadeGame.Data;
 using Shared.Editor;
+using Shared.Helpers;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace ArcadeGame.Controllers.Machines
@@ -16,25 +18,67 @@ namespace ArcadeGame.Controllers.Machines
         private const float largeWinningChance = Constants.LargeWinningOdds / 3.5f; //reduced chance of winning big because there are only 16 ticket spaces
         private const float fullRotation = 360f;
 
+        [SerializeField] private bool isSpinning;
+        [SerializeField, Min(1)] private int rotations = 10;
+        [SerializeField] private Vector2 spinTimeRange = new Vector2(10, 20);
+        [SerializeField] private AnimationCurve spinCurve;
+        [SerializeField] private bool reverseDirection;
+
         protected Vector3 RotationAxis => Vector3.right;
+        private Vector3 startingRotation;
 
         #region METHODS
-
+        
         /// <summary>
         ///     Spins the wheel and awards tickets.
         /// </summary>
-        public void Spin()
+        /// <returns>The number off tickets won by the player.</returns>
+        public async Task<int> Spin()
         {
-            //calculate where the wheel will stop & tickets won prior to animation
+            if (isSpinning) return 0;
+            isSpinning = true;
+
+            // calculate where the wheel will stop & tickets won prior to animation
             var ticketsPair = CalculateTickets();
             var ticketsWon = ticketsPair.Value;
             var indexOfTickets = ticketsPair.Key;
 
-            //Lock the final rotation axis
-            var stopRotation = ((float)indexOfTickets / ticketAmounts.Count) * (fullRotation * RotationAxis);
-            spinAxis.localEulerAngles = stopRotation;
+            // get the rotation values for the animation
+            var rotationAxis = RotationAxis;
+            var stopAngle = ((float)indexOfTickets / ticketAmounts.Count) * fullRotation;
+            var direction = reverseDirection ? -1 : 1;
+            var stopRotation = (stopAngle - (reverseDirection ? 0 : fullRotation)) * rotationAxis;
+            var spinRotation = stopRotation + (direction * rotations * fullRotation * rotationAxis);
+            
+            //Log($"Starting Euler: {spinAxis.localRotation.eulerAngles}");
+            //Log($"Starting Rotation: {startingRotation}");
 
+            var spinTime = Random.Range(spinTimeRange.x, spinTimeRange.y);
+            LeanTween
+                .value(0f, 1f, spinTime)
+                .setOnUpdate((float t) =>
+                {
+                    spinAxis.localRotation = Quaternion.Euler(Vector3.LerpUnclamped(startingRotation, spinRotation, t));
+                })
+                .setOnComplete(() =>
+                {
+                    //Lock the final rotation axis
+                    Quaternion q = spinAxis.localRotation;
+                    q.eulerAngles = stopRotation;
+                    spinAxis.localRotation = q;
+
+                    //Log($"Stop Axis: {stopRotation}");
+                    //Log($"Stop Rotation: {spinAxis.localRotation.eulerAngles}");
+                    startingRotation = stopRotation; //set the starting rotation for the next spin
+                })
+                .setEase(spinCurve);
+
+            await Timer.WaitForSeconds(spinTime);
+            
             AwardTickets(ticketsWon);
+
+            isSpinning = false;
+            return ticketsWon;
         }
 
         /// <summary>
