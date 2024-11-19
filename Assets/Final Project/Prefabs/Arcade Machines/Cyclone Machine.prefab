@@ -480,6 +480,7 @@ MonoBehaviour:
   largeTicketThreshold: 25
   hasJackpot: 1
   jackpotRange: {x: 50, y: 500}
+  roundJackpotToNearest: 1
   jackpotFlasher: {fileID: 856141950948513799}
   jackpotLCD:
   - {fileID: 8339262162925312497}
@@ -641,8 +642,8 @@ MonoBehaviour:
   - {fileID: 6740954183279843638}
   - {fileID: 615111073573311846}
   isFlashing: 0
-  numberFlashes: 40
-  flashTime: 3.6
+  numberFlashes: 60
+  flashTime: 5
   m_Flash: 0
 --- !u!82 &4044510727721748642
 AudioSource:
@@ -1632,6 +1633,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3392271406212222572}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7894138789950870460, guid: cb10b193f98cea847889fa69aa400e00,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 881309253235094655}
     - targetCorrespondingSourceObject: {fileID: -3376244128791071278, guid: cb10b193f98cea847889fa69aa400e00,
         type: 3}
       insertIndex: -1
@@ -1824,6 +1829,24 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 5075980218215700200}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3169439552084329812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7894138789950870460, guid: cb10b193f98cea847889fa69aa400e00,
+    type: 3}
+  m_PrefabInstance: {fileID: 5075980218215700200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &881309253235094655
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169439552084329812}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 8
+  m_SortAtRoot: 0
 --- !u!23 &3267998408587632558 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7722479435458300230, guid: cb10b193f98cea847889fa69aa400e00,

@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &475201068
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1503,8 +1503,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674483266}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.2303844, y: -0.5728249, z: 0.17243567, w: -0.76750284}
-  m_LocalPosition: {x: -6.263911, y: 2.7224908, z: -0.35994816}
+  m_LocalRotation: {x: -0.07845628, y: -0.9217447, z: 0.2687967, w: -0.26829013}
+  m_LocalPosition: {x: -16.723324, y: 4.00828, z: -8.191196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2172,6 +2172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 6362700225640371040, guid: 0b844816f1589a445af750dda9557d9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2536,7 +2541,7 @@ PrefabInstance:
     - target: {fileID: 3553013816636451154, guid: 120630229c49b934bb9724bb36fb721d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
