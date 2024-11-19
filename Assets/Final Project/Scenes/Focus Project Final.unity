@@ -2218,11 +2218,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2176017259650533506, guid: a65a7988ebebca84090aeef4a670e306,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a65a7988ebebca84090aeef4a670e306, type: 3}
 --- !u!1001 &2300894154037797643
 PrefabInstance:
@@ -2255,6 +2251,31 @@ PrefabInstance:
     - target: {fileID: 1196527357787940905, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483284528713897086, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483284528713897086, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483284528713897086, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483284528713897086, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483284528713897086, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5465553464161499635, guid: 92dbd67369697694f86e073f31d5ba4c,
@@ -2317,6 +2338,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 5325222894965236578, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 1802705424785715692, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}

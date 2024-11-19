@@ -21,6 +21,7 @@ namespace ArcadeGame.Controllers.Machines
         [SerializeField] protected int largeTicketThreshold = 100;
         [SerializeField] private bool hasJackpot;
         [SerializeField, DependsUpon("hasJackpot")] private Vector2Int jackpotRange;
+        [SerializeField, DependsUpon("hasJackpot"),Min(1)] private int roundJackpotToNearest = 1;
         [SerializeField, DependsUpon("hasJackpot")] protected LightJackpotFlasher jackpotFlasher;
         [SerializeField, DependsUpon("hasJackpot")] private TextMeshPro[] jackpotLCD;
         
@@ -63,6 +64,7 @@ namespace ArcadeGame.Controllers.Machines
         protected void ResetJackpot()
         {
             currentJackpot = jackpotRange.x == jackpotRange.y ? jackpotRange.x : Random.Range(jackpotRange.x, jackpotRange.y + 1);
+            currentJackpot -= currentJackpot % roundJackpotToNearest;
             UpdateJackpotDisplay();
 
             PlayerPrefs.SetInt(saveKey + jackpotKey, currentJackpot);
