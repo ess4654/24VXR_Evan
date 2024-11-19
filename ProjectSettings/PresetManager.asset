@@ -19,3 +19,16 @@ PresetManager:
         type: 2}
       m_Filter: left
       m_Disabled: 0
+  - first:
+      m_NativeTypeID: 1006
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: a3befde585a182b45b13b8c3cbd4d029,
+        type: 2}
+      m_Filter: glob:"*/UI/**.png"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 82e073510e69eb842b2cdce67e7741b6,
+        type: 2}
+      m_Filter: glob:"*/Gizmos/**.png"
+      m_Disabled: 0
