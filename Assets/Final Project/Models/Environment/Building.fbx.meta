@@ -7,8 +7,48 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Arcade Walls
+    second: {fileID: 2100000, guid: be9fcec367a95194b94ba38156f6fde5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brick Wall
+    second: {fileID: 2100000, guid: db31fa4487f53094dbb89f36aa567722, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Building
     second: {fileID: 2100000, guid: 94fd96f03da248b4c9052ae6ddf88dd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carpet Floor
+    second: {fileID: 2100000, guid: 5e1550c33bff88f4a81550d789a43003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carpet Flooring
+    second: {fileID: 2100000, guid: 5e1550c33bff88f4a81550d789a43003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceiling
+    second: {fileID: 2100000, guid: 6ee334b21a1bed946af1767763b916e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door Handle
+    second: {fileID: 2100000, guid: b791f56171137014eaef65edd183febb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exit Sign
+    second: {fileID: 2100000, guid: 81096dfdc8ba13741bd8f5dd4023f4b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Door
+    second: {fileID: 2100000, guid: be5dd89ec76fb8f439c62a637c72ab9c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
