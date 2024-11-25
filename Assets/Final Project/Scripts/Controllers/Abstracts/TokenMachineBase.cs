@@ -4,6 +4,7 @@ using ArcadeGame.Views.Machines;
 using Shared.Editor;
 using Shared.Helpers.Extensions;
 using UnityEngine;
+using System.Collections;
 
 namespace ArcadeGame.Controllers.Machines
 {
@@ -36,6 +37,7 @@ namespace ArcadeGame.Controllers.Machines
         [SerializeField] private string UI_Panel;
 
         private int depositedTokens;
+        private float countdown;
         
         private const string tokenKey = "DepositedTokens";
 
@@ -46,6 +48,7 @@ namespace ArcadeGame.Controllers.Machines
         protected virtual void Awake()
         {
             LoadData();
+            StartCoroutine(Countdown());
         }
 
         /// <summary>
@@ -67,6 +70,19 @@ namespace ArcadeGame.Controllers.Machines
                 OnGameActive(); //engine
         }
 
+        private IEnumerator Countdown()
+        {
+            while (this)
+            {
+                if (hasTimer && GameData.State == gameStateOnPlay && countdown > 0)
+                {
+                    countdown--;
+                    OnCountdown(countdown);
+                }
+                yield return new WaitForSeconds(1);
+            }
+        }
+
         #endregion
 
         #region ENGINE
@@ -75,6 +91,12 @@ namespace ArcadeGame.Controllers.Machines
         ///     OnGameActive is called every frame if we are engaged with the machine.
         /// </summary>
         protected virtual void OnGameActive() { }
+
+        /// <summary>
+        ///     OnCountdown is called every second while the countdown clock is greater than 0, and the game is active.
+        /// </summary>
+        /// <param name="remainingTime">Remaining amount of time of the countdown clock.</param>
+        protected virtual void OnCountdown(float remainingTime) { }
 
         #endregion
 
@@ -86,11 +108,28 @@ namespace ArcadeGame.Controllers.Machines
         public void Interact()
         {
             GameData.State = gameStateOnPlay;
+            ResetCountdown();
         }
 
-        #endregion
+        /// <summary>
+        ///     Resets the countdown on the timer clock.
+        /// </summary>
+        protected void ResetCountdown()
+        {
+            if (hasTimer && GameData.State == gameStateOnPlay)
+                countdown = gameTime + 1;
+        }
 
-        #region DEBUGGING
+        /// <summary>
+        ///     Leaves the arcade machine and regains control to the player input.
+        /// </summary>
+        public void Leave()
+        {
+            countdown = 0;
+            GameData.State = GameState.Arcade;
+            PlayerMover.Instance.ActivatePlayerInput(true);
+        }
+
         #endregion
     }
 }

@@ -1,4 +1,5 @@
-﻿using Shared.Helpers.Extensions;
+﻿using ArcadeGame.Views.Machines;
+using Shared.Helpers.Extensions;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,8 @@ namespace ArcadeGame.Controllers.Machines
     /// </summary>
     public class ShooterMachine : ShooterArcadeCabinetBase
     {
+        #region VARIABLE DECLARATIONS
+
         /// <summary>
         ///     Called when the machine is interacted with passing the player standing position.
         /// </summary>
@@ -17,10 +20,14 @@ namespace ArcadeGame.Controllers.Machines
 
         [SerializeField] private string gameScene;
 
+        private new ShooterMachineAnimator animator => base.animator as ShooterMachineAnimator;
+
         /// <summary>
         ///     The position the player is standing at the machine.
         /// </summary>
         private int playerPosition = -1;
+
+        #endregion
 
         protected override void Awake()
         {
@@ -39,6 +46,7 @@ namespace ArcadeGame.Controllers.Machines
         {
             playerPosition = standingPosition;
             OnInteraction?.Invoke(playerPosition); //subscribed event
+            animator.ToggleGun(playerPosition, false); //toggle the gun model at the position off
             base.Interact();
         }
     }

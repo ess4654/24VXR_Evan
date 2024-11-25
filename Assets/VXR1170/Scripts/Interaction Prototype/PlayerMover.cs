@@ -1,10 +1,10 @@
 using Shared;
 using Shared.Editor;
 using Shared.Helpers;
-using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace ArcadeGame.Controllers
 {
@@ -14,16 +14,40 @@ namespace ArcadeGame.Controllers
     [RequireComponent(typeof(NavMeshAgent))]
     public class PlayerMover : Singleton<PlayerMover>
     {
+        #region VARIABLE DECLARATIONS
+
         [SerializeField, ReadOnly] private bool isMoving;
         [SerializeField, ReadOnly] private float movingVelocity;
 
         private NavMeshAgent ai;
+        private ContinuousMoveProviderBase moveProvider;
+        private ContinuousTurnProviderBase turnProvider;
+
+        #endregion
+
+        #region SETUP
 
         protected override void Awake()
         {
             ai = GetComponent<NavMeshAgent>();
-            ai.enabled = false;
+            moveProvider = GetComponent<ContinuousMoveProviderBase>();
+            turnProvider = GetComponent<ContinuousTurnProviderBase>();
+
+            ActivatePlayerInput(true);
             base.Awake();
+        }
+
+        #endregion
+
+        /// <summary>
+        ///     Activates/De-Activates the input of the player's devices.
+        /// </summary>
+        /// <param name="active">Is the movement to be player controlled (true) or AI controlled (false)?</param>
+        public void ActivatePlayerInput(bool active)
+        {
+            ai.enabled = !active;
+            moveProvider.enabled = active;
+            turnProvider.enabled = active;
         }
 
         /// <summary>
@@ -36,12 +60,12 @@ namespace ArcadeGame.Controllers
         {
             if (isMoving) return;
 
+            ActivatePlayerInput(false);
             isMoving = true;
-            ai.enabled = true;
             ai.updateRotation = false;
-            var distance = Vector3.Distance(position, transform.position);
             var startingRotation = transform.rotation;
             ai.SetDestination(position);
+            var distance = Vector3.Distance(ai.destination, transform.position);
 
             //wait for movement to stop
             movingVelocity = float.MaxValue;
@@ -55,16 +79,18 @@ namespace ArcadeGame.Controllers
                 //rotate player
                 if (rotation.HasValue) 
                 {
-                    var remainingDistance = Vector3.Distance(position, transform.position);
+                    var remainingDistance = Vector3.Distance(ai.destination, transform.position);
                     var t = 1f - (remainingDistance / distance);
                     transform.rotation = Quaternion.Lerp(startingRotation, rotation.Value, t);
                 }
             }
             if (this == null) return;
 
+            if(rotation.HasValue)
+                transform.rotation = rotation.Value;
             ai.isStopped = true;
-            ai.enabled = false;
             isMoving = false;
+            ActivatePlayerInput(true);
         }
     }
 }

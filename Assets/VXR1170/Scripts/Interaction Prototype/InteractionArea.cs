@@ -1,6 +1,7 @@
 ﻿using ArcadeGame.Controllers;
 using ArcadeGame.Controllers.Machines;
 using Shared.Editor;
+using System;
 using UnityEngine;
 
 namespace Assets.Final_Project.Scripts.Controllers
@@ -22,6 +23,16 @@ namespace Assets.Final_Project.Scripts.Controllers
             TokenCup,
             ArcadeMachine
         }
+
+        /// <summary>
+        ///     Called when this interaction region is entered.
+        /// </summary>
+        public Action OnEnter;
+
+        /// <summary>
+        ///     Called when this interaction region is exited.
+        /// </summary>
+        public Action OnExit;
 
         [SerializeField, ReadOnly] private bool insideRegion;
         [SerializeField] private string playerTag;
@@ -121,6 +132,7 @@ namespace Assets.Final_Project.Scripts.Controllers
         private void EnterRegion()
         {
             insideRegion = true;
+            OnEnter?.Invoke(); //subscribed event
             GameEventBroadcaster.BroadcastPlayerEnteredRegion(this); //informs other regions that we are in this one
         }
 
@@ -130,12 +142,18 @@ namespace Assets.Final_Project.Scripts.Controllers
         private void ExitRegion()
         {
             insideRegion = false;
+            OnExit?.Invoke(); //subscribed event
         }
 
+        /// <summary>
+        ///     Moves the player to the interaction region and locks the player movement.
+        /// </summary>
         public async void MoveToInteraction()
         {
             var worldPosition = transform.TransformPoint(boxTrigger.center + (boxTrigger.size.x / 2f * Vector3.right)); //position at the boundary of the box trigger
-            await PlayerMover.Instance.MoveToPosition(worldPosition, Quaternion.Euler(transform.right));
+            await PlayerMover.Instance.MoveToPosition(worldPosition, Quaternion.LookRotation(-transform.right));
+            PlayerMover.Instance.ActivatePlayerInput(false);
+
             EnterRegion();
             HandleInput();
         }

@@ -20,6 +20,9 @@ namespace ArcadeGame.Views.Machines
         /// <param name="active">Is the gun visible?</param>
         public void ToggleGun(int index, bool active)
         {
+            if(index < 0 || index >= gunModels.Length)
+                throw new System.ArgumentOutOfRangeException("index");
+
             var model = gunModels[index];
             model.SetActive(active);
         }

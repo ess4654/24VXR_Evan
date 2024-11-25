@@ -75,7 +75,8 @@ namespace ArcadeGame.Controllers.Machines
                 .setEase(spinCurve);
 
             await Timer.WaitUntil(() => !isSpinning); //wait for spinning to stop
-            
+            if (this == null) return 0;
+
             AwardTickets(ticketsWon);
 
             return ticketsWon;
@@ -87,7 +88,6 @@ namespace ArcadeGame.Controllers.Machines
         /// <returns>The number of tickets won tied to it's index int he array</returns>
         private KeyValuePair<int, int> CalculateTickets()
         {
-            return new(10, 1000);
             var randomIndex = Random.Range(0, ticketAmounts.Count);
             var ticketsWon = ticketAmounts[randomIndex];
             if (ticketsWon == Constants.Jackpot) //we hit the jackpot

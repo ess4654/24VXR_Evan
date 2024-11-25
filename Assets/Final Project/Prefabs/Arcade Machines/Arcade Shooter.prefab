@@ -89,7 +89,9 @@ MonoBehaviour:
   m_buttonIndex: 0
   m_PressButton: 0
   m_ReleaseButton: 0
-  gunModels: []
+  gunModels:
+  - {fileID: 7433593588878979731}
+  - {fileID: 8569928403056267310}
 --- !u!95 &2919662200125350490
 Animator:
   serializedVersion: 5
@@ -377,6 +379,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1358138ff324cb04bb23e2b562d598cb, type: 3}
+--- !u!1 &7433593588878979731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2145460249991472018, guid: 1358138ff324cb04bb23e2b562d598cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8858397127864668417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8569928403056267310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8358160585409052369, guid: 1358138ff324cb04bb23e2b562d598cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8858397127864668417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9035874777755793130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1358138ff324cb04bb23e2b562d598cb,
