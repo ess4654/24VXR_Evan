@@ -354,6 +354,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1805132092}
     m_Modifications:
+    - target: {fileID: -6659107001809659824, guid: 986267ef7a0b03a45af32a08723d33da,
+        type: 3}
+      propertyPath: gunRay
+      value: 
+      objectReference: {fileID: 1522383728}
+    - target: {fileID: 904761302467753551, guid: 986267ef7a0b03a45af32a08723d33da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.525
+      objectReference: {fileID: 0}
     - target: {fileID: 1068217631574257634, guid: 986267ef7a0b03a45af32a08723d33da,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -424,6 +434,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2235306731104508629, guid: 986267ef7a0b03a45af32a08723d33da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.425
+      objectReference: {fileID: 0}
     - target: {fileID: 4310783196767236777, guid: 986267ef7a0b03a45af32a08723d33da,
         type: 3}
       propertyPath: m_IsActive
@@ -433,6 +448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arcade Shooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063199412367223965, guid: 986267ef7a0b03a45af32a08723d33da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1114,7 +1134,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345573252}
   m_LocalRotation: {x: 0, y: 0.887976, z: 0, w: 0.4598899}
-  m_LocalPosition: {x: 0, y: 0, z: -1.586}
+  m_LocalPosition: {x: 0, y: 0, z: -1.68}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2346,6 +2366,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 721677673654099356, guid: 120630229c49b934bb9724bb36fb721d,
+        type: 3}
+      propertyPath: m_StartingHoverFilters.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4386152876467688865, guid: 120630229c49b934bb9724bb36fb721d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3299,6 +3324,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1494396479}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1522383728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 721677673654099356, guid: 120630229c49b934bb9724bb36fb721d,
+    type: 3}
+  m_PrefabInstance: {fileID: 951828120}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1586192156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,7 +3952,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708014874}
   m_LocalRotation: {x: 0, y: 0.4598899, z: 0, w: 0.887976}
-  m_LocalPosition: {x: 0, y: 0, z: 1.593}
+  m_LocalPosition: {x: 0, y: 0, z: 1.638}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:

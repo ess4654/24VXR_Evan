@@ -36,9 +36,17 @@ namespace ArcadeGame.Controllers
         /// </summary>
         public static event Action<InputDevice> OnControllerTrigger;
 
+        /// <summary>
+        ///     Called when the trigger button on any controller is released.
+        /// </summary>
+        public static event Action<InputDevice> OnControllerTriggerUp;
+
         private InputDevice rightController;
         private InputDevice leftController;
         private InputDevice hmd;
+
+        private bool rightTrigger;
+        private bool leftTrigger;
 
         #endregion
 
@@ -55,19 +63,44 @@ namespace ArcadeGame.Controllers
                 InitializeDevice(InputDeviceCharacteristics.HeadMounted, ref hmd);
 
             //get the input from the right device
-            bool triggered;
+            bool trigger;
             if (rightController.isValid)
             {
-                if(rightController.TryGetFeatureValue(CommonUsages.triggerButton, out triggered) && triggered)
-                    OnControllerTrigger?.Invoke(rightController);
+                if(rightController.TryGetFeatureValue(CommonUsages.triggerButton, out trigger))
+                {
+                    if(trigger)
+                    {
+                        OnControllerTrigger?.Invoke(rightController);
+                        rightTrigger = trigger;
+                    }
+                    else if(rightTrigger)
+                    {
+                        OnControllerTriggerUp?.Invoke(rightController);
+                        rightTrigger = false;
+                    }
+                }
             }
             //get the input from the left device
             if (leftController.isValid)
             {
-                if(leftController.TryGetFeatureValue(CommonUsages.triggerButton, out triggered) && triggered)
-                    OnControllerTrigger?.Invoke(leftController);
                 if(leftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rotation))
+                {
                     OnControllerRotation?.Invoke(rotation);
+                }
+
+                if(leftController.TryGetFeatureValue(CommonUsages.triggerButton, out trigger))
+                {
+                    if(trigger)
+                    {
+                        OnControllerTrigger?.Invoke(leftController);
+                        leftTrigger = trigger;
+                    }
+                    else if(leftTrigger)
+                    {
+                        OnControllerTriggerUp?.Invoke(leftController);
+                        leftTrigger = false;
+                    }
+                }
             }
         }
 

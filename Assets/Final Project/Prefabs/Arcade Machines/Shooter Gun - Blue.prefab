@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 7882413208577087376, guid: 899070fbdaddb674e92d113121dc6d2a,
         type: 3}
       propertyPath: m_Name
-      value: Shooter Gun - Blue Variant
+      value: Shooter Gun - Blue
       objectReference: {fileID: 0}
     - target: {fileID: 8550554077460279264, guid: 899070fbdaddb674e92d113121dc6d2a,
         type: 3}

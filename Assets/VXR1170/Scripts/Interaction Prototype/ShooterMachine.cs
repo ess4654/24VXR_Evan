@@ -1,8 +1,13 @@
-﻿using ArcadeGame.Views.Machines;
+﻿using ArcadeGame.Controllers.Games;
+using ArcadeGame.Data;
+using ArcadeGame.Views.Machines;
+using Shared.Editor;
 using Shared.Helpers.Extensions;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace ArcadeGame.Controllers.Machines
 {
@@ -18,7 +23,13 @@ namespace ArcadeGame.Controllers.Machines
         /// </summary>
         public static event Action<int> OnInteraction;
 
+        [Header("Cabinet Settings")]
         [SerializeField] private string gameScene;
+        [SerializeField] private XRRayInteractor gunRay;
+        [SerializeField] private MeshCollider screenCollider;
+
+        [SerializeField, ReadOnly] private bool targetingScreen;
+        [SerializeField, ReadOnly] private Vector2 uvScreenCoord;
 
         private new ShooterMachineAnimator animator => base.animator as ShooterMachineAnimator;
 
@@ -26,8 +37,11 @@ namespace ArcadeGame.Controllers.Machines
         ///     The position the player is standing at the machine.
         /// </summary>
         private int playerPosition = -1;
+        private bool triggerDown;
 
         #endregion
+
+        #region SETUP
 
         protected override void Awake()
         {
@@ -37,6 +51,53 @@ namespace ArcadeGame.Controllers.Machines
             if(!gameScene.IsNullOrWhiteSpace())
                 SceneManager.LoadSceneAsync(gameScene, LoadSceneMode.Additive);
         }
+
+        private void OnEnable()
+        {
+            XRInputManager.OnControllerTrigger += HandleControllerTrigger;
+            XRInputManager.OnControllerTriggerUp += HandleControllerTriggerUp;
+        }
+
+        private void OnDisable()
+        {
+            XRInputManager.OnControllerTrigger -= HandleControllerTrigger;
+            XRInputManager.OnControllerTriggerUp -= HandleControllerTriggerUp;
+        }
+
+        private void HandleControllerTrigger(InputDevice device)
+        {
+            if (triggerDown) return;
+
+            if(device.characteristics.HasFlag(InputDeviceCharacteristics.Right) && GameData.State == gameStateOnPlay && targetingScreen)
+            {
+                triggerDown = true;
+
+                var tex = screenCollider.GetComponent<MeshRenderer>().material.mainTexture;
+                var screenPointHit = new Vector2(uvScreenCoord.x * tex.width, uvScreenCoord.y * tex.height);
+                //Log($"Hit Screen ({tex.width} x {tex.height}): {uvScreenCoord} ({screenPointHit})");
+                ShooterGame.Instance.FireShot(screenPointHit);
+            }
+        }
+
+        private void HandleControllerTriggerUp(InputDevice device)
+        {
+            if (device.characteristics.HasFlag(InputDeviceCharacteristics.Right))
+                triggerDown = false;
+        }
+
+        protected override void OnGameStart()
+        {
+            gunRay.GetComponent<LineRenderer>().enabled = false; //hide the raycast line
+        }
+
+        protected override void OnGameStop()
+        {
+            animator.ToggleGun(0, true);
+            animator.ToggleGun(1, true);
+            gunRay.GetComponent<LineRenderer>().enabled = true; //show the raycast line
+        }
+
+        #endregion
 
         /// <summary>
         ///     Interact with the shooter game.
@@ -48,6 +109,26 @@ namespace ArcadeGame.Controllers.Machines
             OnInteraction?.Invoke(playerPosition); //subscribed event
             animator.ToggleGun(playerPosition, false); //toggle the gun model at the position off
             base.Interact();
+        }
+
+        protected override void OnGameActive()
+        {
+            UpdateUVCoord(gunRay);
+        }
+
+        /// <summary>
+        ///     The ray passed in from the right controller of the player.
+        /// </summary>
+        /// <param name="ray">Reference to the ray interactor object.</param>
+        private void UpdateUVCoord(XRRayInteractor ray)
+        {
+            if(ray != null && ray.TryGetCurrent3DRaycastHit(out RaycastHit hit) && hit.collider == screenCollider)
+            {
+                targetingScreen = true;
+                uvScreenCoord = hit.textureCoord;
+            }
+            else
+                targetingScreen = false;
         }
     }
 }

@@ -1,4 +1,6 @@
+using ArcadeGame.Controllers;
 using ArcadeGame.Controllers.Machines;
+using ArcadeGame.Data;
 using Shared.Editor;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,11 +42,19 @@ namespace ArcadeGame.Views
         private void OnEnable()
         {
             ShooterMachine.OnInteraction += SwapHand;
+            GameEventBroadcaster.OnGameStateChanged += HandleStateChanged;
         }
 
         private void OnDisable()
         {
             ShooterMachine.OnInteraction -= SwapHand;
+            GameEventBroadcaster.OnGameStateChanged -= HandleStateChanged;
+        }
+
+        private void HandleStateChanged(GameState state)
+        {
+            if (state == GameState.Arcade)
+                ReturnToDefaultHand();
         }
 
         #endregion
