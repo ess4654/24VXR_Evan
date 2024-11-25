@@ -85,6 +85,11 @@ namespace ArcadeGame.Controllers.Machines
         #region ENGINE
 
         /// <summary>
+        ///     OnGameStart is called when the arcade game is first interacted with.
+        /// </summary>
+        protected virtual void OnGameStart() { }
+
+        /// <summary>
         ///     OnGameActive is called every frame if we are engaged with the machine.
         /// </summary>
         protected virtual void OnGameActive() { }
@@ -94,6 +99,11 @@ namespace ArcadeGame.Controllers.Machines
         /// </summary>
         /// <param name="remainingTime">Remaining amount of time of the countdown clock.</param>
         protected virtual void OnCountdown(float remainingTime) { }
+
+        /// <summary>
+        ///     OnGameStop is called when the player has left the arcade game.
+        /// </summary>
+        protected virtual void OnGameStop() { }
 
         #endregion
 
@@ -106,6 +116,7 @@ namespace ArcadeGame.Controllers.Machines
         {
             GameData.State = gameStateOnPlay;
             ResetCountdown();
+            OnGameStart(); //engine
         }
 
         /// <summary>
@@ -125,6 +136,7 @@ namespace ArcadeGame.Controllers.Machines
             countdown = 0;
             GameData.State = GameState.Arcade;
             PlayerMover.Instance.ActivatePlayerInput(true);
+            OnGameStop(); //engine
         }
 
         #endregion

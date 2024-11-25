@@ -151,7 +151,7 @@ namespace Assets.Final_Project.Scripts.Controllers
         public async void MoveToInteraction()
         {
             var worldPosition = transform.TransformPoint(boxTrigger.center + (boxTrigger.size.x / 2f * Vector3.right)); //position at the boundary of the box trigger
-            await PlayerMover.Instance.MoveToPosition(worldPosition, Quaternion.LookRotation(-transform.right));
+            await PlayerMover.Instance.MoveToPosition(worldPosition, Quaternion.LookRotation(transform.forward));
             PlayerMover.Instance.ActivatePlayerInput(false);
 
             EnterRegion();

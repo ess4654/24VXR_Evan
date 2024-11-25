@@ -115,6 +115,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverseDirection: 0
+  leaver: {fileID: 0}
+  spinThreshold: {x: 55, y: 80}
   m_Spin: 0
 --- !u!114 &328816246384706608
 MonoBehaviour:
@@ -833,12 +835,12 @@ PrefabInstance:
     - target: {fileID: 5667589036701600813, guid: 636fbd182c481f54db99a2288cb1e4b4,
         type: 3}
       propertyPath: m_Center.y
-      value: 1.0100703
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5667589036701600813, guid: 636fbd182c481f54db99a2288cb1e4b4,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.00000021837099
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8274529796462381553, guid: 636fbd182c481f54db99a2288cb1e4b4,
         type: 3}

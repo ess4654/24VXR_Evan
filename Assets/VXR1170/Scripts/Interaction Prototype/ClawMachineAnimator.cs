@@ -138,7 +138,7 @@ namespace ArcadeGame.Views.Machines
         /// <returns>Completed drop animation</returns>
         public async Task AnimatePrizeDrop()
         {
-            await AnimateTowards(dropZone);// new Vector2(.308f , - .423f));
+            await AnimateTowards(dropZone);
             await Timer.WaitForSeconds(1);
         }
 
