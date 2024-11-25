@@ -38,6 +38,8 @@ namespace ArcadeGame.Controllers.Machines
         /// </summary>
         private int playerPosition = -1;
         private bool triggerDown;
+        private float cacheStartLineWidth;
+        private float cacheEndLineWidth;
 
         #endregion
 
@@ -87,14 +89,26 @@ namespace ArcadeGame.Controllers.Machines
 
         protected override void OnGameStart()
         {
-            gunRay.GetComponent<LineRenderer>().enabled = false; //hide the raycast line
+            if(gunRay.TryGetComponent(out LineRenderer line))
+            {
+                cacheStartLineWidth = line.startWidth;
+                cacheEndLineWidth = line.endWidth;
+
+                line.startWidth = 0; //hide the raycast line
+                line.endWidth = 0; //hide the raycast line
+            }
         }
 
         protected override void OnGameStop()
         {
             animator.ToggleGun(0, true);
             animator.ToggleGun(1, true);
-            gunRay.GetComponent<LineRenderer>().enabled = true; //show the raycast line
+
+            if (gunRay.TryGetComponent(out LineRenderer line) && (cacheStartLineWidth > 0 || cacheEndLineWidth > 0))
+            {
+                line.startWidth = cacheStartLineWidth; //hide the raycast line
+                line.endWidth = cacheEndLineWidth; //hide the raycast line
+            }
         }
 
         #endregion
