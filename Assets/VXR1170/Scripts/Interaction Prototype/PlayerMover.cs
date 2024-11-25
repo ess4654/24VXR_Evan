@@ -69,7 +69,7 @@ namespace ArcadeGame.Controllers
 
             //wait for movement to stop
             movingVelocity = float.MaxValue;
-            while (this && movingVelocity > 0.1f)
+            while (this && Vector3.Distance(ai.destination, transform.position) > 0.1f)
             {
                 await Timer.WaitForFrame();
                 if (this == null) return;

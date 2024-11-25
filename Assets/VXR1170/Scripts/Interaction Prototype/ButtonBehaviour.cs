@@ -1,4 +1,5 @@
 using ArcadeGame.Controllers.Machines;
+using ArcadeGame.Helpers.Audio;
 using Assets.Final_Project.Scripts.Controllers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,7 @@ namespace ArcadeGame.Controllers
         /// </summary>
         public void StartGame()
         {
+            SoundManager.PlayAudioClip("button-press");
             if(interactionRegion != null)
                 interactionRegion.MoveToInteraction();
         }
@@ -28,6 +30,7 @@ namespace ArcadeGame.Controllers
         /// </summary>
         public void LeaveGame()
         {
+            SoundManager.PlayAudioClip("button-press");
             if (machine != null)
                 machine.Leave();
         }

@@ -1,6 +1,11 @@
+using ArcadeGame.Controllers;
+using ArcadeGame.Data;
 using Shared.Helpers;
+using System;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ArcadeGame.Views.Machines
 {
@@ -27,6 +32,12 @@ namespace ArcadeGame.Views.Machines
         [SerializeField] private Transform clawBlock;
         [SerializeField] private float horizontalMovementSpeed = 1f;
         [SerializeField] private Vector2 blockBoundaries;
+        [SerializeField] private Vector2 dropZone;
+
+        [Header("UI")]
+        [SerializeField] private Canvas uiCanvas;
+        [SerializeField] private Image countdownClock;
+        [SerializeField] private TextMeshProUGUI countdownDisplay;
 
         private float restingClawY;
         private const float threshold = 0.01f;
@@ -34,11 +45,33 @@ namespace ArcadeGame.Views.Machines
 
         #endregion
 
+        #region SETUP
+
         protected override void Awake()
         {
             base.Awake();
             restingClawY = clawBlock.Find("Claw").localPosition.y;
+            if (uiCanvas)
+                uiCanvas.enabled = false;
         }
+
+        private void OnEnable()
+        {
+            GameEventBroadcaster.OnGameStateChanged += GameStateChanged;
+        }
+
+        private void OnDisable()
+        {
+            GameEventBroadcaster.OnGameStateChanged -= GameStateChanged;
+        }
+
+        private void GameStateChanged(GameState state)
+        {
+            if (uiCanvas)
+                uiCanvas.enabled = state == GameState.ClawMachine;
+        }
+
+        #endregion
 
         #region METHODS
 
@@ -105,7 +138,7 @@ namespace ArcadeGame.Views.Machines
         /// <returns>Completed drop animation</returns>
         public async Task AnimatePrizeDrop()
         {
-            await AnimateTowards(new Vector2(.308f , - .423f));
+            await AnimateTowards(dropZone);// new Vector2(.308f , - .423f));
             await Timer.WaitForSeconds(1);
         }
 
@@ -136,6 +169,19 @@ namespace ArcadeGame.Views.Machines
                 AnimateRails(new Vector2(xInput, yInput));
                 await Timer.WaitForFrame();
             }
+        }
+
+        /// <summary>
+        ///     Updates the countdown clock for the UI Canvas with the amount of remaining time left.
+        /// </summary>
+        /// <param name="remainingTime">Time remaining before the claw automatically drops.</param>
+        /// <param name="startingTime">The time on the clock when the countdown first starts.</param>
+        public void UpdateCountDown(int remainingTime, int startingTime)
+        {
+            if(countdownDisplay)
+                countdownDisplay.text = remainingTime.ToString();
+            if(countdownClock)
+                countdownClock.fillAmount = ((float)remainingTime / startingTime);
         }
 
         #endregion

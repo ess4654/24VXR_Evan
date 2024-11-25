@@ -1,10 +1,10 @@
 using ArcadeGame.Data;
 using static ArcadeGame.Data.Constants;
 using ArcadeGame.Views.Machines;
+using System.Collections;
 using Shared.Editor;
 using Shared.Helpers.Extensions;
 using UnityEngine;
-using System.Collections;
 
 namespace ArcadeGame.Controllers.Machines
 {
@@ -25,14 +25,11 @@ namespace ArcadeGame.Controllers.Machines
         [SerializeField, Range(1, MaxMachineTokens)] private int requiredTokens;
         
         [SerializeField] private bool hasTimer;
-        [SerializeField, DependsUpon("hasTimer")] private float gameTime = 30;
+        [SerializeField, DependsUpon("hasTimer")] protected float gameTime = 30;
 
         [Header("Animation")]
         [SerializeField] protected ArcadeMachineAnimator animator;
 
-        //[Header("Audio Settings")]
-        //[SerializeField] private MachineAnimatorBase animator;
-        
         [Header("HUD")]
         [SerializeField] private string UI_Panel;
 

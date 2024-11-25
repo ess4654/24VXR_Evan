@@ -1,7 +1,6 @@
 using ArcadeGame.Data;
 using ArcadeGame.Views.Machines;
 using Shared.Editor;
-using System;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -92,7 +91,9 @@ namespace ArcadeGame.Controllers.Machines
 
         protected override void OnCountdown(float remainingTime)
         {
-            //Log(remainingTime);
+            animator.UpdateCountDown((int)remainingTime, (int)gameTime);
+            if (remainingTime == 0)
+                DropClaw();
         }
 
         #endregion

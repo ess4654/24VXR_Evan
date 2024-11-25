@@ -59,7 +59,9 @@ MonoBehaviour:
   gameTime: 30
   animator: {fileID: -6483880171739762639}
   UI_Panel: claw-machine
+  droppingClaw: 0
   joystickAxis: {x: 0, y: 0}
+  m_DropClaw: 0
 --- !u!114 &-6483880171739762639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +93,10 @@ MonoBehaviour:
   clawBlock: {fileID: 8839245117559926413}
   horizontalMovementSpeed: 0.6
   blockBoundaries: {x: -0.4, y: 0.4}
+  dropZone: {x: 0.308, y: -0.423}
+  uiCanvas: {fileID: 0}
+  countdownClock: {fileID: 0}
+  countdownDisplay: {fileID: 0}
 --- !u!95 &-7398711703365561930
 Animator:
   serializedVersion: 5
