@@ -30,6 +30,8 @@ namespace Assets.Final_Project.Scripts.Controllers
         [SerializeField, DependsUpon("interactionEvent", InteractionEvents.ArcadeMachine, "machine", true)] private int playerPosition;
         [SerializeField, DependsUpon("interactionEvent", InteractionEvents.TokenCup)] private TokenCup cup;
 
+        private BoxCollider boxTrigger;
+
         #endregion
 
         #region EDITOR
@@ -43,6 +45,11 @@ namespace Assets.Final_Project.Scripts.Controllers
         #endregion
 
         #region SETUP
+
+        private void Awake()
+        {
+            boxTrigger = GetComponent<BoxCollider>();
+        }
 
         private void OnEnable()
         {
@@ -82,6 +89,8 @@ namespace Assets.Final_Project.Scripts.Controllers
                         {
                             if(machine is Cyclone cyclone)
                                 cyclone.Interact(playerPosition);
+                            else if(machine is ShooterMachine shooter)
+                                shooter.Interact(playerPosition);
                             else
                                 machine.Interact();
                         }
@@ -123,6 +132,19 @@ namespace Assets.Final_Project.Scripts.Controllers
             insideRegion = false;
         }
 
+        public async void MoveToInteraction()
+        {
+            var worldPosition = transform.TransformPoint(boxTrigger.center + (boxTrigger.size.x / 2f * Vector3.right)); //position at the boundary of the box trigger
+            await PlayerMover.Instance.MoveToPosition(worldPosition, Quaternion.Euler(transform.right));
+            EnterRegion();
+            HandleInput();
+        }
+
+        #endregion
+
+        #region DEBUGGING
+        [Debugging]
+        [SerializeField, InspectorButton("MoveToInteraction")] bool m_MoveToInteraction;
         #endregion
     }
 }

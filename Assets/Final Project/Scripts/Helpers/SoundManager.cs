@@ -46,6 +46,8 @@ namespace ArcadeGame.Helpers.Audio
         /// <param name="key">Key of the audio source to play.</param>
         public static void PlayAudioClip(string key)
         {
+            if (Instance == null) return;
+
             var file = Instance.audioFiles.FirstOrDefault(x => x.key == key);
             if(file.clip != null)
                 Instance.uiSource.PlayOneShot(file.clip);

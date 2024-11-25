@@ -1,3 +1,4 @@
+using ArcadeGame.Data;
 using ArcadeGame.Views.Machines;
 using Shared.Editor;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace ArcadeGame.Controllers.Machines
 
         #region VARIABLE DECLARATIONS
 
+        [Space]
+        [SerializeField, ReadOnly] private bool droppingClaw;
         [SerializeField, Axis] private Vector2 joystickAxis;
 
         private new ClawMachineAnimator animator => base.animator as ClawMachineAnimator;
@@ -39,13 +42,39 @@ namespace ArcadeGame.Controllers.Machines
 
         #endregion
 
+        /// <summary>
+        ///     Drops the claw for the machine and waits for all animation to complete.
+        /// </summary>
+        private async void DropClaw()
+        {
+            if(droppingClaw) return;
+
+            if (GameData.State == gameStateOnPlay)
+            {
+                droppingClaw = true;
+                
+                await animator.AnimateClawDrop(); //drop animation
+                //await animator.AnimatePrizeDrop(); //move to drop region and open claw
+                await animator.AnimateClawReturn(); //returning to center point
+                
+                joystickAxis = Vector2.zero;
+                droppingClaw = false;
+            }
+        }
+
         #region ENGINE
 
         protected override void OnGameActive()
         {
-            animator.AnimateJoystick(in joystickAxis);
+            if(!droppingClaw)
+                animator.AnimateJoystick(in joystickAxis);
         }
 
+        #endregion
+
+        #region DEBUGGING
+        [Debugging]
+        [SerializeField, InspectorButton("DropClaw")] bool m_DropClaw;
         #endregion
     }
 }

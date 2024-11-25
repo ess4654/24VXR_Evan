@@ -22,7 +22,7 @@ namespace ArcadeGame.Controllers.Machines
         /// <summary>
         ///     The position the player is standing at the machine.
         /// </summary>
-        private int playerPosition = 0;
+        private int playerPosition = -1;
 
         private const float jackpotFlashTime = 3.0f;
 

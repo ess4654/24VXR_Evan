@@ -63,6 +63,13 @@ namespace ArcadeGame.Views.Machines
         /// <param name="buttonIndex"></param>
         public void ReleaseButton(int buttonIndex) => AnimateButton(buttonIndex, false);
 
+        /// <summary>
+        ///     Sets the boolean value of the animator.
+        /// </summary>
+        /// <param name="name">Name of the boolean variable.</param>
+        /// <param name="value">Value to set the boolean.</param>
+        protected void SetBool(string name, bool value) => controller.SetBool(name, value);
+
         #endregion
 
         #region DEBUGGING
