@@ -15,6 +15,11 @@ namespace Assets.Final_Project.Scripts.Controllers
         #region VARIABLE DECLARATIONS
 
         /// <summary>
+        ///     The region name the player is currently standing in.
+        /// </summary>
+        public static string PlayerRegion { get; private set; }
+
+        /// <summary>
         ///     Types of interactions this area can handle.
         /// </summary>
         private enum InteractionEvents
@@ -35,6 +40,7 @@ namespace Assets.Final_Project.Scripts.Controllers
         public Action OnExit;
 
         [SerializeField, ReadOnly] private bool insideRegion;
+        [SerializeField] private string regionName;
         [SerializeField] private string playerTag;
         [SerializeField] private InteractionEvents interactionEvent;
         [SerializeField, DependsUpon("interactionEvent", InteractionEvents.ArcadeMachine)] private TokenMachineBase machine;
@@ -132,6 +138,7 @@ namespace Assets.Final_Project.Scripts.Controllers
         private void EnterRegion()
         {
             insideRegion = true;
+            PlayerRegion = regionName;
             OnEnter?.Invoke(); //subscribed event
             GameEventBroadcaster.BroadcastPlayerEnteredRegion(this); //informs other regions that we are in this one
         }

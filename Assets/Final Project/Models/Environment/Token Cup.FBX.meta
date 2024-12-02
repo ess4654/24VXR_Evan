@@ -3,7 +3,12 @@ guid: e5d7802d4bd761745bbc7acf1d85ace9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RedCup
+    second: {fileID: 2100000, guid: 472d29c8e6fb30042b9ee257313453b9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -31,5 +31,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6733556157719078073, guid: 20affaa5cb69bb64ba5d92e5a82f0149,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7442590861630469758}
   m_SourcePrefab: {fileID: 100100000, guid: 20affaa5cb69bb64ba5d92e5a82f0149, type: 3}
+--- !u!1 &5257599357562722496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6733556157719078073, guid: 20affaa5cb69bb64ba5d92e5a82f0149,
+    type: 3}
+  m_PrefabInstance: {fileID: 1550605395224198265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7442590861630469758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5257599357562722496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e829c87dc2a2ed2419c5f67848317fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 11400000, guid: d780f25df1d231d4aa9a31ab3ba935d0, type: 2}
+  exportAllChildren: 0
+  terrainSimplificationLevel: 0

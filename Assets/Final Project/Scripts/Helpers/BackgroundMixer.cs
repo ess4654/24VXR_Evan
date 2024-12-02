@@ -1,5 +1,6 @@
 using ArcadeGame.Controllers;
 using ArcadeGame.Data;
+using Assets.Final_Project.Scripts.Controllers;
 using Shared;
 using Shared.Editor;
 using UnityEngine;
@@ -47,7 +48,7 @@ namespace ArcadeGame.Helpers
         #region METHODS
 
         /// <summary>
-        ///     Transitions to the new audio mixer snapotshot.
+        ///     Transitions to the new audio mixer snapshot.
         /// </summary>
         /// <param name="snapshot">Snapshot to transition to.</param>
         /// <param name="pitch">Pitch of the music tracks.</param>
@@ -80,7 +81,7 @@ namespace ArcadeGame.Helpers
             int index = (int)gameState;
             float pitch = PitchNormal;
             if (index > -1)
-                currentSnapshot = snapshots[index];
+                currentSnapshot = snapshots[gameState == GameState.Cyclone ? (InteractionArea.PlayerRegion == "Cyclone 1" ? 1 : 6) : index];
             else
                 pitch = PitchPaused; //lower the pitch when paused
             
