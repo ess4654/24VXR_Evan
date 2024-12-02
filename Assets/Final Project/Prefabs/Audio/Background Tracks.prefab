@@ -15,7 +15,7 @@ GameObject:
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7733149465322653912
 Transform:
@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2715838ec9562754499f0da8368d5db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
   snapshots:
   - {fileID: 24500006, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
   - {fileID: 3791416355384752653, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
@@ -80,6 +79,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
         type: 3}
@@ -136,6 +140,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Music
       objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -190,6 +199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
         type: 3}
@@ -246,6 +260,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Music
       objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -301,6 +320,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Music
       objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -355,6 +379,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
         type: 3}
@@ -415,6 +444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
         type: 3}
