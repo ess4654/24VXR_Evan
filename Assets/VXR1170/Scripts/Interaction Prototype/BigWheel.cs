@@ -105,7 +105,7 @@ namespace ArcadeGame.Controllers.Machines
                     Quaternion q = spinAxis.localRotation;
                     q.eulerAngles = stopRotation;
                     spinAxis.localRotation = q;
-
+            
                     //Log($"Stop Axis: {stopRotation}");
                     //Log($"Stop Rotation: {spinAxis.localRotation.eulerAngles}");
                     startingRotation = stopRotation; //set the starting rotation for the next spin

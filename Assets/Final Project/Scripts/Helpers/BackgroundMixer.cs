@@ -8,7 +8,7 @@ using UnityEngine.Audio;
 namespace ArcadeGame.Helpers
 {
     /// <summary>
-    ///     Constrols the audio mixer for the background music of the arcade game.
+    ///     Controls the audio mixer for the background music of the arcade game.
     /// </summary>
     public class BackgroundMixer : Singleton<BackgroundMixer>
     {
