@@ -1,0 +1,455 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4258320582278511906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7733149465322653912}
+  - component: {fileID: 335613980170072697}
+  m_Layer: 0
+  m_Name: Background Tracks
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &7733149465322653912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258320582278511906}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3221904403709949776}
+  - {fileID: 7614425856900622693}
+  - {fileID: 3390968863115873427}
+  - {fileID: 6032389035783635181}
+  - {fileID: 5231629913650129222}
+  - {fileID: 2938092062583145621}
+  - {fileID: 8525295704294792178}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335613980170072697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258320582278511906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2715838ec9562754499f0da8368d5db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 0}
+  snapshots:
+  - {fileID: 24500006, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
+  - {fileID: 3791416355384752653, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
+  - {fileID: 4465116765567220400, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
+  - {fileID: 5365078777039576810, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
+  - {fileID: 2237243424957812693, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
+  - {fileID: -7640950210563405877, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
+  - {fileID: -327837104257727375, guid: 3a7fc5aa0209c60448d269e77f0936d7, type: 2}
+  transitionTime: 2
+  gameTrack: 0
+  m_TestTransition: 0
+--- !u!1001 &538701216014049734
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7733149465322653912}
+    m_Modifications:
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_Name
+      value: Shooter Cabinet Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_TagString
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f497ac268c4609942888666096d61819, type: 3}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2523606380240861031, guid: 3a7fc5aa0209c60448d269e77f0936d7,
+        type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c60f0440032551d4c8b0bcf2bcf91762, type: 3}
+--- !u!4 &5231629913650129222 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+    type: 3}
+  m_PrefabInstance: {fileID: 538701216014049734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2041533105577298029
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7733149465322653912}
+    m_Modifications:
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_Name
+      value: Claw Machine Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_TagString
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e786e160a3d741b43b78e286a19208a9, type: 3}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8454779532685573793, guid: 3a7fc5aa0209c60448d269e77f0936d7,
+        type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c60f0440032551d4c8b0bcf2bcf91762, type: 3}
+--- !u!4 &6032389035783635181 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+    type: 3}
+  m_PrefabInstance: {fileID: 2041533105577298029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2758592965204419045
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7733149465322653912}
+    m_Modifications:
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_Name
+      value: Cyclone Background 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_TagString
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ce8cc465e2aef604d894f6763dd2e931, type: 3}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3648264945216441530, guid: 3a7fc5aa0209c60448d269e77f0936d7,
+        type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c60f0440032551d4c8b0bcf2bcf91762, type: 3}
+--- !u!4 &7614425856900622693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+    type: 3}
+  m_PrefabInstance: {fileID: 2758592965204419045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4155781290766717810
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7733149465322653912}
+    m_Modifications:
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_Name
+      value: Pirate Spin Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_TagString
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bb24879ebf2df14bb8422667952b308, type: 3}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6494832726032547016, guid: 3a7fc5aa0209c60448d269e77f0936d7,
+        type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c60f0440032551d4c8b0bcf2bcf91762, type: 3}
+--- !u!4 &8525295704294792178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+    type: 3}
+  m_PrefabInstance: {fileID: 4155781290766717810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6984104877501989907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7733149465322653912}
+    m_Modifications:
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_Name
+      value: Cyclone Background 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_TagString
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f9706401d8e34e24e90dd292c9b5849a, type: 3}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -8827390493435219278, guid: 3a7fc5aa0209c60448d269e77f0936d7,
+        type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c60f0440032551d4c8b0bcf2bcf91762, type: 3}
+--- !u!4 &3390968863115873427 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+    type: 3}
+  m_PrefabInstance: {fileID: 6984104877501989907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7157665300083589072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7733149465322653912}
+    m_Modifications:
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_Name
+      value: Arcade Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_TagString
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5be88b142a9b38e4a8dbcbd69917e1c6, type: 3}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3615995792147008166, guid: 3a7fc5aa0209c60448d269e77f0936d7,
+        type: 2}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c60f0440032551d4c8b0bcf2bcf91762, type: 3}
+--- !u!4 &3221904403709949776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+    type: 3}
+  m_PrefabInstance: {fileID: 7157665300083589072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7432506725838818325
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7733149465322653912}
+    m_Modifications:
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_Name
+      value: Big Wheel Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672310462682855904, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_TagString
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5baa7a4299d9ff64da16b40400d68bf7, type: 3}
+    - target: {fileID: 8961209969240710383, guid: c60f0440032551d4c8b0bcf2bcf91762,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4056023189993815172, guid: 3a7fc5aa0209c60448d269e77f0936d7,
+        type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c60f0440032551d4c8b0bcf2bcf91762, type: 3}
+--- !u!4 &2938092062583145621 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5756623243188029568, guid: c60f0440032551d4c8b0bcf2bcf91762,
+    type: 3}
+  m_PrefabInstance: {fileID: 7432506725838818325}
+  m_PrefabAsset: {fileID: 0}
