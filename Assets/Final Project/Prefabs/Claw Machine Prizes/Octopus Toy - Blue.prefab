@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4314771857763271705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 438684912255293141, guid: d81d851e69fe728469fc3569c5e7b91c,
+        type: 3}
+      propertyPath: m_Name
+      value: Octopus Toy - Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 963019589535173743, guid: d81d851e69fe728469fc3569c5e7b91c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 963019589535173743, guid: d81d851e69fe728469fc3569c5e7b91c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 100.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 963019589535173743, guid: d81d851e69fe728469fc3569c5e7b91c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095996723823605504, guid: d81d851e69fe728469fc3569c5e7b91c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aa58cf65e4dc2ba4e93538657e2919ef, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d81d851e69fe728469fc3569c5e7b91c, type: 3}
