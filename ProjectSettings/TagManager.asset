@@ -8,6 +8,7 @@ TagManager:
   - Lights
   - Sound FX
   - Music
+  - Prize Area
   layers:
   - Default
   - TransparentFX

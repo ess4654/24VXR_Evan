@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insideRegion: 0
+  regionName: 
   playerTag: Player
   interactionEvent: 1
   machine: {fileID: 0}
