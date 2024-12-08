@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 4217608744936654279, guid: cdc46a8295aab9d42b40764bae4bfa32,
         type: 3}
       propertyPath: m_Name
-      value: Ice Cream Pillows - Pink Variant
+      value: Ice Cream Pillows - Pink
       objectReference: {fileID: 0}
     - target: {fileID: 4514177672463794412, guid: cdc46a8295aab9d42b40764bae4bfa32,
         type: 3}

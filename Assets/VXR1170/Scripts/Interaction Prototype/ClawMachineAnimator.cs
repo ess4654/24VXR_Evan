@@ -86,7 +86,7 @@ namespace ArcadeGame.Views.Machines
                 joystickPivot.localEulerAngles = new Vector3
                 (
                     -axis.x * joystickRange,
-                    0,
+                    90,
                     -axis.y * joystickRange
                 );
             }
@@ -104,13 +104,13 @@ namespace ArcadeGame.Views.Machines
         private void AnimateRails(in Vector2 axis)
         {
             //move railing
-            var railPosition = rails.localPosition + (axis.y * forwardMovementSpeed * Time.smoothDeltaTime * rails.right);
-            railPosition.x = Mathf.Clamp(railPosition.x, railBoundaries.x, railBoundaries.y);
+            var railPosition = rails.localPosition + (axis.y * forwardMovementSpeed * Time.smoothDeltaTime * -rails.right);
+            railPosition.z = Mathf.Clamp(railPosition.z, railBoundaries.x, railBoundaries.y);
             rails.localPosition = railPosition;
             
             //move claw block
-            var blockPosition = clawBlock.localPosition + (axis.x * horizontalMovementSpeed * Time.smoothDeltaTime * -clawBlock.forward);
-            blockPosition.z = Mathf.Clamp(blockPosition.z, blockBoundaries.x, blockBoundaries.y);
+            var blockPosition = clawBlock.localPosition + (axis.x * horizontalMovementSpeed * Time.smoothDeltaTime * clawBlock.forward);
+            blockPosition.x = Mathf.Clamp(blockPosition.x, blockBoundaries.x, blockBoundaries.y);
             clawBlock.localPosition = blockPosition;
         }
 
