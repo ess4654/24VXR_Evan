@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Pirate Spin Wheel
+    second: {fileID: 2100000, guid: 706fa994cdf05de4a8d1b6bf716c09ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Roda
     second: {fileID: 2100000, guid: db641016150104d40a607af73a456b93, type: 2}
   - first:

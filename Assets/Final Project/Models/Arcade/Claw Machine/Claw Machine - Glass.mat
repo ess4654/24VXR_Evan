@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Claw Machine - Glass
-  m_Shader: {fileID: -6465566751694194690, guid: be3c3e03ff4a5204ab41db2b8979a191,
+  m_Shader: {fileID: -6465566751694194690, guid: 13c79528e7e74904b8249bfa804cf19a,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

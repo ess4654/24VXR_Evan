@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Cyclone
+    second: {fileID: 2100000, guid: 6207018d33686334690d74f870396116, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Dome Glass
     second: {fileID: 2100000, guid: bc68e2f0e3018654680d5d17ca845d19, type: 2}
   - first:
