@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cyclone - Glass
+  m_Name: Cyclone (Mission To Mars) - Tranparent
   m_Shader: {fileID: -6465566751694194690, guid: 13c79528e7e74904b8249bfa804cf19a,
     type: 3}
   m_Parent: {fileID: 0}

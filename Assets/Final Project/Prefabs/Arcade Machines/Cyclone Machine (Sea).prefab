@@ -58,6 +58,11 @@ PrefabInstance:
       propertyPath: lightOffMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 21f81e8626ef7354a8893dff77e116c9, type: 2}
+    - target: {fileID: 960283097833877090, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af56bcdaeec39b243aa3cbbcdfb16fb2, type: 2}
     - target: {fileID: 1188594715758085089, guid: 78503f8b52f063245bacc43109622387,
         type: 3}
       propertyPath: lightOnMaterial
@@ -78,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: eff6c8b270be30647bb78c370aed6cb6, type: 2}
+    - target: {fileID: 1481893977007267404, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bec3b41dae137ea4bb6a9e07a6464718, type: 2}
     - target: {fileID: 1853246576007560803, guid: 78503f8b52f063245bacc43109622387,
         type: 3}
       propertyPath: saveKey
@@ -493,6 +503,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 21f81e8626ef7354a8893dff77e116c9, type: 2}
+    - target: {fileID: 4725754740689080860, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bec3b41dae137ea4bb6a9e07a6464718, type: 2}
     - target: {fileID: 4738564968218773800, guid: 78503f8b52f063245bacc43109622387,
         type: 3}
       propertyPath: regionName
@@ -503,6 +518,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyclone Machine (Sea)
       objectReference: {fileID: 0}
+    - target: {fileID: 6711742223297182618, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bec3b41dae137ea4bb6a9e07a6464718, type: 2}
     - target: {fileID: 6740954183279843638, guid: 78503f8b52f063245bacc43109622387,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -513,6 +533,21 @@ PrefabInstance:
       propertyPath: regionName
       value: Cyclone 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8357681228017903053, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bec3b41dae137ea4bb6a9e07a6464718, type: 2}
+    - target: {fileID: 8394691521468328835, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bec3b41dae137ea4bb6a9e07a6464718, type: 2}
+    - target: {fileID: 8439476007533525520, guid: 78503f8b52f063245bacc43109622387,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bec3b41dae137ea4bb6a9e07a6464718, type: 2}
     - target: {fileID: 9122045864843089284, guid: 78503f8b52f063245bacc43109622387,
         type: 3}
       propertyPath: regionName
