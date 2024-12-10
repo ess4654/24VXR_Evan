@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Faceplate
+    second: {fileID: 2100000, guid: d53a81466168e1143b770b0a79c518fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: KeyHole
     second: {fileID: 2100000, guid: 0e7b463ae1cbcaa4195e99197f2a10b9, type: 2}
   materials:
