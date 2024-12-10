@@ -1,4 +1,4 @@
-using Assets.Final_Project.Scripts.Controllers;
+using ArcadeGame.Controllers;
 using UnityEngine;
 
 namespace ArcadeGame.Views

@@ -1,5 +1,4 @@
 using ArcadeGame.Data;
-using Assets.Final_Project.Scripts.Controllers;
 using System;
 
 namespace ArcadeGame.Controllers

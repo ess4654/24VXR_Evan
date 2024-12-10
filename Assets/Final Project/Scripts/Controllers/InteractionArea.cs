@@ -1,10 +1,9 @@
-﻿using ArcadeGame.Controllers;
-using ArcadeGame.Controllers.Machines;
+﻿using ArcadeGame.Controllers.Machines;
 using Shared.Editor;
 using System;
 using UnityEngine;
 
-namespace Assets.Final_Project.Scripts.Controllers
+namespace ArcadeGame.Controllers
 {
     /// <summary>
     ///     Handles interaction areas the player can enter/exit.

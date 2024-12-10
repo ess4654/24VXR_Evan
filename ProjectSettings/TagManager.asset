@@ -9,6 +9,8 @@ TagManager:
   - Sound FX
   - Music
   - Prize Area
+  - Bullet
+  - Shooter Screen
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Plushies
   - Block Light
   - Arcade Machine
-  - 
+  - Duck
   - 
   - 
   - 

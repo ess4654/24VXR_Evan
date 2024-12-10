@@ -15,6 +15,9 @@
         /// </summary>
         public const string DefaultSaveFile = "ArcadeGameData";
 
+        public const string TAG_BULLET = "Bullet";
+        public const string TAG_CABINET_SCREEN = "Shooter Screen";
+
         #region TOKEN MACHINES
 
         /// <summary>

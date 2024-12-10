@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3203662025315438235
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -1782468618687703729, guid: a2481a4628fb7834fb2bf23814704e9b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 533de8a850ea0c74f9d0aedbf47aaece,
+        type: 3}
+    - target: {fileID: 7599127345498248738, guid: a2481a4628fb7834fb2bf23814704e9b,
+        type: 3}
+      propertyPath: m_Name
+      value: Duck - Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308475728390802493, guid: a2481a4628fb7834fb2bf23814704e9b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308475728390802493, guid: a2481a4628fb7834fb2bf23814704e9b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308475728390802493, guid: a2481a4628fb7834fb2bf23814704e9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308475728390802493, guid: a2481a4628fb7834fb2bf23814704e9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308475728390802493, guid: a2481a4628fb7834fb2bf23814704e9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318283821381158162, guid: a2481a4628fb7834fb2bf23814704e9b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 533de8a850ea0c74f9d0aedbf47aaece,
+        type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a2481a4628fb7834fb2bf23814704e9b, type: 3}

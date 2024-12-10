@@ -1,6 +1,5 @@
 using ArcadeGame.Controllers;
 using ArcadeGame.Data;
-using Assets.Final_Project.Scripts.Controllers;
 using Shared;
 using Shared.Editor;
 using UnityEngine;

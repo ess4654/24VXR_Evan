@@ -1,4 +1,7 @@
-﻿using Shared;
+﻿using ArcadeGame.Data;
+using Shared;
+using Shared.Helpers;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,13 +12,96 @@ namespace ArcadeGame.Controllers.Games
     /// </summary>
     public class ShooterGame : Singleton<ShooterGame>
     {
-        [SerializeField] private Image shotPrefab;
-        [SerializeField] private RectTransform screen;
+        #region VARAIABLE DECLARATIONS
 
-        public void FireShot(Vector2 screenPoint)
+        [SerializeField] private bool testing;
+        [SerializeField] private BulletShot shotPrefab;
+        [SerializeField] private Duck[] ducks;
+        [SerializeField] private RectTransform screen;
+        [SerializeField] private RectTransform[] screenBoundaries;
+
+        [Header("Game Settings")]
+        [SerializeField] private float spawnRate = 4;
+
+        #endregion
+
+        #region SETUP
+        
+        private void Start()
         {
-            var shot = Instantiate(shotPrefab, screen);
-            shot.rectTransform.anchoredPosition = screenPoint;
+            StartCoroutine(RunGame());
         }
+
+        /// <summary>
+        ///     Run the game asynchronously.
+        /// </summary>
+        /// <returns>Game Routine</returns>
+        private IEnumerator RunGame()
+        {
+            while (this)
+            {
+                yield return new WaitForSeconds(spawnRate);
+
+                if (GameData.State == GameState.ShooterCabinet)
+                    SpawnDuck();
+            }
+        }
+
+        #endregion
+
+        #region METHODS
+
+        /// <summary>
+        ///     Spawns an object into 2D space on the screen.
+        /// </summary>
+        /// <param name="prefab">Prefab to spawn.</param>
+        /// <param name="screenPoint"></param>
+        private void SpawnObject(Image prefab, Vector2 screenPoint)
+        {
+            if (prefab != null)
+            {
+                var shot = Instantiate(prefab, screen);
+                shot.rectTransform.anchoredPosition = screenPoint;
+            }
+        }
+
+        /// <summary>
+        ///     Spawns a duck randomly at the boundary of the screen.
+        /// </summary>
+        private void SpawnDuck()
+        {
+            var randomDuck = ducks.SelectRandom();
+            var randomBoundary = screenBoundaries.SelectRandom();
+            SpawnObject(randomDuck.GetComponent<Image>(), randomBoundary.anchoredPosition);
+        }
+
+        /// <summary>
+        ///     Fires a shot onto the screen point of the arcade cabinet.
+        /// </summary>
+        /// <param name="screenPoint">The screen point position that was shot at.</param>
+        public void FireShot(Vector2 screenPoint) =>
+            SpawnObject(shotPrefab.GetComponent<Image>(), screenPoint);
+
+        #endregion
+
+        #region UPDATES
+
+        private void Update()
+        {
+            if (testing)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    FireShot(Input.mousePosition);
+                }
+            }
+
+            if (GameData.State == GameState.ShooterCabinet)
+            {
+
+            }
+        }
+
+        #endregion
     }
 }

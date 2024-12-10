@@ -1,6 +1,5 @@
 using ArcadeGame.Controllers.Machines;
 using ArcadeGame.Helpers.Audio;
-using Assets.Final_Project.Scripts.Controllers;
 using UnityEngine;
 using UnityEngine.UI;
 
