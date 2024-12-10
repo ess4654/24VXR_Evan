@@ -767,6 +767,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3804482027177338892, guid: a65a7988ebebca84090aeef4a670e306,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910298139415453011, guid: a65a7988ebebca84090aeef4a670e306,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5746296129434397809, guid: a65a7988ebebca84090aeef4a670e306,
         type: 3}
       propertyPath: m_IsActive
@@ -791,6 +801,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571776153630062405, guid: a65a7988ebebca84090aeef4a670e306,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7299676939044675347, guid: a65a7988ebebca84090aeef4a670e306,
         type: 3}
@@ -908,10 +923,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 392734183039553021, guid: 92dbd67369697694f86e073f31d5ba4c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2300894154037797645}
     - targetCorrespondingSourceObject: {fileID: 1974107788852279235, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       insertIndex: -1
@@ -941,24 +952,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 92dbd67369697694f86e073f31d5ba4c, type: 3}
---- !u!1 &2300894154037797644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 392734183039553021, guid: 92dbd67369697694f86e073f31d5ba4c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2300894154037797643}
-  m_PrefabAsset: {fileID: 0}
---- !u!210 &2300894154037797645
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2300894154037797644}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_SortAtRoot: 0
 --- !u!1001 &2679380339205800349
 PrefabInstance:
   m_ObjectHideFlags: 0

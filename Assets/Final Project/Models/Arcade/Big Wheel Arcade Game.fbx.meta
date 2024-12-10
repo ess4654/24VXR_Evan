@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Big Wheel
+    second: {fileID: 2100000, guid: ab0a6651cf9d0de4eab71d8dc56df8b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Black
     second: {fileID: 2100000, guid: 184d5cd8ff351e742b19557c7f5412aa, type: 2}
   - first:
