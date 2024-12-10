@@ -70,6 +70,8 @@ MonoBehaviour:
   gameScene: Duck Game
   gunRay: {fileID: 0}
   screenCollider: {fileID: 5519130337493975196}
+  targetingScreen: 0
+  uvScreenCoord: {x: 0, y: 0}
 --- !u!114 &-2734025647924352279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +293,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1068217631574257634}
     m_Modifications:
+    - target: {fileID: -9172624938892508642, guid: 1358138ff324cb04bb23e2b562d598cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1358138ff324cb04bb23e2b562d598cb,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -305,21 +312,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.6000004
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1358138ff324cb04bb23e2b562d598cb,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1358138ff324cb04bb23e2b562d598cb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1358138ff324cb04bb23e2b562d598cb,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1358138ff324cb04bb23e2b562d598cb,
         type: 3}
@@ -361,10 +353,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8358160585409052369, guid: 1358138ff324cb04bb23e2b562d598cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1358138ff324cb04bb23e2b562d598cb,
         type: 3}
       propertyPath: m_Name
       value: Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1358138ff324cb04bb23e2b562d598cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629508235655800543, guid: 1358138ff324cb04bb23e2b562d598cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145460249991472018, guid: 1358138ff324cb04bb23e2b562d598cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8674780607809188226, guid: 1358138ff324cb04bb23e2b562d598cb,
         type: 3}

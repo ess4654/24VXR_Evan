@@ -13,8 +13,9 @@ namespace Assets.Final_Project.Scripts.Views.Abstract
     {
         private AudioSource sirenSound;
 
-        protected virtual void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             sirenSound = GetComponent<AudioSource>();
         }
 

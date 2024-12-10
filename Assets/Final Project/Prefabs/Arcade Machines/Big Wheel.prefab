@@ -306,6 +306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightOffMaterial: {fileID: 2100000, guid: 0d3313b3aa5354a48acca14b130ca0e3, type: 2}
   lightOnMaterial: {fileID: 2100000, guid: 73696cef11e8bec42b656fe653657d62, type: 2}
+  useShaderVariableInstead: 0
+  variableName: 
+  variableOffValue: 0
+  variableOnValue: 1
   lights:
   - {fileID: 6142725032518511379}
   - {fileID: 2716598231512581306}
@@ -1067,6 +1071,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5755827390163791772}
+    - targetCorrespondingSourceObject: {fileID: -3700646817581377074, guid: be2aa34658c5bf64a9a617d090d108cb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3661177092999991212}
     - targetCorrespondingSourceObject: {fileID: -8926299953737757698, guid: be2aa34658c5bf64a9a617d090d108cb,
         type: 3}
       insertIndex: -1
@@ -1097,6 +1105,27 @@ MonoBehaviour:
   material: {fileID: 11400000, guid: d780f25df1d231d4aa9a31ab3ba935d0, type: 2}
   exportAllChildren: 0
   terrainSimplificationLevel: 0
+--- !u!65 &3661177092999991212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130832400044624191}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2796621, y: 4.0122056, z: 4.0910215}
+  m_Center: {x: 0.00055390596, y: 2.0061033, z: -0.034489274}
 --- !u!1 &6136714044600245007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8926299953737757698, guid: be2aa34658c5bf64a9a617d090d108cb,

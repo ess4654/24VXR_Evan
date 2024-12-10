@@ -1823,7 +1823,7 @@
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "Emission Strength",
     "m_DefaultReferenceName": "_Emission_Strength",
-    "m_OverrideReferenceName": "_EmissionStrength",
+    "m_OverrideReferenceName": "_Emission",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",

@@ -23,8 +23,10 @@ namespace ArcadeGame.Views
 
         #region SETUP
         
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             reverseDirection = Random.value < .5f;
             isCycling = true;
             CycleLight();
@@ -68,7 +70,8 @@ namespace ArcadeGame.Views
         public int SkipNextLight()
         {
             //turn the current light off
-            UpdateLight(currentIndex, false);
+            var x = currentIndex;
+            UpdateLight(x, false);
 
             if (reverseDirection)
             {

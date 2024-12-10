@@ -34,7 +34,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EmissionStrength: 1
+    - _Emission: 0
+    - _EmissionStrength: 0
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &5038037517418982005

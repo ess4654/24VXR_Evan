@@ -715,6 +715,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8844402537548017625}
+    - targetCorrespondingSourceObject: {fileID: -3700646817581377074, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3420398752091155322}
     - targetCorrespondingSourceObject: {fileID: -8926299953737757698, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
         type: 3}
       insertIndex: -1
@@ -826,6 +830,22 @@ MonoBehaviour:
   material: {fileID: 11400000, guid: d780f25df1d231d4aa9a31ab3ba935d0, type: 2}
   exportAllChildren: 0
   terrainSimplificationLevel: 0
+--- !u!208 &3420398752091155322
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153542584267785698}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.775, y: 1.6990001, z: 0.585}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.07300001, y: 1.6990001, z: 0.053000003}
+  m_TimeToStationary: 0.5
 --- !u!4 &5739145242141127563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4937120362177589159, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,

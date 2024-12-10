@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pirate_Spin_Button_AC
+  m_Controller: {fileID: 9100000, guid: 39454e02563b66d4bad7827242a8c63b, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: bc940f7c4b1c2074b9f81493adcd6ee6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c74f65a34c44bbb409dcc60be438ef7d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d304f5539859c2a469adc527515b017d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c6975a9d1d1379c4dafc9e48518ffc93, type: 2}
