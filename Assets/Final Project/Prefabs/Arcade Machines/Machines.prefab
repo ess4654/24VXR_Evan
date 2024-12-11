@@ -223,6 +223,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1196527357787940905}
     m_Modifications:
+    - target: {fileID: 2092131788695328559, guid: da45ff8a6f6f43f4bb470a449efb16df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2206672718990774239, guid: da45ff8a6f6f43f4bb470a449efb16df,
         type: 3}
       propertyPath: m_Name
@@ -311,6 +316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601007682449465530, guid: a72ae2c01534cf64187b04d4f9c3a423,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4285756275
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
