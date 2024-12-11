@@ -1,4 +1,5 @@
 using ArcadeGame.Data;
+using ArcadeGame.Helpers.Audio;
 using Shared.Editor;
 using Shared.Helpers;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace ArcadeGame.Controllers
     ///     Controls the behaviour of the plushies for the claw machine.
     /// </summary>
     [RequireComponent(typeof(Rigidbody))]
-    public class Plushie : Shared.Behaviour
+    public class Plushie : RandomAudioClip
     {
         #region VARIABLE DECLARATIONS
 
@@ -46,13 +47,13 @@ namespace ArcadeGame.Controllers
                 transform.localPosition = Vector3.zero;
         }
 
-
-        private void OnTriggerEnter(Collider collision)
+        private async void OnTriggerEnter(Collider collision)
         {
             if (!spawned) return;
 
             if (collision.CompareTag(Constants.TAG_CLAW_MACHINE_BIN))
             {
+                PlayRandomAudio(); //play plushie hit sound
                 GameEventBroadcaster.BroadcastClawMachinePrize(plushieType, name);
                 
                 //award prize and destroy
@@ -65,9 +66,15 @@ namespace ArcadeGame.Controllers
                     //parent the plushie to the transform of the claw only if another
                     //plushie has not been mounted to the claw already
 
+                    collision.transform.parent.GetComponent<Collider>().enabled = false;
+
                     body.useGravity = false;
                     collider.enabled = false;
                     transform.SetParent(collision.transform);
+
+                    await Timer.WaitForSeconds(.25f);
+                    if (this == null) return;
+
                     insideClaw = true;
                 }
             }
@@ -78,9 +85,9 @@ namespace ArcadeGame.Controllers
         /// </summary>
         public void DropPlushie()
         {
-            Log("Dropping" + name);
+            //Log("Dropping" + name);
             insideClaw = false;
-            //transform.SetParent(null);
+            //transform.SetParent(null, true);
             collider.enabled = true;
             body.useGravity = true;
         }

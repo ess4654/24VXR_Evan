@@ -48,14 +48,46 @@ MonoBehaviour:
   audioFiles:
   - key: button-press
     clip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  - key: 
+  - key: button-release
     clip: {fileID: 0}
-  - key: 
-    clip: {fileID: 0}
-  - key: 
-    clip: {fileID: 0}
-  - key: 
-    clip: {fileID: 0}
+  - key: claw-button
+    clip: {fileID: 8300000, guid: f97316211068597498f567cb6c73c3c5, type: 3}
+  - key: plushie-hit-01
+    clip: {fileID: 8300000, guid: b37e3012ed8b7844aa41a4e7e536cf21, type: 3}
+  - key: plushie-hit-02
+    clip: {fileID: 8300000, guid: c42e117e67f6dd849a9d03893437920c, type: 3}
+  - key: plushie-hit-03
+    clip: {fileID: 8300000, guid: fff3c1f91a2931d40929523573af7ad4, type: 3}
+  - key: plushie-hit-04
+    clip: {fileID: 8300000, guid: a6204ea11a9450f43b0222bfb950e7f6, type: 3}
+  - key: plushie-hit-05
+    clip: {fileID: 8300000, guid: 11f142d171fa95d428c36376136ec581, type: 3}
+  - key: plushie-hit-06
+    clip: {fileID: 8300000, guid: aaa107e79da6ef146aa2af2b13bb076e, type: 3}
+  - key: plushie-hit-07
+    clip: {fileID: 8300000, guid: f2fc0294a72f3274f9e179804c239810, type: 3}
+  - key: plushie-hit-08
+    clip: {fileID: 8300000, guid: 734d41e7497dc60468fb08c4a7c24e35, type: 3}
+  - key: plushie-hit-09
+    clip: {fileID: 8300000, guid: ae17c57d332ce9a4e8a592e8085bb7b6, type: 3}
+  - key: plushie-hit-10
+    clip: {fileID: 8300000, guid: 2157404c729149e49a051ad3a38420c1, type: 3}
+  - key: plushie-hit-11
+    clip: {fileID: 8300000, guid: 9b1ffde7c704468418a26d1388c4d5f8, type: 3}
+  - key: plushie-hit-12
+    clip: {fileID: 8300000, guid: c5849b1e1deca8c4980bc53567355702, type: 3}
+  - key: plushie-hit-13
+    clip: {fileID: 8300000, guid: 7e923d7484a793c4183b0635515c8973, type: 3}
+  - key: plushie-hit-14
+    clip: {fileID: 8300000, guid: aa49372295c1e2847ac429208586707b, type: 3}
+  - key: plushie-hit-15
+    clip: {fileID: 8300000, guid: c79beeae51a09f74f90fcdd07f10a88f, type: 3}
+  - key: plushie-hit-16
+    clip: {fileID: 8300000, guid: 05bee57d6a87d8e40877859faa67c041, type: 3}
+  - key: plushie-hit-17
+    clip: {fileID: 8300000, guid: 9eb6dd27b409aef40a48022f16850603, type: 3}
+  - key: plushie-hit-18
+    clip: {fileID: 8300000, guid: 45a0be34fb964384180d7d77db94dc52, type: 3}
 --- !u!82 &4145062070129986314
 AudioSource:
   m_ObjectHideFlags: 0
@@ -65,7 +97,8 @@ AudioSource:
   m_GameObject: {fileID: 2001408091452351638}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1016257220201838294, guid: 3a7fc5aa0209c60448d269e77f0936d7,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

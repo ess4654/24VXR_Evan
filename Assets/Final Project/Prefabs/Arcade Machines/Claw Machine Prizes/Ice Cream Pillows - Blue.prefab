@@ -146,4 +146,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fac98ca28683a8499ee6ee5e72a33b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clips: []
+  useSoundKeyInstead: 1
+  clipKeys:
+  - plushie-hit-1
+  - plushie-hit-2
+  - plushie-hit-3
+  - plushie-hit-4
+  - plushie-hit-5
+  - plushie-hit-6
+  - plushie-hit-7
+  - plushie-hit-8
+  - plushie-hit-9
+  - plushie-hit-10
+  - plushie-hit-11
+  - plushie-hit-12
+  - plushie-hit-13
+  - plushie-hit-14
+  - plushie-hit-15
+  - plushie-hit-16
+  - plushie-hit-17
+  - plushie-hit-18
   plushieType: 1
+  m_DropPlushie: 0

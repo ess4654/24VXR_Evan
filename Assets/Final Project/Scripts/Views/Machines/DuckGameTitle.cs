@@ -1,7 +1,7 @@
 using ArcadeGame.Controllers;
 using ArcadeGame.Data;
 
-namespace ArcadeGame.Views
+namespace ArcadeGame.Views.Machines
 {
     /// <summary>
     ///     Flashes the text on the screen for the duck slayer game.
@@ -21,7 +21,7 @@ namespace ArcadeGame.Views
         private void HandleStateChange(GameState state)
         {
             //hide the title text when the shooter game starts
-            //label.enabled = state != GameState.ShooterCabinet;
+            label.enabled = state != GameState.ShooterCabinet;
         }
     }
 }

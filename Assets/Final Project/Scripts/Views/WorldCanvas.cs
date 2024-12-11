@@ -13,10 +13,13 @@ namespace ArcadeGame.Views
 
         private Canvas canvas;
 
+        #region SETUP
+
         private void Awake()
         {
             canvas = GetComponent<Canvas>();
             canvas.enabled = false;
+            canvas.worldCamera = Camera.main;
         }
 
         private void OnEnable()
@@ -36,6 +39,8 @@ namespace ArcadeGame.Views
                 interactionRegion.OnExit -= RegionExited;
             }
         }
+
+        #endregion
 
         private void RegionEntered()
         {

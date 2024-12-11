@@ -49,8 +49,19 @@ namespace ArcadeGame.Helpers.Audio
             if (Instance == null) return;
 
             var file = Instance.audioFiles.FirstOrDefault(x => x.key == key);
-            if(file.clip != null)
-                Instance.uiSource.PlayOneShot(file.clip);
+            PlayAudioClip(file.clip);
+        }
+
+        /// <summary>
+        ///     Plays a random audio clip in the global 2D sound source.
+        /// </summary>
+        /// <param name="clip">The clip to play.</param>
+        public static void PlayAudioClip(AudioClip clip)
+        {
+            if (Instance == null) return;
+
+            if (clip != null)
+                Instance.uiSource.PlayOneShot(clip);
         }
 
         #endregion

@@ -34,6 +34,11 @@ namespace ArcadeGame.Controllers.Machines
         [Header("HUD")]
         [SerializeField] private string UI_Panel;
 
+        /// <summary>
+        ///     Override this to pause or stop the countdown process.
+        /// </summary>
+        protected virtual bool CanCountdown => true;
+
         private int depositedTokens;
         
         private const string tokenKey = "DepositedTokens";
@@ -71,7 +76,7 @@ namespace ArcadeGame.Controllers.Machines
         {
             while (this)
             {
-                if (hasTimer && GameData.State == gameStateOnPlay && countdown > 0)
+                if (hasTimer && GameData.State == gameStateOnPlay && countdown > 0 && CanCountdown)
                 {
                     countdown--;
                     OnCountdown(countdown);

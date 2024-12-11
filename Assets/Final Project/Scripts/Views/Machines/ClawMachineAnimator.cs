@@ -5,7 +5,6 @@ using System;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace ArcadeGame.Views.Machines
@@ -37,16 +36,25 @@ namespace ArcadeGame.Views.Machines
 
         [Header("Claw Settings")]
         [SerializeField] private CharacterJoint claw;
+        [SerializeField] private Collider clawCollider;
         [SerializeField] private Vector2 clawExtensionRange;
         [SerializeField] private float clawExtensionTime = 1.5f;
         [SerializeField] private float bladeClosingTime = 1f;
+
+        [Header("Audio")]
+        [SerializeField] private AudioSource movementSounds;
+        [SerializeField] private AudioSource clawSounds;
+        [SerializeField] private AudioClip clawClose;
+        [SerializeField] private AudioClip clawOpen;
 
         [Header("UI")]
         [SerializeField] private Canvas uiCanvas;
         [SerializeField] private Image countdownClock;
         [SerializeField] private TextMeshProUGUI countdownDisplay;
+        [SerializeField] private TextMeshPro countdownDisplay3D;
 
-        private float restingClawY;
+        private bool clawExtensionCompete;
+
         private const float threshold = 0.01f;
         private const float autoAxis = 0.75f;
 
@@ -57,7 +65,6 @@ namespace ArcadeGame.Views.Machines
         protected override void Awake()
         {
             base.Awake();
-            restingClawY = clawBlock.Find("Claw").localPosition.y;
             if (uiCanvas)
                 uiCanvas.enabled = false;
         }
@@ -102,6 +109,9 @@ namespace ArcadeGame.Views.Machines
             clampedAxis.x = Mathf.Abs(axis.x) < joystickDeadZone ? 0 : axis.x;
             clampedAxis.y = Mathf.Abs(axis.y) < joystickDeadZone ? 0 : axis.y;
             AnimateRails(in clampedAxis);
+
+            if (movementSounds)
+                movementSounds.mute = clampedAxis == Vector2.zero;
         }
 
         /// <summary>
@@ -127,6 +137,9 @@ namespace ArcadeGame.Views.Machines
         /// <returns>Completed dropping animation</returns>
         public async Task AnimateClawDrop()
         {
+            if(movementSounds)
+                movementSounds.mute = true;
+
             ExtendAndRetractClaw(); //start the claw extension and retraction method asynchronously
             
             //animate the button press down
@@ -144,8 +157,6 @@ namespace ArcadeGame.Views.Machines
             await Timer.WaitUntil(() => this == null || clawExtensionCompete);
         }
 
-        bool clawExtensionCompete;
-
         /// <summary>
         ///     Controls the animation of the claw extension downwards, then closing the blades, and retracting back up.
         /// </summary>
@@ -155,6 +166,9 @@ namespace ArcadeGame.Views.Machines
             clawExtensionCompete = false;
             var startY = clawExtensionRange.x;
             var endY = clawExtensionRange.y;
+
+            if(clawCollider)
+                clawCollider.enabled = true;
 
             //animate claw dropping down
             LeanTween
@@ -168,6 +182,9 @@ namespace ArcadeGame.Views.Machines
             //animate the claw blades closing
             await AnimateClawBlades(false);
             if (this == null) return;
+
+            if(clawCollider)
+                clawCollider.enabled = false;
 
             //animate claw pulling up
             LeanTween
@@ -206,7 +223,18 @@ namespace ArcadeGame.Views.Machines
                 .setOnUpdate((float v) => controller.SetFloat("Claw Blade Rotation", v))
                 .setEaseLinear();
 
-            await Timer.WaitForSeconds(bladeClosingTime);
+            if(clawSounds) //play audio in 3D space
+                clawSounds.PlayOneShot(open ? clawOpen : clawClose);
+
+            await Timer.WaitForSeconds(bladeClosingTime / 2f);
+            if (this == null) return;
+
+            //if the claw has a plushie, release it
+            var plushie = GetComponentInChildren<Plushie>();
+            if(open && plushie != null)
+                plushie.DropPlushie();
+
+            await Timer.WaitForSeconds(bladeClosingTime / 2f);
         }
 
         /// <summary>
@@ -216,21 +244,14 @@ namespace ArcadeGame.Views.Machines
         public async Task AnimatePrizeDrop()
         {
             await AnimateTowards(dropZone);
+            if(this == null) return;
+
             await Timer.WaitForSeconds(.5f);
+            if(this == null) return;
 
             //animate the claw blades opening
             await AnimateClawBlades(true);
-            
-            await Timer.WaitForSeconds(.5f);
-            if(this == null) return;
-
-            //if the claw has a plushie, release it
-            var plushie = GetComponentInChildren<Plushie>();
-            if (plushie != null)
-                plushie.DropPlushie();
-
-            await Timer.WaitForSeconds(.5f);
-            if(this == null) return;
+            await Timer.WaitForSeconds(1f);
         }
 
         /// <summary>
@@ -253,6 +274,9 @@ namespace ArcadeGame.Views.Machines
             float xInput;
             float yInput;
 
+            if (movementSounds)
+                movementSounds.mute = false;
+
             while (this && (Mathf.Abs(clawBlock.localPosition.x - position.x) > threshold) || (Mathf.Abs(rails.localPosition.z - position.y) > threshold))
             {
                 //Log($"Moving Towards: {position}");
@@ -263,6 +287,9 @@ namespace ArcadeGame.Views.Machines
                 AnimateRails(new Vector2(xInput, yInput));
                 await Timer.WaitForFrame();
             }
+
+            if (movementSounds)
+                movementSounds.mute = true;
 
             //Log($"Finished Moving Claw");
         }
@@ -278,6 +305,8 @@ namespace ArcadeGame.Views.Machines
                 countdownDisplay.text = remainingTime.ToString();
             if(countdownClock)
                 countdownClock.fillAmount = ((float)remainingTime / startingTime);
+            if(countdownDisplay3D)
+                countdownDisplay3D.text = remainingTime.ToString();
         }
 
         #endregion

@@ -54,6 +54,7 @@ namespace ArcadeGame.Views.Machines
             if (buttonIndex < 0 || buttonIndex >= buttonAnimators.Length)
                 throw new IndexOutOfRangeException($"{buttonIndex}");
 
+            buttonsFlasher.TestFlash();
             buttonAnimators[buttonIndex].SetBool(buttonAnimatorToggle, down);
             SoundManager.PlayAudioClip(down ? buttonPressAudioKey: buttonReleaseAudioKey);
         }

@@ -65,7 +65,7 @@ namespace ArcadeGame.Controllers.Machines
             if (GameData.State == gameStateOnPlay)
             {
                 droppingClaw = true;
-                
+
                 await animator.AnimateClawDrop(); //drop animation
                 if (this == null) return;
 
@@ -82,6 +82,8 @@ namespace ArcadeGame.Controllers.Machines
         }
 
         #region ENGINE
+
+        protected override bool CanCountdown => !droppingClaw; //stop the countdown when we drop
 
         protected override void OnGameActive()
         {

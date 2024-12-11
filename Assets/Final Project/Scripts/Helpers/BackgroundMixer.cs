@@ -5,7 +5,7 @@ using Shared.Editor;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace ArcadeGame.Helpers
+namespace ArcadeGame.Helpers.Audio
 {
     /// <summary>
     ///     Controls the audio mixer for the background music of the arcade game.
