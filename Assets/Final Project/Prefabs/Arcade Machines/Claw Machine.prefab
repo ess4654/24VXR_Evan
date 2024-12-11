@@ -405,6 +405,59 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.98246384, y: 0.47338748, z: 0.5367347}
   m_Center: {x: -0.0299716, y: 0.26330626, z: 0.004945934}
+--- !u!1 &6790770229377066226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5798292858305913188}
+  - component: {fileID: 5172242028114522075}
+  m_Layer: 8
+  m_Name: Prize Mount
+  m_TagString: Claw
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5798292858305913188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6790770229377066226}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000037748954, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 2.5125, z: -0.045}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 812038643200081905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5172242028114522075
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6790770229377066226}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &39129834316639974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -602,15 +655,20 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -3236115032989658409, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -3236115032989658409, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3133498875991405556, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -3133498875991405556, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3083375478037696170, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
         type: 3}
@@ -631,6 +689,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1547504421437280903, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: -1547504421437280903, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -188935493433192741, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
         type: 3}
@@ -707,6 +775,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1b8f1a9df20c0ae40be6952f6165a473, type: 2}
+    - target: {fileID: 8978037360021404131, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -23
+      objectReference: {fileID: 0}
     - target: {fileID: 9095133976785123391, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
         type: 3}
       propertyPath: m_Layer
@@ -714,7 +787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 28523704846918621, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5798292858305913188}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -3700646817581377074, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
         type: 3}
@@ -757,6 +834,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2092131788695328559}
   m_SourcePrefab: {fileID: 100100000, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c, type: 3}
+--- !u!4 &812038643200081905 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 28523704846918621, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 802105824821419052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &912857992787786695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
@@ -882,8 +965,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
-  m_Center: {x: -4.038968e-28, y: 2.65, z: 0.00000011920929}
+  m_Radius: 0.125
+  m_Center: {x: 0, y: 2.65, z: -0.053}
 --- !u!4 &2228623197600699346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1570645775957872638, guid: 1cdb5edd302ea234fbc9d9baa76f7a4c,
@@ -1263,11 +1346,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plushie Spawn Points
-      objectReference: {fileID: 0}
-    - target: {fileID: 6705404124748627754, guid: 6a57f63b3333dcc4aabedc908b2089b7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6995211125133497037, guid: 6a57f63b3333dcc4aabedc908b2089b7,
         type: 3}

@@ -6,6 +6,7 @@
     public enum ClawMachinePrizes
     {
         LilBuddy,
-        IceCream
+        IceCream,
+        Octopus
     }
 }

@@ -28,6 +28,13 @@ namespace ArcadeGame.Controllers
         /// <param name="area">Area that is being passed.</param>
         public delegate void InteractionAreaAction(InteractionArea area);
 
+        /// <summary>
+        ///    An event that contains information about a claw machine prize. 
+        /// </summary>
+        /// <param name="prizeType">The type of prize passed by the action.</param>
+        /// <param name="prizeName">The name of the prize passed by the action.</param>
+        public delegate void ClawMachinePrizeAction(ClawMachinePrizes prizeType, string prizeName);
+
         #endregion
 
         #region EVENTS
@@ -56,6 +63,11 @@ namespace ArcadeGame.Controllers
         ///     Called when the player enters a region.
         /// </summary>
         public static event InteractionAreaAction OnPlayerEnteredRegion;
+
+        /// <summary>
+        ///     Called when the player wins a toy from the claw machine.
+        /// </summary>
+        public static event ClawMachinePrizeAction OnClawMachinePrizeWon;
 
         #endregion
 
@@ -94,6 +106,14 @@ namespace ArcadeGame.Controllers
         /// <param name="region">The region the player has entered.</param>
         public static void BroadcastPlayerEnteredRegion(InteractionArea region) =>
             OnPlayerEnteredRegion?.Invoke(region);
+
+        /// <summary>
+        ///     Broadcasts event when a prize from the claw machine is won.
+        /// </summary>
+        /// <param name="prizeType">Type of prize that was won.</param>
+        /// <param name="prizeName">name of the prize that was won.</param>
+        public static void BroadcastClawMachinePrize(ClawMachinePrizes prizeType, string prizeName) =>
+            OnClawMachinePrizeWon?.Invoke(prizeType, prizeName);
 
         #endregion
     }

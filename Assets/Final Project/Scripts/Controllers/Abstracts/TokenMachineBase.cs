@@ -26,6 +26,7 @@ namespace ArcadeGame.Controllers.Machines
         
         [SerializeField] private bool hasTimer;
         [SerializeField, DependsUpon("hasTimer")] protected float gameTime = 30;
+        [SerializeField, ReadOnly] private float countdown;
 
         [Header("Animation")]
         [SerializeField] protected ArcadeMachineAnimator animator;
@@ -34,7 +35,6 @@ namespace ArcadeGame.Controllers.Machines
         [SerializeField] private string UI_Panel;
 
         private int depositedTokens;
-        private float countdown;
         
         private const string tokenKey = "DepositedTokens";
 

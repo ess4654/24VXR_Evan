@@ -221,7 +221,16 @@ namespace ArcadeGame.Views.Machines
             //animate the claw blades opening
             await AnimateClawBlades(true);
             
-            await Timer.WaitForSeconds(1);
+            await Timer.WaitForSeconds(.5f);
+            if(this == null) return;
+
+            //if the claw has a plushie, release it
+            var plushie = GetComponentInChildren<Plushie>();
+            if (plushie != null)
+                plushie.DropPlushie();
+
+            await Timer.WaitForSeconds(.5f);
+            if(this == null) return;
         }
 
         /// <summary>

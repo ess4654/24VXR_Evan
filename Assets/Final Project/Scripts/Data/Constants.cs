@@ -17,6 +17,8 @@
 
         public const string TAG_BULLET = "Bullet";
         public const string TAG_CABINET_SCREEN = "Shooter Screen";
+        public const string TAG_CLAW_MACHINE_BIN = "Prize Area";
+        public const string TAG_CLAW_MACHINE_CLAW = "Claw";
 
         #region TOKEN MACHINES
 
