@@ -1,5 +1,6 @@
 using ArcadeGame.Helpers.Audio;
 using Shared.Editor;
+using System;
 using UnityEngine;
 
 namespace ArcadeGame.Views.Machines
@@ -21,7 +22,7 @@ namespace ArcadeGame.Views.Machines
         [SerializeField, DependsUpon("hasButtons")] private string buttonPressAudioKey;
         [SerializeField, DependsUpon("hasButtons")] private string buttonReleaseAudioKey;
 
-        private Animator controller;
+        protected Animator controller;
 
         #endregion
 
@@ -39,13 +40,19 @@ namespace ArcadeGame.Views.Machines
         /// <summary>
         ///     Animates the button press of an arcade machine, & plays the audio feedback.
         /// </summary>
-        /// <param name="buttonIndex"></param>
-        /// <param name="down"></param>
-        /// <exception cref="System.Exception"></exception>
+        /// <param name="buttonIndex">Index of the button to animate.</param>
+        /// <param name="down">If the button is being pressed down or up.</param>
+        /// <exception cref="Exception">If the index is out of range, or the button animators are not properly configured.</exception>
         private void AnimateButton(int buttonIndex, bool down)
         {
             if (!hasButtons)
-                throw new System.Exception($"{name} does not use buttons.");
+                throw new Exception($"{name} does not use buttons.");
+
+            if (buttonAnimators.Length == 0)
+                throw new Exception($"{name} needs to configure it's button animators.");
+
+            if (buttonIndex < 0 || buttonIndex >= buttonAnimators.Length)
+                throw new IndexOutOfRangeException($"{buttonIndex}");
 
             buttonAnimators[buttonIndex].SetBool(buttonAnimatorToggle, down);
             SoundManager.PlayAudioClip(down ? buttonPressAudioKey: buttonReleaseAudioKey);

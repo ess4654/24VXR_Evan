@@ -1438,6 +1438,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 6094834893172523836, guid: 120630229c49b934bb9724bb36fb721d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.095
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094834893172523836, guid: 120630229c49b934bb9724bb36fb721d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923557495333044346, guid: 120630229c49b934bb9724bb36fb721d,
+        type: 3}
+      propertyPath: m_PositionInput.m_Action.m_Id
+      value: cc66d84b-bdb3-42f3-8338-97fa3af54d7d
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923557495333044346, guid: 120630229c49b934bb9724bb36fb721d,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_Id
+      value: 30a55134-5afb-40e8-ac92-e389d31df12d
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923557495333044346, guid: 120630229c49b934bb9724bb36fb721d,
+        type: 3}
+      propertyPath: m_PositionInput.m_Action.m_Name
+      value: Position Input
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923557495333044346, guid: 120630229c49b934bb9724bb36fb721d,
+        type: 3}
+      propertyPath: m_RotationInput.m_Action.m_Name
+      value: Rotation Input
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
