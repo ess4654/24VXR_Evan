@@ -170,6 +170,8 @@ namespace ArcadeGame.Views.Machines
             if(clawCollider)
                 clawCollider.enabled = true;
 
+            claw.GetComponent<Rigidbody>().AddForce(.01f * Vector3.down, ForceMode.Impulse);
+
             //animate claw dropping down
             LeanTween
                 .value(startY, endY, clawExtensionTime)

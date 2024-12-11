@@ -88,6 +88,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9eb6dd27b409aef40a48022f16850603, type: 3}
   - key: plushie-hit-18
     clip: {fileID: 8300000, guid: 45a0be34fb964384180d7d77db94dc52, type: 3}
+  - key: pirate-button-press
+    clip: {fileID: 8300000, guid: 7119c31695d1a604f913fecb03d6e0d5, type: 3}
+  - key: pirate-start-spin
+    clip: {fileID: 8300000, guid: 55be9b49b62367b4eb1287cd842cd469, type: 3}
 --- !u!82 &4145062070129986314
 AudioSource:
   m_ObjectHideFlags: 0

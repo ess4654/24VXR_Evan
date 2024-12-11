@@ -44,24 +44,27 @@ namespace ArcadeGame.Helpers.Audio
         ///     Plays the audio clip in 2D space.
         /// </summary>
         /// <param name="key">Key of the audio source to play.</param>
-        public static void PlayAudioClip(string key)
+        public static AudioClip PlayAudioClip(string key)
         {
-            if (Instance == null) return;
+            if (Instance == null) return null;
 
             var file = Instance.audioFiles.FirstOrDefault(x => x.key == key);
-            PlayAudioClip(file.clip);
+            
+            return PlayAudioClip(file.clip);
         }
 
         /// <summary>
         ///     Plays a random audio clip in the global 2D sound source.
         /// </summary>
         /// <param name="clip">The clip to play.</param>
-        public static void PlayAudioClip(AudioClip clip)
+        public static AudioClip PlayAudioClip(AudioClip clip)
         {
-            if (Instance == null) return;
+            if (Instance == null) return null;
 
             if (clip != null)
                 Instance.uiSource.PlayOneShot(clip);
+
+            return clip;
         }
 
         #endregion

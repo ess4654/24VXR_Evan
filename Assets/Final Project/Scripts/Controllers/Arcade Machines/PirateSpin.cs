@@ -1,3 +1,7 @@
+using ArcadeGame.Views.Machines;
+using Shared.Helpers;
+using UnityEngine;
+
 namespace ArcadeGame.Controllers.Machines
 {
     /// <summary>
@@ -7,5 +11,15 @@ namespace ArcadeGame.Controllers.Machines
     {
         public const string Filename = "Pirate Spin";
 
+        #region VARIABLE DECLARATIONS
+
+        private new PirateSpinAnimator animator => base.animator as PirateSpinAnimator;
+
+        #endregion
+
+        protected override void OnGameActive()
+        {
+            //UpdateSpinRate();
+        }
     }
 }

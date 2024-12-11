@@ -145,6 +145,7 @@ MonoBehaviour:
   playbackTime: 0
   length: 0
   delay: 0.4
+  muteAtStart: 1
   randomSounds:
   - {fileID: 8300000, guid: 9b3ab6d4c8291604aa74d14a548f371d, type: 3}
   - {fileID: 8300000, guid: 800c77ef16f6ab44d8a55577a887b529, type: 3}

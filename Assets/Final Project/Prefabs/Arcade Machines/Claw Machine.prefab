@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7647413382246337659}
   - component: {fileID: 8145093511614025545}
   - component: {fileID: 1791636349324116345}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303901437666286056}
   - component: {fileID: 2501663402530822644}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Prize Area
   m_TagString: Prize Area
   m_Icon: {fileID: 0}
@@ -1169,7 +1169,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.125
   m_Center: {x: 0, y: 2.65, z: -0.053}

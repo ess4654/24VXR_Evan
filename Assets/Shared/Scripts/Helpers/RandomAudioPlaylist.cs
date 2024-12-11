@@ -16,7 +16,13 @@ namespace Shared.Helpers
         [SerializeField, ReadOnly] private float playbackTime;
         [SerializeField, ReadOnly] private float length;
         [SerializeField] private float delay;
+        [SerializeField] private bool muteAtStart;
         [SerializeField] private AudioClip[] randomSounds;
+
+        /// <summary>
+        ///     The amount of time to delay between clips.
+        /// </summary>
+        public float Delay { get => delay; set => delay = value; }
 
         private AudioSource source;
 
@@ -27,6 +33,8 @@ namespace Shared.Helpers
         private void Awake()
         {
             source = GetComponent<AudioSource>();
+            source.mute = muteAtStart;
+            
             StartCoroutine(PlayRandomSound());
         }
 
@@ -60,6 +68,12 @@ namespace Shared.Helpers
 
             StartCoroutine(PlayRandomSound());
         }
+
+        /// <summary>
+        ///     Mute or unmute the audio source.
+        /// </summary>
+        /// <param name="mute">If the source is to be muted.</param>
+        public void Mute(bool mute) => source.mute = mute;
 
         #endregion
     }
