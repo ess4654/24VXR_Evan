@@ -224,6 +224,7 @@ MonoBehaviour:
   requiredTokens: 2
   hasTimer: 0
   gameTime: 30
+  countdown: 0
   animator: {fileID: 4831241767591372872}
   UI_Panel: cyclone
   spinningGame: 0
@@ -425,7 +426,7 @@ AudioSource:
   Priority: 50
   DopplerLevel: 1
   MinDistance: 3
-  MaxDistance: 20
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

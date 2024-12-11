@@ -24,7 +24,7 @@ namespace ArcadeGame.Data
                 GameEventBroadcaster.BroadcastGameStateChanged(state);
             }
         }
-        private static GameState state = GameState.ClawMachine;
+        private static GameState state;
 
         /// <summary>
         ///     The number of tokens we currently have.

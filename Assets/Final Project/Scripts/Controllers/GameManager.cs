@@ -19,7 +19,7 @@ namespace ArcadeGame.Controllers
 
         private void Start()
         {
-            GameData.State = GameState.ShooterCabinet;
+            GameData.State = GameState.PirateSpin;
             GameData.LoadData();
         }
 
