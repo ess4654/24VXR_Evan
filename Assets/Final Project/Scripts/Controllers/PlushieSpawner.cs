@@ -22,7 +22,6 @@ namespace ArcadeGame.Controllers
             spawnPoints ??= new List<Transform>();
             foreach (Transform child in transform)
             {
-                child.RemoveComponent<Collider>();
                 child.RemoveComponent<MeshFilter>();
                 child.RemoveComponent<MeshRenderer>();
                 child.localScale = Vector3.one;
@@ -51,7 +50,7 @@ namespace ArcadeGame.Controllers
                 //randomly spawn plushies throughout the matrix
                 if(Random.value < spawnChance)
                 {
-                    var randomRotation = new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
+                    var randomRotation = Vector3.zero; // new Vector3(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
                     Instantiate(plushies.SelectRandom(), spawnLocation.position, Quaternion.Euler(randomRotation), spawnLocation);
                 }
             }

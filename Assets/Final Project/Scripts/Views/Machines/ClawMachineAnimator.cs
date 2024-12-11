@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace ArcadeGame.Views.Machines
@@ -33,6 +34,12 @@ namespace ArcadeGame.Views.Machines
         [SerializeField] private float horizontalMovementSpeed = 1f;
         [SerializeField] private Vector2 blockBoundaries;
         [SerializeField] private Vector2 dropZone;
+
+        [Header("Claw Settings")]
+        [SerializeField] private CharacterJoint claw;
+        [SerializeField] private Vector2 clawExtensionRange;
+        [SerializeField] private float clawExtensionTime = 1.5f;
+        [SerializeField] private float bladeClosingTime = 1f;
 
         [Header("UI")]
         [SerializeField] private Canvas uiCanvas;
@@ -120,16 +127,86 @@ namespace ArcadeGame.Views.Machines
         /// <returns>Completed dropping animation</returns>
         public async Task AnimateClawDrop()
         {
+            ExtendAndRetractClaw(); //start the claw extension and retraction method asynchronously
+            
+            //animate the button press down
             PressButton(0);
             SetBool("Down", true);
 
-            await Timer.WaitForSeconds(1f);
+            await Timer.WaitForSeconds(1f); //wait 1 second to animate the button back up
+            if (this == null) return;
+
+            //animate the button press up down
             ReleaseButton(0);
             
             SetBool("Down", false);
-            var claw = clawBlock.Find("Claw");
-            await Timer.WaitUntil(() => claw.localPosition.y >= restingClawY);
-            await Timer.WaitForSeconds(.25f);
+            
+            await Timer.WaitUntil(() => this == null || clawExtensionCompete);
+        }
+
+        bool clawExtensionCompete;
+
+        /// <summary>
+        ///     Controls the animation of the claw extension downwards, then closing the blades, and retracting back up.
+        /// </summary>
+        /// <returns>Completed claw extension method.</returns>
+        private async Task ExtendAndRetractClaw()
+        {
+            clawExtensionCompete = false;
+            var startY = clawExtensionRange.x;
+            var endY = clawExtensionRange.y;
+
+            //animate claw dropping down
+            LeanTween
+                .value(startY, endY, clawExtensionTime)
+                .setOnUpdate(UpdateClawAnchor)
+                .setEaseLinear();
+            
+            await Timer.WaitForSeconds(clawExtensionTime);
+            if (this == null) return;
+
+            //animate the claw blades closing
+            await AnimateClawBlades(false);
+            if (this == null) return;
+
+            //animate claw pulling up
+            LeanTween
+                .value(endY, startY, clawExtensionTime)
+                .setOnUpdate(UpdateClawAnchor)
+                .setEaseLinear();
+
+            await Timer.WaitForSeconds(clawExtensionTime);
+            if (this == null) return;
+
+            clawExtensionCompete = true;
+        }
+
+        /// <summary>
+        ///     Updates the value of the claw anchor.
+        /// </summary>
+        /// <param name="yValue">Y Value of the claw anchor point.</param>
+        private void UpdateClawAnchor(float yValue)
+        {
+            if (claw != null)
+                claw.anchor = yValue * Vector3.up;
+        }
+
+        /// <summary>
+        ///     Animates the opening and closing of the claw blades.
+        /// </summary>
+        /// <param name="open">Whether the blades are to be opened or not.</param>
+        /// <returns>Completed animation routine</returns>
+        private async Task AnimateClawBlades(bool open)
+        {
+            //animate the claw blades opening or closing
+            var start = open ? 1 : 0;
+            var end = open ? 0: 1;
+            LeanTween
+                .value(start, end, bladeClosingTime)
+                .setOnUpdate((float v) => controller.SetFloat("Claw Blade Rotation", v))
+                .setEaseLinear();
+
+            await Timer.WaitForSeconds(bladeClosingTime);
         }
 
         /// <summary>
@@ -139,7 +216,21 @@ namespace ArcadeGame.Views.Machines
         public async Task AnimatePrizeDrop()
         {
             await AnimateTowards(dropZone);
-            await Timer.WaitForSeconds(1);
+            await Timer.WaitForSeconds(.5f);
+
+            //animate the claw blades opening
+            await AnimateClawBlades(true);
+            
+            await Timer.WaitForSeconds(.5f);
+            if(this == null) return;
+
+            //if the claw has a plushie, release it
+            var plushie = GetComponentInChildren<Plushie>();
+            if (plushie != null)
+                plushie.DropPlushie();
+
+            await Timer.WaitForSeconds(.5f);
+            if(this == null) return;
         }
 
         /// <summary>
@@ -162,13 +253,18 @@ namespace ArcadeGame.Views.Machines
             float xInput;
             float yInput;
 
-            while (this && (Mathf.Abs(clawBlock.localPosition.z - position.x) > threshold) || (Mathf.Abs(rails.localPosition.x - position.y) > threshold))
+            while (this && (Mathf.Abs(clawBlock.localPosition.x - position.x) > threshold) || (Mathf.Abs(rails.localPosition.z - position.y) > threshold))
             {
-                xInput = Mathf.Abs(clawBlock.localPosition.z - position.x) <= threshold ? 0 : clawBlock.localPosition.z < position.x ? -autoAxis : autoAxis;
-                yInput = Mathf.Abs(rails.localPosition.x - position.y) <= threshold ? 0 : rails.localPosition.x < position.y ? autoAxis : -autoAxis;
+                //Log($"Moving Towards: {position}");
+                //Log($"Distance Remaining: {new Vector2(Mathf.Abs(clawBlock.localPosition.x - position.x), Mathf.Abs(rails.localPosition.z - position.y)).magnitude}");
+
+                xInput = Mathf.Abs(clawBlock.localPosition.x - position.x) <= threshold ? 0 : clawBlock.localPosition.x < position.x ? -autoAxis : autoAxis;
+                yInput = Mathf.Abs(rails.localPosition.z - position.y) <= threshold ? 0 : rails.localPosition.z < position.y ? -autoAxis : autoAxis;
                 AnimateRails(new Vector2(xInput, yInput));
                 await Timer.WaitForFrame();
             }
+
+            //Log($"Finished Moving Claw");
         }
 
         /// <summary>
