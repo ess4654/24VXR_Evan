@@ -330,7 +330,7 @@ MonoBehaviour:
   dropZone: {x: 0.55, y: 0.2}
   claw: {fileID: 427423251920401738}
   clawCollider: {fileID: 2092131788695328559}
-  clawExtensionRange: {x: 2.8856, y: 3.8}
+  clawExtensionRange: {x: 2.8856, y: 4}
   clawExtensionTime: 1.5
   bladeClosingTime: 0.75
   movementSounds: {fileID: 6701023920533832199}
@@ -1389,7 +1389,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5153542584267785698}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c86d4ff48df3424fa402d0d7c7919f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
