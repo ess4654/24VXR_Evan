@@ -41,6 +41,9 @@ namespace ArcadeGame.Controllers
         /// </summary>
         public static event Action<InputDevice> OnControllerTriggerUp;
 
+        public static event AxisEvent OnControllerRightAxis;
+        public static event AxisEvent OnControllerLeftAxis;
+
         private InputDevice rightController;
         private InputDevice leftController;
         private InputDevice hmd;
@@ -79,14 +82,17 @@ namespace ArcadeGame.Controllers
                         rightTrigger = false;
                     }
                 }
+
+                if (rightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 axisRight))
+                    OnControllerRightAxis?.Invoke(axisRight);
+                else
+                    OnControllerRightAxis?.Invoke(Vector2.zero);
             }
             //get the input from the left device
             if (leftController.isValid)
             {
                 if(leftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rotation))
-                {
                     OnControllerRotation?.Invoke(rotation);
-                }
 
                 if(leftController.TryGetFeatureValue(CommonUsages.triggerButton, out trigger))
                 {
@@ -101,6 +107,11 @@ namespace ArcadeGame.Controllers
                         leftTrigger = false;
                     }
                 }
+
+                if (leftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 axisLeft))
+                    OnControllerLeftAxis?.Invoke(axisLeft);
+                else
+                    OnControllerLeftAxis?.Invoke(Vector2.zero);
             }
         }
 

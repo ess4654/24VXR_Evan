@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5371831438677098152}
   - component: {fileID: 3407673885017217840}
   - component: {fileID: 3229355938073832401}
+  - component: {fileID: 6678820502721871277}
   m_Layer: 0
   m_Name: Footstep Sounds
   m_TagString: Sound FX
@@ -157,3 +158,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5ac4f09615820164598cbabb1dd30b6d, type: 3}
   - {fileID: 8300000, guid: 77b9494475f11d34e875737ea1255f67, type: 3}
   - {fileID: 8300000, guid: 6b52491bf6b3a7d44875e814d361233f, type: 3}
+--- !u!114 &6678820502721871277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489723320196855622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987a9e16c8a73894a86c63f00492d712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
