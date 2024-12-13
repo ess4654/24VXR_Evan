@@ -23,7 +23,7 @@ namespace ArcadeGame.Controllers.Machines
         /// <summary>
         ///     The position the player is standing at the machine.
         /// </summary>
-        private int playerPosition = -1;
+        private int playerPosition = 0;//-1;
 
         private const float jackpotFlashTime = 3.0f;
 
@@ -71,8 +71,10 @@ namespace ArcadeGame.Controllers.Machines
         ///     Presses the button stopping the light.
         /// </summary>
         /// <returns>Completed press button task</returns>
+        [ContextMenu("Press Button")]
         public async Task PressButton()
         {
+            Log($"{GameData.State} : {gameStateOnPlay}");
             if (GameData.State != gameStateOnPlay) return; //not playing cyclone
 
             //animate the button press

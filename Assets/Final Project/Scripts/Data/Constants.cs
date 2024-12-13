@@ -49,7 +49,8 @@
         /// <summary>
         ///     The odds of hitting a jackpot. Makes the game more difficult.
         /// </summary>
-        public const float JackpotOdds = .1f;
+        //if you hit the jackpot you will win
+        public const float JackpotOdds = 1; //.1f;
 
         /// <summary>
         ///     The odds of winning a large number of tickets.
@@ -57,7 +58,8 @@
         /// <remarks>
         ///     Note: This is different than the jackpot odds.
         /// </remarks>
-        public const float LargeWinningOdds = .25f;
+        //if you hit the large winning odds you will win
+        public const float LargeWinningOdds = 1;//.25f;
 
         #endregion
     }

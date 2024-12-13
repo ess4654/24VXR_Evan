@@ -45,18 +45,25 @@ namespace ArcadeGame.Views.Machines
         /// <exception cref="Exception">If the index is out of range, or the button animators are not properly configured.</exception>
         private void AnimateButton(int buttonIndex, bool down)
         {
+            Log("A");
             if (!hasButtons)
                 throw new Exception($"{name} does not use buttons.");
 
+            Log("B");
             if (buttonAnimators.Length == 0)
                 throw new Exception($"{name} needs to configure it's button animators.");
 
+            Log("C");
+            Log(buttonIndex);
             if (buttonIndex < 0 || buttonIndex >= buttonAnimators.Length)
                 throw new IndexOutOfRangeException($"{buttonIndex}");
 
-            buttonsFlasher.TestFlash();
+            Log("D");
+            if(buttonsFlasher)
+                buttonsFlasher.TestFlash();
             buttonAnimators[buttonIndex].SetBool(buttonAnimatorToggle, down);
             SoundManager.PlayAudioClip(down ? buttonPressAudioKey: buttonReleaseAudioKey);
+            Log("E");
         }
 
         /// <summary>
