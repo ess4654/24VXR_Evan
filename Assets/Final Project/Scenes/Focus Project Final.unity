@@ -808,11 +808,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machines
       objectReference: {fileID: 0}
-    - target: {fileID: 5465553464161499635, guid: 92dbd67369697694f86e073f31d5ba4c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6113293311839674434, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       propertyPath: lights.Array.size
