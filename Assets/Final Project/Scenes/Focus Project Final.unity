@@ -210,12 +210,12 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.067
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9212534
+      value: 0.9063079
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.38896307
+      value: -0.42261827
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -235,12 +235,12 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -23.308
+      value: -23.588
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.892
+      value: 1.438
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -250,7 +250,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -45.78
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -261,6 +261,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shooter Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_text
+      value: Duck Slayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 5632562627238180656, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -699,12 +709,12 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.833
+      value: 3.265
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.887976
+      value: 0.9063079
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -714,7 +724,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4598899
+      value: 0.42261827
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -729,7 +739,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.4546
+      value: 1.769
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -739,7 +749,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 54.76
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -750,6 +760,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Claw Machine Worldspace Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_text
+      value: Claw Machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_characterSpacing
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 5632562627238180656, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1096,12 +1121,12 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -16.685
+      value: -17.199
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.4546
+      value: 1.926
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1122,6 +1147,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Big Wheel Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_text
+      value: Big Wheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_characterSpacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878215316292435064, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292467161
       objectReference: {fileID: 0}
     - target: {fileID: 5632562627238180656, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1148,6 +1193,11 @@ PrefabInstance:
       propertyPath: interactionRegion
       value: 
       objectReference: {fileID: 892979358}
+    - target: {fileID: 8401932133829795780, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292467161
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1257,12 +1307,12 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.247
+      value: -3.56
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.37298793
+      value: 0.42261827
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1272,7 +1322,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.92783624
+      value: -0.9063079
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1287,7 +1337,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.999
+      value: 1.438
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1297,7 +1347,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -136.2
+      value: -130
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1308,6 +1358,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shooter Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_text
+      value: Duck Slayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 5632562627238180656, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1457,6 +1517,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pirate Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_text
+      value: Pirate Spin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 5632562627238180656, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1620,12 +1690,12 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.83
+      value: -3.166
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.4598899
+      value: 0.42261827
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1635,7 +1705,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.887976
+      value: 0.9063079
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1645,12 +1715,12 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.377
+      value: -4.821
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.4546
+      value: 1.769
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1660,7 +1730,7 @@ PrefabInstance:
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 125.24
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 1094044051182014135, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
@@ -1671,6 +1741,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Claw Machine Worldspace Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_text
+      value: Claw Machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_characterSpacing
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973808705903862704, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1890,6 +1975,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2901868568410131208, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292467161
+      objectReference: {fileID: 0}
     - target: {fileID: 3845852128621910577, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -1935,10 +2025,20 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: 1.1010062
       objectReference: {fileID: 0}
+    - target: {fileID: 7570017282605099188, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292467161
+      objectReference: {fileID: 0}
     - target: {fileID: 7857302484306338410, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473871893335996284, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 8646798058552340749, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
