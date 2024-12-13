@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 24214965709015974}
   - component: {fileID: 3259425365690885982}
   - component: {fileID: 7330250058506692669}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plushie Scale Reference
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
