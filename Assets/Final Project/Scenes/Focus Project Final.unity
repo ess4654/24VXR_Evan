@@ -1970,6 +1970,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2321400808993082437, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292467161
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366178252287176735, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292467161
+      objectReference: {fileID: 0}
     - target: {fileID: 2570041695001935868, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1985,10 +1995,20 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4285756275
       objectReference: {fileID: 0}
+    - target: {fileID: 4341889634152689623, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 4868146313426578302, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4285756275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915785735806807034, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 4951918482005428667, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
@@ -2020,10 +2040,20 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7024732744879828985, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292467161
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033991633823552419, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292467161
+      objectReference: {fileID: 0}
     - target: {fileID: 7066420107637221950, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 1.1010062
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7570017282605099188, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
@@ -2054,6 +2084,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073621015104729137, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
