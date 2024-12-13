@@ -19,7 +19,6 @@ namespace ArcadeGame.Controllers
 
         private void Start()
         {
-            GameData.State = GameState.ClawMachine;
             GameData.LoadData();
         }
 
