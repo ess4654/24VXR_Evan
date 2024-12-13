@@ -47,7 +47,7 @@ namespace ArcadeGame.Controllers
         {
             ai.enabled = !active;
             moveProvider.enabled = active;
-            turnProvider.enabled = active;
+            //turnProvider.enabled = active;
         }
 
         /// <summary>
@@ -77,12 +77,12 @@ namespace ArcadeGame.Controllers
                 movingVelocity = ai.velocity.magnitude;
 
                 //rotate player
-                if (rotation.HasValue) 
-                {
-                    var remainingDistance = Vector3.Distance(ai.destination, transform.position);
-                    var t = 1f - (remainingDistance / distance);
-                    transform.rotation = Quaternion.Lerp(startingRotation, rotation.Value, t);
-                }
+                //if (rotation.HasValue) 
+                //{
+                //    var remainingDistance = Vector3.Distance(ai.destination, transform.position);
+                //    var t = 1f - (remainingDistance / distance);
+                //    transform.rotation = Quaternion.Lerp(startingRotation, rotation.Value, t);
+                //}
             }
             if (this == null) return;
 

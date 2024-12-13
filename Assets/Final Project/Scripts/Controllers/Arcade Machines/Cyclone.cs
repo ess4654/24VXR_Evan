@@ -4,6 +4,7 @@ using Shared.Editor;
 using Shared.Helpers;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace ArcadeGame.Controllers.Machines
 {
@@ -32,20 +33,24 @@ namespace ArcadeGame.Controllers.Machines
 
         private void OnEnable()
         {
-            
+            XRInputManager.OnControllerTrigger += HandleInputDown;
+            XRInputManager.OnControllerTrigger += HandleInputUp;
         }
 
         private void OnDisable()
         {
-            
+            XRInputManager.OnControllerTrigger -= HandleInputDown;
+            XRInputManager.OnControllerTrigger -= HandleInputUp;
         }
 
-        private void HandleInput()
+        private void HandleInputDown(InputDevice controllerData)
         {
-            if(true)
-                PressButton();
-            else
-                ReleaseButton();
+            PressButton();
+        }
+
+        private void HandleInputUp(InputDevice controllerData)
+        {
+            ReleaseButton();
         }
 
         #endregion
@@ -68,6 +73,8 @@ namespace ArcadeGame.Controllers.Machines
         /// <returns>Completed press button task</returns>
         public async Task PressButton()
         {
+            if (GameData.State != gameStateOnPlay) return; //not playing cyclone
+
             //animate the button press
             animator.PressButton(playerPosition);
 

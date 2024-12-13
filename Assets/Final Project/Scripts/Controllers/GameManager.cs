@@ -19,6 +19,7 @@ namespace ArcadeGame.Controllers
 
         private void Start()
         {
+            GameData.State = GameState.Cyclone;
             GameData.LoadData();
         }
 

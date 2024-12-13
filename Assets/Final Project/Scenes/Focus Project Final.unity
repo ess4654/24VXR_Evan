@@ -235,6 +235,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &766825941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 766825943}
+  - component: {fileID: 766825942}
+  m_Layer: 0
+  m_Name: Steam Audio Static Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &766825942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766825941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8173b2a8dbe2d2d48995bb2ba9a49ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000, guid: a2df115e4efaaba448a857caada93a52, type: 2}
+  sceneNameWhenExported: Focus Project Final
+--- !u!4 &766825943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766825941}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &892979358 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5436426966244301425, guid: 92dbd67369697694f86e073f31d5ba4c,
@@ -868,6 +914,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Wheel Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5632562627238180656, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: machine
+      value: 
+      objectReference: {fileID: 1511709771}
+    - target: {fileID: 5632562627238180656, guid: d1a84c1c2f14c1347aa406c1b9d67695,
+        type: 3}
+      propertyPath: interactionRegion
+      value: 
+      objectReference: {fileID: 892979358}
     - target: {fileID: 6893005887750695166, guid: d1a84c1c2f14c1347aa406c1b9d67695,
         type: 3}
       propertyPath: interactionRegion
@@ -1138,7 +1194,7 @@ PrefabInstance:
     - target: {fileID: 7676746461505419607, guid: 717055fe1b7ac0e43bd61891f7f593a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.01
+      value: -10.81
       objectReference: {fileID: 0}
     - target: {fileID: 7676746461505419607, guid: 717055fe1b7ac0e43bd61891f7f593a4,
         type: 3}
@@ -1148,7 +1204,7 @@ PrefabInstance:
     - target: {fileID: 7676746461505419607, guid: 717055fe1b7ac0e43bd61891f7f593a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.94
+      value: -11.47
       objectReference: {fileID: 0}
     - target: {fileID: 7676746461505419607, guid: 717055fe1b7ac0e43bd61891f7f593a4,
         type: 3}
@@ -1358,6 +1414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Loop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066420107637221950, guid: 92dbd67369697694f86e073f31d5ba4c,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 1.1010062
       objectReference: {fileID: 0}
     - target: {fileID: 7857302484306338410, guid: 92dbd67369697694f86e073f31d5ba4c,
         type: 3}
@@ -1675,3 +1736,4 @@ SceneRoots:
   - {fileID: 387582694}
   - {fileID: 1598374529}
   - {fileID: 86005337170413546}
+  - {fileID: 766825943}

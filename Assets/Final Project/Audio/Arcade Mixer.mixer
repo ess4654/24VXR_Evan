@@ -211,6 +211,39 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1491764012799887631
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Neon
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 73821e09005f4464b812ddea333fb55f
+  m_Children: []
+  m_Volume: 2660494197abb8f4e8269bafce660921
+  m_Pitch: db5094dc556659642adb9f2d731d146e
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -1038420163024989329}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-1038420163024989329
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 4be7ba8fb5ba1c842ada7c8fc0c324a7
+  m_EffectName: Attenuation
+  m_MixLevel: 3029caa0e6e5add48b3bccd4c24f258d
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-1016257220201838294
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -222,6 +255,7 @@ AudioMixerGroupController:
   m_GroupID: 89d61677c029a8c45bb046d5bf133abc
   m_Children:
   - {fileID: 7736200451182628658}
+  - {fileID: -1491764012799887631}
   m_Volume: c63fe74bea9292e4ca4de8319605dc79
   m_Pitch: 72085a75065ce6b439d89942a351f94a
   m_Send: 00000000000000000000000000000000
@@ -241,6 +275,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 788c8a584ec84e34c96170c4de7ce0ec
   m_FloatValues:
+    2660494197abb8f4e8269bafce660921: -10
     15df02937fb443b429f4628f5253bc64: 9
     4b876be3222db4448a2dd3a411a55556: -18
     76fb119796ae3884fa482e02e2ae7d45: -80
@@ -288,9 +323,10 @@ AudioMixerController:
     - e033ccb3ba2d3354481b474176e964a0
     - e5b017d3a44446e478f60b80b41ec64f
     - 16b2702b31ed03840a1771a2e111cfa8
+    - 73821e09005f4464b812ddea333fb55f
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 3791416355384752653}
+  m_TargetSnapshot: {fileID: -327837104257727375}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -336,12 +372,14 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: bae576a9875f419489c19000d96d9a7f
   m_FloatValues:
+    2660494197abb8f4e8269bafce660921: -10.8
     15df02937fb443b429f4628f5253bc64: -80
     4b876be3222db4448a2dd3a411a55556: -18
     76fb119796ae3884fa482e02e2ae7d45: -80
     15640c3ba5c414746b5aaa209a2543bf: -80
     c63fe74bea9292e4ca4de8319605dc79: 6
     867d29bc166b17e42b5105cf863a33fd: 12
+    db5094dc556659642adb9f2d731d146e: 1
     bc33678e82eda034da03b7f4b92df143: -80
     97a8a03fc82abdd4098e9629c72503f8: -80
     1a4e164fe25dad14bb87c186e13eaab9: -80
